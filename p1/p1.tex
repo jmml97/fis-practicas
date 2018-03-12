@@ -123,44 +123,27 @@ En esta sección se definen y describen las características del sistema que son
   Se incluye información que es necesaria incluir en el sistema.
   \ri{Pacientes}\\
   Información relativa a los pacientes dados de alta en la clínica.
-    \textbf{Contenido:} Id\_cliente, DNI, nombre y apellidos, fecha de nacimiento, teléfono, forma de pago, en caso de emergencia avisar a, historial médico, grupo sanguíneo, enfermedades previas, alergias, anatomías patológicas
-  - Relativa al médico:
-    - Id_medico
-    - DNI
-    - Nombre y apellidos
-    - Fecha de nacimiento
-    - Teléfono
-    - Especialización
-    - Sueldo
-    - Vacaciones
-  - Relativa al encargado de la contabilidad:
-    - Id_contable
-    - DNI
-    - Nombre y apellidos
-    - Fecha de nacimiento
-    - Teléfono
-    - Horario
-    - Vacaciones
-    - Sueldo
-  - Relativa al administrador:
-    - Id_administrador
-    - DNI
-    - Nombre y apellidos
-    - Fecha de nacimiento
-    - Teléfono
-    - Horario
-    - Vacaciones
-    - Sueldo
-  - Relativa a las instalaciones:
-    - Id_instalación
-    - Nombre
-    - Tipo
-    - Instrumental
-    - Localización
-  - Relativa a las recetas:
-    - Id_receta
-    - Nombre
-    - Descripción
+  \textbf{Contenido:} Id\_cliente, DNI, nombre y apellidos, fecha de nacimiento, teléfono, forma de pago, en caso de emergencia avisar a, historial médico, grupo sanguíneo, enfermedades previas, alergias, anatomías patológicas.
+  
+  \ri{Médico}\\
+  Información relativa a los médicos que trabajan en la clínica.
+  \textbf{Contenido:} Id\_medico, DNI, nombre y apellidos, fecha de nacimiento, teléfono, especialización, sueldo, vacaciones.
+  
+  \ri{Encargado de contabilidad}\\
+  Información acerca del personal de contabilidad.
+  \textbf{Contenido:} Id\_contable, DNI, nombre y apellidos, fecha de nacimiento, teléfono, horario, vacaciones, sueldo.
+
+  \ri{Encargado de administración}\\
+  Información sobre los encargados de administración.
+  \textbf{Contenido:} Id\_administrador, DNI, nombre y apellidos, fecha de nacimiento, teléfono, horario, vacaciones, sueldo.
+  
+  \ri{Instalaciones}\\
+  Descripción de las instalaciones de la clínica.
+  \textbf{Contenido:} Id\_instalación, nombre, tipo, instrumental localización.
+  
+  \ri{Recetas}
+  Información sobre las recetas.
+  \textbf{Contenido:} Id_receta, nombre, descripción.
 % section lista_estructurada_de_requisitos (end)
 
 \section{Glosario de términos} % (fold)
@@ -168,7 +151,27 @@ En esta sección se definen y describen las características del sistema que son
 
 \term{Prueba}{Prueba2}
 \term{Prueba3}{Prueba4}
-
+paciente
+personal sanitario
+administracion
+resonancia, radiografia, ecografia...
+cita
+operacion
+paritorio
+quirofano
+receta
+sala de espera
+clinica
+medicamento
+farmacia
+vacuna
+sala de curas
+consulta
+jefe de planta
+especialidad
+enfermero (personal sanitario (?))
+instrumental
+infraestructuras
 
 % section glosario_de_términos (end)
 
