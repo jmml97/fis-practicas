@@ -18,19 +18,43 @@
 \setlist[enumerate]{leftmargin=*}
 
 \newcommand{\term}[2]{\textbf{#1}\quad#2\\}
+\newcounter{ObjCounter}
+\newcommand{\obj}[1]{\addtocounter{ObjCounter}{1}\textbf{\rmfamily OBJ-\theObjCounter}\quad#1\\}
+
+\usepackage{array}
 
 \begin{document}
 
 {\Huge{Fundamentos de Ingeniería de Software}}
 
-\section{Estudio del dominio del problema} % (fold)
+\section{Objetivos} % (fold)
 \label{sec:estudio_del_dominio_del_problema}
+
+\obj{Prueba}
+\obj{Prueba 2}
+
 
 % section estudio_del_dominio_del_problema (end)
 
 \section{Descripción general del sistema} % (fold)
 \label{sec:descripción_general_del_sisetema}
 
+El problema consiste en ofrecer una solución software a una clínica privada que se encargue de automatizar el sistema de atención al cliente, de fichas médicas y de sus instalaciones, entre otras cosas. Para ello, el desarollo de este software consistirá en un sistema que maneje toda la parte relacionada con los pacientes, médicos, administración e infrastructura.
+
+\section{Descripción de los implicados} % (fold)
+\label{sec:descripción_de_los_implicados}
+
+	\begin{tabular}{lp{3cm}lp{4cm}}
+		Nombre & Descripción & Tipo & Responsabilidad \\
+		Paciente & Representa a una persona adscrita al centro & Usuario sistema & Pedir cita. Ver su historial médico. Consultar información sobre la clínica. \\
+		Sanitario & Representa al personal médico & Usuario producto & \\
+		Administración & Representa a una encargado de administración & Usuario producto & \\
+		Jefe de planta & Representa al encargado de una sección & Usuario producto & \\
+		Proveedor & Representa a un proveedor & Usuario sistema & Suministrar medicamentos a la clínica
+	\end{tabular}
+
+
+% section descripción_de_los_implicados (end)
 
 
 % section descripción_general_del_sisetema (end)
