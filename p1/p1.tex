@@ -70,6 +70,97 @@ El sistema mejorará el proceso de gestión de citas, consulta de historial clí
 \section{Lista estructurada de requisitos} % (fold)
 \label{sec:lista_estructurada_de_requisitos}
 
+\subsection{Requisitos funcionales}
+En esta sección se definen y describen las características del sistema que son esenciales para cubrir las necesidades de los usuarios. Para presentarlo de forma más clara los hemos clasificado según el implicado.
+
+\subsubsection{Paciente}
+    \rf{Pedir una cita}
+    \rf{Consultar y modificar sus datos}
+    \rf{Elegir médico y centro}
+    \rf{Consultar lista de espera}
+    \rf{Consultar sus citas, radiografías y/o facturas}
+    \rf{Recordatorio automático de cita}
+\subsubsection{Médico}
+    \rf{Consultar y administrar citas}
+    \rf{Consultar y reservar disponibilidad de las instalaciones}
+    \rf{Modificar y consultar historial medico de pacientes}
+    \rf{Consultar los tratamientos de los pacientes}
+    \rf{Acceder a la base de datos de recetas}
+    \rf{Recetar a un paciente}
+    \rf{Consultar y modificar su horario}
+    \rf{Consultar su propia ficha}
+    \rf{Consultar y modificar listas de espera    }
+    \rf{Consultar ingresos}
+    \rf{Consultar y gestionar vacaciones}
+    \rf{Consultar el material disponible}
+\subsubsection{Cualquier usuario que acceda a la página web}
+    \rf{Tratamientos disponibles}
+    \rf{Especialidades}
+    \rf{Horarios y horarios de visitas}
+    \rf{Instalaciones}
+    \rf{Médicos}
+\subsubsection{Encargado de contabilidad}
+    \rf{Consultar facturación}
+    \rf{Consultar y gestionar impuestos}
+    \rf{Gestionar y consultar facturas}
+  - El administrador puede:
+    \rf{Consultar y modificar todas las bases de datos del sistema}
+    \rf{Modificar instalaciones, médicos, recetas, aparatos...} disponibles
+    \rf{Gestionar el personal asi como modificar sus funcionalidades}
+    \rf{Consultar estadística y control de uso}
+
+    \subsection{Requisitos no funcionales}
+  \rn{Consistencia en los identificadores del sistema (unicidad). Esto incluye pacientes, médicos, instalaciones, facturas...}
+  \rn{onsistencia en el sistema de citas (no dar dos citas en el mismo momento para el mismo médico o paciente)}
+  \rn{istema de recordatorio automático de cita}
+  \rn{estionar el acceso a la información según el tipo de usuario}
+  \rn{estionar estadísticas de uso del sistema}
+  \rn{oporte multiplataforma y multilenguaje}
+
+
+  \subsection{Requisitos de información}
+
+  Se incluye información que es necesaria incluir en el sistema.
+  \ri{Pacientes}\\
+  Información relativa a los pacientes dados de alta en la clínica.
+    \textbf{Contenido:} Id\_cliente, DNI, nombre y apellidos, fecha de nacimiento, teléfono, forma de pago, en caso de emergencia avisar a, historial médico, grupo sanguíneo, enfermedades previas, alergias, anatomías patológicas
+  - Relativa al médico:
+    - Id_medico
+    - DNI
+    - Nombre y apellidos
+    - Fecha de nacimiento
+    - Teléfono
+    - Especialización
+    - Sueldo
+    - Vacaciones
+  - Relativa al encargado de la contabilidad:
+    - Id_contable
+    - DNI
+    - Nombre y apellidos
+    - Fecha de nacimiento
+    - Teléfono
+    - Horario
+    - Vacaciones
+    - Sueldo
+  - Relativa al administrador:
+    - Id_administrador
+    - DNI
+    - Nombre y apellidos
+    - Fecha de nacimiento
+    - Teléfono
+    - Horario
+    - Vacaciones
+    - Sueldo
+  - Relativa a las instalaciones:
+    - Id_instalación
+    - Nombre
+    - Tipo
+    - Instrumental
+    - Localización
+  - Relativa a las recetas:
+    - Id_receta
+    - Nombre
+    - Descripción
 % section lista_estructurada_de_requisitos (end)
 
 \section{Glosario de términos} % (fold)
