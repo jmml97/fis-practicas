@@ -2,7 +2,7 @@
 
 \usepackage[headsep=1cm,headheight=3cm,includeheadfoot,left=3.5cm,right=3.5cm,top=1cm,bottom=2cm,a4paper]{geometry}
 
-\linespread{1.3}
+%% \linespread{1.3}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1em}
 
@@ -62,25 +62,138 @@ El sistema mejorará el proceso de gestión de citas, consulta de historial clí
 \section{Lista estructurada de requisitos} % (fold)
 \label{sec:lista_estructurada_de_requisitos}
 
-\rf{aaaa}
+\subsection{Requisitos funcionales}
+En esta sección se definen y describen las características del sistema que son esenciales para cubrir las necesidades de los usuarios. Para presentarlo de forma más clara los hemos clasificado según el implicado.
 
-\rn{bbb}
+\subsubsection{Paciente}
+    \rf{Pedir una cita}
+    \rf{Consultar y modificar sus datos}
+    \rf{Elegir médico y centro}
+    \rf{Consultar lista de espera}
+    \rf{Consultar sus citas, radiografías y/o facturas}
+    \rf{Recordatorio automático de cita}
+\subsubsection{Médico}
+    \rf{Consultar y administrar citas}
+    \rf{Consultar y reservar disponibilidad de las instalaciones}
+    \rf{Modificar y consultar historial medico de pacientes}
+    \rf{Consultar los tratamientos de los pacientes}
+    \rf{Acceder a la base de datos de recetas}
+    \rf{Recetar a un paciente}
+    \rf{Consultar y modificar su horario}
+    \rf{Consultar su propia ficha}
+    \rf{Consultar y modificar listas de espera    }
+    \rf{Consultar ingresos}
+    \rf{Consultar y gestionar vacaciones}
+    \rf{Consultar el material disponible}
+\subsubsection{Cualquier usuario que acceda a la página web}
+    \rf{Tratamientos disponibles}
+    \rf{Especialidades}
+    \rf{Horarios y horarios de visitas}
+    \rf{Instalaciones}
+    \rf{Médicos}
+\subsubsection{Encargado de contabilidad}
+    \rf{Consultar facturación}
+    \rf{Consultar y gestionar impuestos}
+    \rf{Gestionar y consultar facturas}
+  - El administrador puede:
+    \rf{Consultar y modificar todas las bases de datos del sistema}
+    \rf{Modificar instalaciones, médicos, recetas, aparatos...} disponibles
+    \rf{Gestionar el personal asi como modificar sus funcionalidades}
+    \rf{Consultar estadística y control de uso}
 
-\ri{ccc}
+    \subsection{Requisitos no funcionales}
+  \rn{Consistencia en los identificadores del sistema (unicidad). Esto incluye pacientes, médicos, instalaciones, facturas...}
+  \rn{onsistencia en el sistema de citas (no dar dos citas en el mismo momento para el mismo médico o paciente)}
+  \rn{istema de recordatorio automático de cita}
+  \rn{estionar el acceso a la información según el tipo de usuario}
+  \rn{estionar estadísticas de uso del sistema}
+  \rn{oporte multiplataforma y multilenguaje}
 
-aaaa
-bbb
-aaaaa
-pppp
 
+  \subsection{Requisitos de información}
+
+  Se incluye información que es necesaria incluir en el sistema.
+  \ri{Pacientes}\\
+  Información relativa a los pacientes dados de alta en la clínica.
+  \textbf{Contenido:} Id\_cliente, DNI, nombre y apellidos, fecha de nacimiento, teléfono, forma de pago, en caso de emergencia avisar a, historial médico, grupo sanguíneo, enfermedades previas, alergias, anatomías patológicas.
+  
+  \ri{Médico}\\
+  Información relativa a los médicos que trabajan en la clínica.
+  \textbf{Contenido:} Id\_medico, DNI, nombre y apellidos, fecha de nacimiento, teléfono, especialización, sueldo, vacaciones.
+  
+  \ri{Encargado de contabilidad}\\
+  Información acerca del personal de contabilidad.
+  \textbf{Contenido:} Id\_contable, DNI, nombre y apellidos, fecha de nacimiento, teléfono, horario, vacaciones, sueldo.
+
+  \ri{Encargado de administración}\\
+  Información sobre los encargados de administración.
+  \textbf{Contenido:} Id\_administrador, DNI, nombre y apellidos, fecha de nacimiento, teléfono, horario, vacaciones, sueldo.
+  
+  \ri{Instalaciones}\\
+  Descripción de las instalaciones de la clínica.
+  \textbf{Contenido:} Id\_instalación, nombre, tipo, instrumental localización.
+  
+  \ri{Recetas}
+  Información sobre las recetas.
+  \textbf{Contenido:} Id_receta, nombre, descripción.
 % section lista_estructurada_de_requisitos (end)
 
 \section{Glosario de términos} % (fold)
 \label{sec:glosario_de_términos}
 
-\term{Prueba}{Prueba2}
-\term{Prueba3}{Prueba4}
-
+\begin{itemize}
+	\item \textbf{Administracion hospitalaria} ---> La administración hospitalaria es una especialidad de la administración en salud enfocada a la autonomía de la gestión de los servicios y de las instituciones hospitalarias.
+	
+	\item \textbf{Asistencia sanitaria privada} ---> Asistencia sanitaria proporcionada por entidades distintas al gobierno, empresas privadas a las que el ciudadano contribuyen (generalmente vía la suscripción de seguros de salud)
+	
+	\item \textbf{Cita} ---> Acuerdo entre un médico y un paciente (o más personas) acerca del lugar, día y hora en que se encontrarán para verse o tratar algún asunto.
+	
+	\item \textbf{Clinica} ---> Establecimiento destinado a proporcionar asistencia o tratamiento médico a determinadas enfermedades.
+	
+	\item \textbf{Consulta (cita)} ---> Acto médico que consiste en examinar al paciente para reconocer su enfermedad, darle tratamiento, etc.
+	
+	\item \textbf{Consulta (lugar)} ---> Despacho u otro lugar donde el médico recibe, examina y atiende a sus pacientes.
+	
+	\item \textbf{Ecografia} ---> Técnica de exploración de los órganos internos del cuerpo que consiste en registrar el eco de ondas electromagnéticas o acústicas enviadas hacia el lugar que se examina.
+	
+	\item \textbf{Enfermero} ---> Encargado de asistir o atender a enfermos, heridos o lesionados bajo las prescripciones de un médico, o ayudar al médico o cirujano.
+	
+	\item \textbf{Especialidad médica} ---> Estudios cursados por un graduado o licenciado en Medicina en su período de posgrado, que derivan de un conjunto de conocimientos médicos especializados relativos a un área específica del cuerpo humano, a técnicas quirúrgicas específicas o a un método diagnóstico determinado.
+	
+	\item \textbf{Farmacia (especialidad)} ---> Ciencia y técnica de conocer las sustancias de acción terapéutica, de obtenerlas y combinarlas para preparar medicamentos.
+	
+	\item \textbf{Farmacia (lugar)} ---> Establecimiento en el que se preparan y venden medicamentos.
+	
+	\item \textbf{Gerencia} ---> Persona o conjunto de personas que se encargan de dirigir, gestionar o administrar la clínica privada.
+	
+	\item \textbf{Infraestructuras} ---> Conjunto de medios técnicos, servicios e instalaciones necesarios para el desarrollo correcto de las actividades hospitalarias.
+	
+	\item \textbf{Instrumental} ---> Conjunto de instrumentos necesarios para realizar una actividad.
+	
+	\item \textbf{Medicamento} ---> Sustancia que sirve para curar o prevenir una enfermedad, para reducir sus efectos sobre el organismo o para aliviar un dolor físico.
+	
+	\item \textbf{Operacion} ---> Intervención quirúrgica que consiste en abrir o cortar un tejido u órgano dañado o lesionado con los instrumentos adecuados y con una intención reparadora o terapéutica.
+	
+	\item \textbf{Paciente} ---> Persona enferma que es atendida por un médico o recibe tratamiento médico o quirúrgico.
+	
+	\item \textbf{Paritorio} ---> Sala de un establecimiento hospitalario especialmente acondicionada para un parto.
+	
+	\item \textbf{Patologia} ---> Parte de la medicina que estudia los trastornos anatómicos y fisiológicos de los tejidos y los órganos enfermos, así como los síntomas y signos a través de los cuales se manifiestan las enfermedades y las causas que las producen.
+	
+	\item \textbf{Personal sanitario }---> Conjunto de las personas que trabajan la misma instacia médica. (??)
+	
+	\item \textbf{Quirofano} ---> Sala de un establecimiento hospitalario especialmente acondicionada para realizar operaciones quirúrgicas.
+	
+	\item \textbf{Radiografia} ---> Técnica exploratoria que consiste en someter un cuerpo o un objeto a la acción de los rayos X para obtener una imagen sobre una placa fotográfica.
+	
+	\item \textbf{Receta} ---> Nota oficial que hace un médico para que se despache en la farmacia un determinado medicamento que debe ser administrado a un enfermo, así como su dosificación.
+	
+	\item \textbf{Resonancia} ---> Técnica exploratoria que se basa en la reconstrucción, mediante una computadora, de la señal de relajación producida por los núcleos de los átomos de hidrógeno que previamente se hicieron entrar en resonancia excitándolos por la interacción de un campo magnético estático y uno oscilante.
+	
+	\item \textbf{Sala de espera} ---> Parte de un edificio donde la gente se sienta o permanece de pie hasta que el hecho que está esperando ocurre.
+	
+	\item \textbf{Vacuna} ---> Sustancia compuesta por una suspensión de microorganismos atenuados o muertos que se introduce en el organismo para prevenir y tratar determinadas enfermedades infecciosas; estimula la formación de anticuerpos con lo que se consigue una inmunización contra estas enfermedades.
+\end{itemize}
 
 % section glosario_de_términos (end)
 
