@@ -1,0 +1,26 @@
+@startuml
+left to right direction
+skinparam usecase {
+	BorderColor #AC58FA
+	BackgroundColor #F6CEF5
+	
+	BackgroundColor<< Main >> YellowGreen
+	BorderColor<< Main >> YellowGreen	
+}
+skinparam {
+	ArrowColor #AC58FA
+	ActorBorderColor #AC58FA
+	ActorBackgroundColor #F6CEF5
+}
+skinparam packageStyle rectangle
+
+actor Contable
+actor Paciente
+
+rectangle Contabilidad {
+  Contable -- (Consultar facturación)
+  Contable -- (Gestionar impuestos)
+  Contable -- (Gestionar facturas)
+  Paciente -- (Gestionar facturas)
+}
+@enduml
