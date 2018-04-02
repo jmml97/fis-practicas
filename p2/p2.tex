@@ -7,11 +7,12 @@
 \setlength{\parskip}{1em}
 
 \usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
 
 %% Fuentes personalizadas para utilizar con XeTeX
-\usepackage{fontspec}
-\setmainfont{IBM Plex Sans}
-\setmonofont[Scale=0.9]{IBM Plex Mono}
+\usepackage[sfdefault]{roboto}
+\usepackage[scaled=0.9]{DejaVuSansMono}
+\usepackage[T1]{fontenc}
 
 \usepackage{enumitem}
 \setlist[itemize]{leftmargin=*}
@@ -20,12 +21,13 @@
 \usepackage{changepage}
 
 \newcounter{ActCounter}
-\newcommand{\act}[1]{\addtocounter{ActCounter}{1}\textbf{\rmfamily ACT-\theActCounter}\quad#1\\}
+\newcommand{\act}[1]{\addtocounter{ActCounter}{1}\textbf{\sffamily ACT-\theActCounter}\quad#1\\}
 
-\usepackage{array}
+\usepackage{tabularx}
+\usepackage{float}
 \usepackage{adjustbox}
 
-\title{Práctica 2: Modelo de casos de uso \large Fundamentos de Ingeniería del Software}
+\title{Práctica 2: Modelo de casos de uso \large\\ Fundamentos de Ingeniería del Software}
 \author{Sofía Almedia Bruno \and José Antonio Álvarez Ocete \and Miguel Lentisco Ballesteros \and Simón López Vico \and José María Martín Luque}
 
 \begin{document}
@@ -34,81 +36,93 @@
 
 \section{Introducción}
 
-En el presente documento se muestra el modelo de Casos de Uso obtenido en el proceso de análisis
-del sistema para la gestión de un centro médico. El modelo se puede descomponer en dos grandes
-paquetes que agrupan las funcionalidades básicas del sistema.
+En el presente documento se muestra el modelo de Casos de Uso obtenido en el proceso de análisis del sistema para la gestión de un centro médico. El modelo se puede descomponer en dos grandes paquetes que agrupan las funcionalidades básicas del sistema.
 
 \section{Diagramas de casos de uso} % (fold)
 
-\begin{center}
-\includegraphics[scale=0.7]{diagramas/gestion_datos}
+\begin{figure}[H]
+	\caption{Diagrama de casos de uso de gestión de datos}
+	\centering
+	\includegraphics{diagramas/gestion_datos}
+\end{figure}
 
-\includegraphics[scale=0.7]{diagramas/contabilidad}
-\end{center}
+\begin{figure}[H]
+	\caption{Diagrama de casos de uso de contabilidad}
+	\centering
+	\includegraphics{diagramas/contabilidad}
+\end{figure}
 
 \section{Descripción de los actores}
 % PLANTILLA PACIENTE
 
-\begin{table}[h]
-\centering
+\begin{table}[H]
 \label{my-label}
-\begin{tabular}{l| p{5cm} llll}
+\begin{tabularx}{\textwidth}{l|Xlllr}
+	\textbf{Actor}           & \multicolumn{4}{l}{Paciente} & \act\\ 
+	\textbf{Descripción}     & \multicolumn{5}{>{\hsize=2\hsize}X}{Paciente adscrito al centro médico que desea pedir cita, consultar su historial o informarse acerca de la clínica}\\
+	\textbf{Características} & \multicolumn{5}{>{\hsize=2\hsize}X}{Todos los clientes de la clínica son pacientes}\\ 
+	\textbf{Relaciones}      & \multicolumn{5}{>{\hsize=2\hsize}X}{}\\ 
+	\textbf{Referencias}     & \multicolumn{5}{>{\hsize=2\hsize}X}{}\\
+	\textbf{Autor}           &  & \textbf{Fecha} &  & \textbf{Versión} & \textbf{}                      \\ 
+\end{tabularx}
+\end{table}
 
-\textbf{Actor}           & Paciente & & & & \act \\ 
+\vspace{1cm}
 
-\textbf{Descripción}     & Paciente adscrito al centro médico que desea pedir cita, consultar su historial o informarse acerca de la clínica & & & & \\
-\textbf{Características} & Todos los clientes de la clínica son pacientes  & &  & & \\ 
-\textbf{Relaciones}      & & & & & \\ 
-\textbf{Referencias}     & & &                                       & \textbf{}                      \\ 
-\textbf{Autor}           &  & \textbf{Fecha} &  & \textbf{Versión} & \textbf{}                      \\ 
-\end{tabular}
-\bigskip
-\centering
+\begin{table}[H]
 \label{my-label}
-\begin{tabular}{lp{10cm}l}
-\textbf{Atributos} &  & \\
-\textbf{Nombre}    & \textbf{Descripción} & \textbf{Tipo} \\ \hline
-Datos personales   & Identifican al paciente (Id\_paciente, DNI, nombre y apellidos,...)     & \\
-Contacto           & Permiten ponerse en contacto con el paciente o algún familiar (teléfono, en caso de emergencia avisar a...) & \\  
-Datos médicos      & Información relativa a la salud del paciente (historial médico, grupo sanguíneo, enfermedades previas, alergias,...)            
-\end{tabular}
-\bigskip
-\begin{tabular}{lll}
-\textbf{Comentarios} &  &  \\ \hline
+\begin{tabularx}{\textwidth}{lXl}
+	\textbf{Atributos} &  & \\
+	\textbf{Nombre}    & \textbf{Descripción} & \textbf{Tipo} \\ \hline
+	Datos personales   & Identifican al paciente (\texttt{Id\_paciente}, DNI, nombre y apellidos, ...)     & \\
+	Contacto           & Permiten ponerse en contacto con el paciente o algún familiar (teléfono, en caso de emergencia avisar a ...) & \\  
+	Datos médicos      & Información relativa a la salud del paciente (historial médico, grupo sanguíneo, enfermedades previas, alergias, ...)            
+\end{tabularx}
+\end{table}
 
-\end{tabular}
+\vspace{1cm}
+
+\begin{table}[H]
+\begin{tabularx}{\textwidth}{lXX}
+	\textbf{Comentarios} &  &  \\ \hline
+\end{tabularx}
 \end{table}
 % FIN PLANTILLA PACIENTE
 
+\vspace{2cm}
+
 % PLANTILLA MÉDICO
 
-\begin{table}[h]
-\centering
+\begin{table}[H]
 \label{my-label}
-\begin{tabular}{l| p{5cm} llll}
+\begin{tabularx}{\textwidth}{l|Xlllr}
+	\textbf{Actor}           & Médico & & & & \act \\ 
+	\textbf{Descripción}     & \multicolumn{5}{>{\hsize=2\hsize}X}{Personal sanitario de la clínica}\\
+	\textbf{Características} & \multicolumn{5}{>{\hsize=2\hsize}X}{Puede modificar la información del paciente}\\ 
+	\textbf{Relaciones}      & \multicolumn{5}{>{\hsize=2\hsize}X}{}\\ 
+	\textbf{Referencias}     & \multicolumn{5}{>{\hsize=2\hsize}X}{}\\ 
+	\textbf{Autor}           &  & \textbf{Fecha} & & \textbf{Versión} & \\ 
+\end{tabularx}
+\end{table}
 
-\textbf{Actor}           & Médico & & & & \act \\ 
+\vspace{1cm}
 
-\textbf{Descripción}     & Personal sanitario de la clínica& & & & \\
-\textbf{Características} & Puede modificar la información del paciente & & & & \\ 
-\textbf{Relaciones}      & & & & & \\ 
-\textbf{Referencias}     & & & & & \\ 
-\textbf{Autor}           &  & \textbf{Fecha} & & \textbf{Versión} & \\ 
-\end{tabular}
-\bigskip
-\centering
+\begin{table}[H]
 \label{my-label}
-\begin{tabular}{lll}
-\textbf{Atributos} &  & \\
-\textbf{Nombre}    & \textbf{Descripción} & \textbf{Tipo} \\ \hline
-Datos personales   &  Identifican al médico (Id\_médico, DNI, nombre y apellidos,...)     & \\
-Datos laborales    & Relativos a su trabajo (horario, sueldo, vacaciones,...)&              
-\end{tabular}
-\bigskip
-\centering
-\begin{tabular}{lll}
-\textbf{Comentarios} &  &  \\ \hline
-\end{tabular}
+\begin{tabularx}{\textwidth}{lXl}
+	\textbf{Atributos} &  & \\
+	\textbf{Nombre}    & \textbf{Descripción} & \textbf{Tipo} \\ \hline
+	Datos personales   &  Identifican al médico (\texttt{Id\_médico}, DNI, nombre y apellidos,...)     & \\
+	Datos laborales    & Relativos a su trabajo (horario, sueldo, vacaciones,...) &
+\end{tabularx}
+\end{table}
+
+\vspace{1cm}
+
+\begin{table}[H]
+\begin{tabularx}{\textwidth}{lXX}
+	\textbf{Comentarios} &  &  \\ \hline
+\end{tabularx}
 \end{table}
 
 % FIN PLANTILLA MÉDICO

@@ -1,16 +1,12 @@
 @startuml
-skinparam package {
-	  BorderColor #AC58FA
-	  BackgroundColor #F6CEF5
-}
 
-skinparam object {
-	  BorderColor #F6CEF5
-	  BackgroundColor #F6CEF5
-	  FontColor #F6CEF5
-}
-
+' Remove shadows
 skinparam shadowing false
+
+' Generated diagram will be in black/grey/white.
+skinparam monochrome true
+
+skinparam defaultFontName Roboto
 
 package "Gestión de datos" {
  object o

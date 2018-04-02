@@ -1,17 +1,14 @@
 @startuml
 left to right direction
-skinparam usecase {
-	BorderColor #AC58FA
-	BackgroundColor #F6CEF5
-	
-	BackgroundColor<< Main >> YellowGreen
-	BorderColor<< Main >> YellowGreen	
-}
-skinparam {
-	ArrowColor #AC58FA
-	ActorBorderColor #AC58FA
-	ActorBackgroundColor #F6CEF5
-}
+
+' Remove shadows
+skinparam shadowing false
+
+' Generated diagram will be in black/grey/white.
+skinparam monochrome true
+
+skinparam defaultFontName Roboto
+
 skinparam packageStyle rectangle
 
 actor Contable
