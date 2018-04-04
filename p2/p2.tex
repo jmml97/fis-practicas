@@ -126,6 +126,47 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 \end{table}
 
 % FIN PLANTILLA MÉDICO
+
+\vspace{2cm}
+
+% PLANTILLA CONTABLE
+
+\begin{table}[H]
+	\label{my-label}
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Actor}           & \multicolumn{4}{l}{Contable} & \act\\ 
+		\textbf{Descripción}     & \multicolumn{5}{>{\hsize=2\hsize}X}{Encargado de gestionar la facturación y los impuestos referentes a la clínica.}\\
+		\textbf{Características} & \multicolumn{5}{>{\hsize=2\hsize}X}{Puede consultar las facturas de todo cliente en el sistema y el sueldo del personal, así como etiquetar como moroso a aquel cliente que debe dinero.}\\ 
+		\textbf{Relaciones}      & \multicolumn{5}{>{\hsize=2\hsize}X}{Paciente, personal.}\\ 
+		\textbf{Referencias}     & \multicolumn{5}{>{\hsize=2\hsize}X}{Consultar facturación, gestionar impuestos, gestionar facturas.}\\
+		\textbf{Autor}           & Simón López & \textbf{Fecha} & 04/04/18 & \textbf{Versión} & \textbf{1.0}                      \\ 
+	\end{tabularx}
+\end{table}
+
+\vspace{1cm}
+
+\begin{table}[H]
+	\label{my-label}
+	\begin{tabularx}{\textwidth}{lXl}
+		\textbf{Atributos}  &  & \\
+		\textbf{Nombre}     & \textbf{Descripción} & \textbf{Tipo} \\ \hline
+		\textbf{IdContable} & Nombre o pseudónimo referente al contable, único en el sistema que identificará a este. & Texto \\
+		\textbf{Salario}    & Cantidad de dinero que cobra el contable al mes. & Numérico \\
+	\end{tabularx}
+\end{table}
+
+\vspace{1cm}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{lXX}
+		\textbf{Comentarios} &  &  \\ \hline
+		Usualmente no habrá más de un contable por clínica.
+	\end{tabularx}
+\end{table}
+
+%FIN DE LA PLANTILLA CONTABLE
+
+
 \section{Descripción de los casos de uso}
 
 % Usar la plantilla general
