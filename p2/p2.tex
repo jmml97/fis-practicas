@@ -189,12 +189,32 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 	\end{tabularx}
 \end{table}
 
-
-
-
-
 % FIN DE LA PLANTILLA USUARIO WEB
 
+% PLANTILLA TEMPORIZADOR
+
+\begin{table}[H]
+	\label{my-label}
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Actor}           & \multicolumn{4}{l}{Temporizador} & \act\\ 
+		\textbf{Descripción}     & \multicolumn{5}{>{\hsize=2\hsize}X}{Daemon cuyo objetivo es recordar las citas a los demas usuarios del sistema}\\
+		\textbf{Características} & \multicolumn{5}{>{\hsize=2\hsize}X}{Accede a los horarios de los distintos usuarios del sistema de forma periódica y avisa tanto a clientes como a trabajadores de su horario.}\\ 
+		\textbf{Relaciones}      & \multicolumn{5}{>{\hsize=2\hsize}X}{No tiene.}\\ 
+		\textbf{Referencias}     & \multicolumn{5}{>{\hsize=2\hsize}X}{}\\
+		\textbf{Autor}           & José Antonio Álvarez & \textbf{Fecha} & 05/04/18 & \textbf{Versión} & \textbf{1.0}                      \\ 
+	\end{tabularx}
+\end{table}
+
+\vspace{1cm}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{lXX}
+		\textbf{Comentarios} &  &  \\ \hline
+		Sobre este actor tampoco se almacenan información debido a sus funcionalidades
+	\end{tabularx}
+\end{table}
+
+% FIN DE LA PLANTILLA TEMPORIZADOR
 
 \section{Descripción de los casos de uso}
 
@@ -202,5 +222,11 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 
 \section{Diagrama de paquetes}
 
+\begin{figure}[H]
+	\caption{Diagrama de paquetes}
+	\centering
+	\includegraphics{diagramas/paquetes}
+\end{figure}
+	
 	
 \end{document}
