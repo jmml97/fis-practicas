@@ -62,15 +62,13 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 \label{my-label}
 \begin{tabularx}{\textwidth}{l|Xlllr}
 	\textbf{Actor}           & \multicolumn{4}{l}{Paciente} & \act\\ 
-	\textbf{Descripción}     & \multicolumn{5}{>{\hsize=2\hsize}X}{Paciente adscrito al centro médico que desea pedir cita, consultar su historial o informarse acerca de la clínica}\\
+	\textbf{Descripción}     & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Paciente adscrito al centro médico que desea pedir cita, consultar su historial o informarse acerca de la clínica}\\
 	\textbf{Características} & \multicolumn{5}{>{\hsize=2\hsize}X}{Todos los clientes de la clínica son pacientes}\\ 
 	\textbf{Relaciones}      & \multicolumn{5}{>{\hsize=2\hsize}X}{No tiene}\\ 
 	\textbf{Referencias}     & \multicolumn{5}{>{\hsize=2\hsize}X}{Pedir una cita, modificar, consultar}\\
 	\textbf{Autor}           & Grupo ? & \textbf{Fecha} & 07/04/18 & \textbf{Versión} & {1.1}                      \\ 
 \end{tabularx}
 \end{table}
-
-\vspace{1cm}
 
 \begin{table}[H]
 \label{my-label}
@@ -83,16 +81,14 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 \end{tabularx}
 \end{table}
 
-\vspace{1cm}
-
 \begin{table}[H]
-\begin{tabularx}{\textwidth}{lXX}
-	\textbf{Comentarios} &  &  \\ \hline
+\begin{tabularx}{\textwidth}{X}
+	\textbf{Comentarios}\\ \hline
 \end{tabularx}
 \end{table}
 % FIN PLANTILLA PACIENTE
 
-\vspace{2cm}
+\newpage
 
 % PLANTILLA MÉDICO
 
@@ -100,15 +96,13 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 \label{my-label}
 \begin{tabularx}{\textwidth}{l|Xlllr}
 	\textbf{Actor}           & Médico & & & & \act \\ 
-	\textbf{Descripción}     & \multicolumn{5}{>{\hsize=2\hsize}X}{Personal sanitario de la clínica}\\
-	\textbf{Características} & \multicolumn{5}{>{\hsize=2\hsize}X}{Puede modificar la información del paciente}\\ 
-	\textbf{Relaciones}      & \multicolumn{5}{>{\hsize=2\hsize}X}{}\\ 
-	\textbf{Referencias}     & \multicolumn{5}{>{\hsize=2\hsize}X}{}\\ 
+	\textbf{Descripción}     & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Personal sanitario de la clínica}\\
+	\textbf{Características} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Puede modificar la información del paciente}\\ 
+	\textbf{Relaciones}      & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{}\\ 
+	\textbf{Referencias}     & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{}\\ 
 	\textbf{Autor}           &  & \textbf{Fecha} & & \textbf{Versión} & \\ 
 \end{tabularx}
 \end{table}
-
-\vspace{1cm}
 
 \begin{table}[H]
 \label{my-label}
@@ -120,17 +114,15 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 \end{tabularx}
 \end{table}
 
-\vspace{1cm}
-
 \begin{table}[H]
-\begin{tabularx}{\textwidth}{lXX}
-	\textbf{Comentarios} &  &  \\ \hline
+\begin{tabularx}{\textwidth}{X}
+	\textbf{Comentarios}\\ \hline
 \end{tabularx}
 \end{table}
 
 % FIN PLANTILLA MÉDICO
 
-\vspace{2cm}
+\newpage
 
 % PLANTILLA CONTABLE
 
@@ -138,15 +130,13 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 	\label{my-label}
 	\begin{tabularx}{\textwidth}{l|Xlllr}
 		\textbf{Actor}           & \multicolumn{4}{l}{Contable} & \act\\ 
-		\textbf{Descripción}     & \multicolumn{5}{>{\hsize=2\hsize}X}{Encargado de gestionar la facturación y los impuestos referentes a la clínica.}\\
-		\textbf{Características} & \multicolumn{5}{>{\hsize=2\hsize}X}{Puede consultar las facturas de todo cliente en el sistema y el sueldo del personal, así como etiquetar como moroso a aquel cliente que debe dinero.}\\ 
-		\textbf{Relaciones}      & \multicolumn{5}{>{\hsize=2\hsize}X}{Paciente, personal.}\\ 
-		\textbf{Referencias}     & \multicolumn{5}{>{\hsize=2\hsize}X}{Consultar facturación, gestionar impuestos, gestionar facturas.}\\
+		\textbf{Descripción}     & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Encargado de gestionar la facturación y los impuestos referentes a la clínica.}\\
+		\textbf{Características} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Puede consultar las facturas de todo cliente en el sistema y el sueldo del personal, así como etiquetar como moroso a aquel cliente que debe dinero.}\\ 
+		\textbf{Relaciones}      & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Paciente, personal.}\\ 
+		\textbf{Referencias}     & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Consultar facturación, gestionar impuestos, gestionar facturas.}\\
 		\textbf{Autor}           & Simón López & \textbf{Fecha} & 04/04/18 & \textbf{Versión} & \textbf{1.0}                      \\ 
 	\end{tabularx}
 \end{table}
-
-\vspace{1cm}
 
 \begin{table}[H]
 	\label{my-label}
@@ -158,16 +148,16 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 	\end{tabularx}
 \end{table}
 
-\vspace{1cm}
-
 \begin{table}[H]
-	\begin{tabularx}{\textwidth}{lXX}
-		\textbf{Comentarios} &  &  \\ \hline
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
 		Usualmente no habrá más de un contable por clínica.
 	\end{tabularx}
 \end{table}
 
 %FIN DE LA PLANTILLA CONTABLE
+
+\newpage
 
 % PLANTILLA USUARIO WEB
 
@@ -175,24 +165,24 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 	\label{my-label}
 	\begin{tabularx}{\textwidth}{l|Xlllr}
 		\textbf{Actor}           & \multicolumn{4}{l}{Usuario web} & \act\\ 
-		\textbf{Descripción}     & \multicolumn{5}{>{\hsize=2\hsize}X}{Cualquier persona que acceda a la información disponible en la página web}\\
-		\textbf{Características} & \multicolumn{5}{>{\hsize=2\hsize}X}{Puede acceder a diversa información tal como las especialidades, tratamientos, horarios, instalaciones o médicos disponibles.}\\ 
-		\textbf{Relaciones}      & \multicolumn{5}{>{\hsize=2\hsize}X}{No tiene.}\\ 
-		\textbf{Referencias}     & \multicolumn{5}{>{\hsize=2\hsize}X}{}\\
+		\textbf{Descripción}     & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Cualquier persona que acceda a la información disponible en la página web}\\
+		\textbf{Características} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Puede acceder a diversa información tal como las especialidades, tratamientos, horarios, instalaciones o médicos disponibles.}\\ 
+		\textbf{Relaciones}      & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{No tiene.}\\ 
+		\textbf{Referencias}     & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{}\\
 		\textbf{Autor}           & Miguel Lentisco & \textbf{Fecha} & 04/04/18 & \textbf{Versión} & \textbf{1.0}                      \\ 
 	\end{tabularx}
 \end{table}
 
-\vspace{1cm}
-
 \begin{table}[H]
-	\begin{tabularx}{\textwidth}{lXX}
-		\textbf{Comentarios} &  &  \\ \hline
-		\multicolumn{3}{>{\hsize=2.5\hsize}X}{No se va a guardar información sobre estos usuarios, puede ser cualquier persona que quiera informarse sobre la clínica.}
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\\hline
+		No se va a guardar información sobre estos usuarios, puede ser cualquier persona que quiera informarse sobre la clínica
 	\end{tabularx}
 \end{table}
 
 % FIN DE LA PLANTILLA USUARIO WEB
+
+\newpage
 
 % PLANTILLA TEMPORIZADOR
 
@@ -200,238 +190,218 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 	\label{my-label}
 	\begin{tabularx}{\textwidth}{l|Xlllr}
 		\textbf{Actor}           & \multicolumn{4}{l}{Temporizador} & \act\\ 
-		\textbf{Descripción}     & \multicolumn{5}{>{\hsize=2\hsize}X}{Daemon cuyo objetivo es recordar las citas a los demas usuarios del sistema}\\
-		\textbf{Características} & \multicolumn{5}{>{\hsize=2\hsize}X}{Accede a los horarios de los distintos usuarios del sistema de forma periódica y avisa tanto a clientes como a trabajadores de su horario.}\\ 
-		\textbf{Relaciones}      & \multicolumn{5}{>{\hsize=2\hsize}X}{No tiene.}\\ 
-		\textbf{Referencias}     & \multicolumn{5}{>{\hsize=2\hsize}X}{}\\
+		\textbf{Descripción}     & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Daemon cuyo objetivo es recordar las citas a los demas usuarios del sistema}\\
+		\textbf{Características} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Accede a los horarios de los distintos usuarios del sistema de forma periódica y avisa tanto a clientes como a trabajadores de su horario.}\\ 
+		\textbf{Relaciones}      & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{No tiene.}\\ 
+		\textbf{Referencias}     & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{}\\
 		\textbf{Autor}           & José Antonio Álvarez & \textbf{Fecha} & 05/04/18 & \textbf{Versión} & \textbf{1.0}                      \\ 
 	\end{tabularx}
 \end{table}
 
-\vspace{1cm}
-
 \begin{table}[H]
-	\begin{tabularx}{\textwidth}{lXX}
-		\textbf{Comentarios} &  &  \\ \hline
-		\multicolumn{3}{>{\hsize=2.5\hsize}X}{Sobre este actor tampoco se almacenan información debido a sus funcionalidades}
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+		Sobre este actor tampoco se almacenan información debido a sus funcionalidades
 	\end{tabularx}
 \end{table}
 
 % FIN DE LA PLANTILLA TEMPORIZADOR
+
+\newpage
 
 \section{Descripción de los casos de uso}
 
 % PEDIR CITA
 
 \begin{table}[H]
-\centering
-\begin{tabular}{l|lllll}
-\textbf{Caso de Uso}   & Pedir cita & & & & \cu \\  
-\textbf{Actores}       & Paciente & & & \\ 
-\textbf{Tipo}          & Primario & & & \\
-\textbf{Referencias}   & RF-1, RN-1, RN-2, RI-1 & & & \\
-\textbf{Precondición}  & Plataforma activa y operativa, paciente correctamente identificado & & & & \\ 
-\textbf{Postcondición} & Cita añadida al sistema & & & & \\
-\textbf{Autor}         & Grupo ? & \textbf{Fecha} & 07/04/18 & \textbf{Versión} & 1.0 \\ 
-\end{tabular}
-\end{table}
-
-\begin{table}[H]
-	\begin{tabularx}{\textwidth}{lXX}
-		\textbf{Propósito} &  &  \\ \hline
-		\multicolumn{3}{>{\hsize=2.5\hsize}X}{Permitir que un paciente reserve una cita con su médico}
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Pedir cita & & & & \cu \\  
+		\textbf{Actores}       & Paciente & & & \\ 
+		\textbf{Tipo}          & Primario & & & \\
+		\textbf{Referencias}   & RF-1, RN-1, RN-2, RI-1 & & & \\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, paciente correctamente identificado}\\ 
+		\textbf{Postcondición} & Cita añadida al sistema & & & & \\
+		\textbf{Autor}         & Grupo ? & \textbf{Fecha} & 07/04/18 & \textbf{Versión} & 1.0 \\ 
 	\end{tabularx}
 \end{table}
 
 \begin{table}[H]
-	\begin{tabularx}{\textwidth}{lXX}
-		\textbf{Resumen} &  &  \\ \hline
-		\multicolumn{3}{>{\hsize=2.5\hsize}X}{Tras la identificación del paciente éste podrá observar en qué fecha y horario su médico tiene citas disponibles y seleccionar una de ellas, el sistema la marcará como reservada por este paciente.}
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Permitir que un paciente reserve una cita con su médico
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		Tras la identificación del paciente éste podrá observar en qué fecha y horario su médico tiene citas disponibles y seleccionar una de ellas, el sistema la marcará como reservada por este paciente.
 	\end{tabularx}
 \end{table}
 
 % FIN PEDIR CITA
 
+\newpage
+
 % MODIFICAR
 
 \begin{table}[H]
-	\centering
-	\begin{tabular}{|l|lllll}
-		\cline{1-1} \cline{6-6}
-		\textbf{Caso de Uso}   & \textbf{Modificar} &   &  & \multicolumn{1}{l|}{\textbf{\textbf{CU(luego pongo el que le toque jeje)}}}        & \multicolumn{1}{l|}{\textbf{}} \\ \cline{1-1} \cline{6-6} 
-		\textbf{Actores}       & Paciente, médico  &                                     &                       &                                       & \textbf{}                      \\ \cline{1-1}
-		\textbf{Tipo}          & Secundario, esencial  &                                     &                       &                                       & \textbf{}                      \\ \cline{1-1}
-		\textbf{Referencias}   & RF-2, RF-9, RF-13, RF-15, RNF-1, RNF-2 &   & Consultar                       &                                       & \textbf{}                      \\ \cline{1-1}
-		\textbf{Precondición}  & Plataforma activa y operativa, usuario y/o médico registrados en el sistema.                          &                      &                & \textbf{}                      \\ \cline{1-1}
-		\textbf{Postcondición} & -                     &                                     &                       &                                       &                                \\ \cline{1-1} \cline{3-3} \cline{5-5}
-		\textbf{Autor}         & \multicolumn{1}{l|}{Simón López} & \multicolumn{1}{l|}{\textbf{Fecha}} & \multicolumn{1}{l|}{05/04/18} & \multicolumn{1}{l|}{\textbf{Versión}} & \textbf{1.0}                      \\ \cline{1-1} \cline{3-3} \cline{5-5}
-	\end{tabular}
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Modificar & & & & \cu \\  
+		\textbf{Actores}       & Paciente, médico & & & \\ 
+		\textbf{Tipo}          & Secundario, esencial & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-2, RF-9, RF-13, RF-15, RNF-1, RNF-2}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, usuario y/o médico registrados en el sistema.}\\ 
+		\textbf{Postcondición} & - & & & & \\
+		\textbf{Autor}         & Grupo ? & \textbf{Fecha} & 05/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
 \end{table}
 
 \begin{table}[H]
-	\centering
-	\begin{tabular}{l}
-		\hline
-		\multicolumn{1}{|l|}{Propósito} \\ \hline
-		Dar la posibilidad de modificar los datos sobre un elemento del sistema tras haberlos introducido en su registro.
-	\end{tabular}
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Dar la posibilidad de modificar los datos sobre un elemento del sistema tras haberlos introducido en su registro
+	\end{tabularx}
 \end{table}
 
 \begin{table}[H]
-	\centering
-	\begin{tabular}{l}
-		\hline
-		\multicolumn{1}{|l|}{Resumen} \\ \hline
-		El usuario accede a su ficha médica (o el médico a la de éste) y solicita modificar sus datos, introduciendo los nuevos y aceptando la modificación de éstos. También pueden modificarse las listas de espera y el horario de los médicos de manera similar.
-	\end{tabular}
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El usuario accede a su ficha médica (o el médico a la de éste) y solicita modificar sus datos, introduciendo los nuevos y aceptando la modificación de éstos. También pueden modificarse las listas de espera y el horario de los médicos de manera similar
+	\end{tabularx}
 \end{table}
 
 % FIN DE MODIFICAR
 
+\newpage
+
 % INICIO DE RECETAR
 
 \begin{table}[H]
-	\centering
-	\begin{tabular}{|l|lllll}
-		\cline{1-1} \cline{6-6}
-		\textbf{Caso de Uso}   & \textbf{Recetar} &   &  & \multicolumn{1}{l|}{\textbf{\textbf{CU(luego pongo el que le toque jeje)}}}        & \multicolumn{1}{l|}{\textbf{}} \\ \cline{1-1} \cline{6-6} 
-		\textbf{Actores}       & Paciente, médico  &                                     &                       &                                       & \textbf{}                      \\ \cline{1-1}
-		\textbf{Tipo}          & Primario, esencial  &                                     &                       &                                       & \textbf{}                      \\ \cline{1-1}
-		\textbf{Referencias}   & RF-12 &   &                       &                                       & \textbf{}                      \\ \cline{1-1}
-		\textbf{Precondición}  & Plataforma activa y operativa, usuario y médico registrados en el sistema.                          &                      &                & \textbf{}                      \\ \cline{1-1}
-		\textbf{Postcondición} & Historial médico correctamente modificado.                     &                                     &                       &                                       &                                \\ \cline{1-1} \cline{3-3} \cline{5-5}
-		\textbf{Autor}         & \multicolumn{1}{l|}{Miguel Lentisco} & \multicolumn{1}{l|}{\textbf{Fecha}} & \multicolumn{1}{l|}{05/04/18} & \multicolumn{1}{l|}{\textbf{Versión}} & \textbf{1.0}                      \\ \cline{1-1} \cline{3-3} \cline{5-5}
-	\end{tabular}
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Modificar & & & & \cu \\  
+		\textbf{Actores}       & Paciente, médico & & & \\ 
+		\textbf{Tipo}          & Primario, esencial & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-12, Consultar}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, usuario y médico registrados en el sistema}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Historial médico correctamente modificado}\\
+		\textbf{Autor}         & Grupo ? & \textbf{Fecha} & 05/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
 \end{table}
 
 \begin{table}[H]
-	\centering
-	\begin{tabular}{l}
-		\hline
-		\multicolumn{1}{|l|}{Propósito} \\ \hline
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
 		El médico receta al paciente las medicinas que necesite (añadidas al historial médico)
-	\end{tabular}
+	\end{tabularx}
 \end{table}
 
 \begin{table}[H]
-	\centering
-	\begin{tabular}{l}
-		\hline
-		\multicolumn{1}{|l|}{Resumen} \\ \hline
-		Seleccionado el paciente al que se le va a recetar, el médico solicita ver la lista de recetas disponibles poniendo un filtro adecuado si lo cree necesario (como por nombre, tipo...). El sistema le devuelve la lista de medicamentos disponibles, y el médico selecciona las recetas oportunas, entonces estas se cargan al historial médico del paciente.
-	\end{tabular}
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		Seleccionado el paciente al que se le va a recetar, el médico solicita ver la lista de recetas disponibles poniendo un filtro adecuado si lo cree necesario (como por nombre, tipo...). El sistema le devuelve la lista de medicamentos disponibles, y el médico selecciona las recetas oportunas, entonces estas se cargan al historial médico del paciente
+	\end{tabularx}
 \end{table}
+
+% FIN RECETAR
+
+\newpage
 
 % INICIO DE GESTIÓN DE IMPUESTOS
 
 \begin{table}[H]
-	\centering
-	\begin{tabular}{|l|lllll}
-		\cline{1-1} \cline{6-6}
-		\textbf{Caso de Uso}   & \textbf{Gestionar impuestos} &   &  & \multicolumn{1}{l|}{\textbf{\textbf{CU(luego pongo el que le toque jeje)}}}        & \multicolumn{1}{l|}{\textbf{}} \\ \cline{1-1} \cline{6-6} 
-		\textbf{Actores}       & Contable &                                     &                       &                                       & \textbf{}                      \\ \cline{1-1}
-		\textbf{Tipo}          & Primario, esencial  &                                     &                       &                                       & \textbf{}                      \\ \cline{1-1}
-		\textbf{Referencias}   & RF-25, RNF-1                          &     & Consultar                       &                                       & \textbf{}                      \\ \cline{1-1}
-		\textbf{Precondición}  & Plataforma activa y operativa, acceso al sistema con una usuario contable para gestionar los impuestos.       &                      &                & \textbf{}                      \\ \cline{1-1}
-		\textbf{Postcondición} & Notificar al gerente de la modificación de la contabilidad en la clínica                &                      &                &                &               \\ \cline{1-1} \cline{3-3} \cline{5-5}
-		\textbf{Autor}         & \multicolumn{1}{l|}{Simón López} & \multicolumn{1}{l|}{\textbf{Fecha}} & \multicolumn{1}{l|}{06/04/18} & \multicolumn{1}{l|}{\textbf{Versión}} & \textbf{1.0}                      \\ \cline{1-1} \cline{3-3} \cline{5-5}
-	\end{tabular}
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Gestionar impuestos & & & & \cu \\  
+		\textbf{Actores}       & Contable & & & \\ 
+		\textbf{Tipo}          & Primario, esencial & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-25, RNF-1, Consultar}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, acceso al sistema con una usuario contable para gestionar los impuestos}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Notificar al gerente de la modificación de la contabilidad en la clínica}\\
+		\textbf{Autor}         & Grupo ? & \textbf{Fecha} & 06/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
 \end{table}
 
 \begin{table}[H]
-	\centering
-	\begin{tabular}{l}
-		\hline
-		\multicolumn{1}{|l|}{Propósito} \\ \hline
-		Facilitar al contable la gestión de los impuestos referente a la clínica, pudiendo gestionar la contabilidad mediante el sistema informático.
-	\end{tabular}
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Facilitar al contable la gestión de los impuestos referente a la clínica, pudiendo gestionar la contabilidad mediante el sistema informático
+	\end{tabularx}
 \end{table}
 
 \begin{table}[H]
-	\centering
-	\begin{tabular}{l}
-		\hline
-		\multicolumn{1}{|l|}{Resumen} \\ \hline
-		El contable entra al sistema mediante su cuenta de contable y accede al apartado de gestión de impuestos, donde podrá dividir el dinero de la clínica en los distintos apartados posibles (investigación, compra de material...). Tras esto, se enviará una notificación al gerente de que se han modificado las cuentas del hospital. 
-	\end{tabular}
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El contable entra al sistema mediante su cuenta de contable y accede al apartado de gestión de impuestos, donde podrá dividir el dinero de la clínica en los distintos apartados posibles (investigación, compra de material...). Tras esto, se enviará una notificación al gerente de que se han modificado las cuentas del hospital
+	\end{tabularx}
 \end{table}
 
 % FIN DE GESTIÓN DE IMPUESTOS
 
+\newpage
+
 % INICIO CONSULTAR FACTURACION
-\begin{table}[H]
-	\centering
-	\begin{tabular}{|l|lllll}
-		\cline{1-1} \cline{6-6}
-		\textbf{Caso de Uso}   & \textbf{Consultar facturación} &   &  & \multicolumn{1}{l|}{\textbf{\textbf{CU(luego pongo el que le toque jeje)}}}        & \multicolumn{1}{l|}{\textbf{}} \\ \cline{1-1} \cline{6-6} 
-		\textbf{Actores}       & Contable &                                     &                       &                                       & \textbf{}                      \\ \cline{1-1}
-		\textbf{Tipo}          & Opcional, esencial  &                                     &                       &                                       & \textbf{}                      \\ \cline{1-1}
-		\textbf{Referencias}   & RF-5, RF-24, RF-26                         &     & -                     &                                       & \textbf{}                      \\ \cline{1-1}
-		\textbf{Precondición}  & Plataforma activa y operativa                    &                      &                                       & \textbf{}                      \\ \cline{1-1}
-		\textbf{Postcondición} & -                                                                                        &                      &                &                &               \\ \cline{1-1} \cline{3-3} \cline{5-5}
-		\textbf{Autor}         & \multicolumn{1}{l|}{Simón López} & \multicolumn{1}{l|}{\textbf{Fecha}} & \multicolumn{1}{l|}{06/04/18} & \multicolumn{1}{l|}{\textbf{Versión}} & \textbf{1.0}                      \\ \cline{1-1} \cline{3-3} \cline{5-5}
-	\end{tabular}
-\end{table}
 
-\begin{table}[h]
-	\centering
-	\begin{tabular}{l}
-		\hline
-		\multicolumn{1}{|l|}{Propósito} \\ \hline
-		Visualizar la facturación de la clínica y las tareas en las que se ha invertido el dinero de ésta.
-	\end{tabular}
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Consultar facturación & & & & \cu \\  
+		\textbf{Actores}       & Contable & & & \\ 
+		\textbf{Tipo}          & Opcional, esencial & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-5, RF-24, RF-26}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{-}\\
+		\textbf{Autor}         & Grupo ? & \textbf{Fecha} & 06/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
 \end{table}
 
 \begin{table}[H]
-	\centering
-	\begin{tabular}{l}
-		\hline
-		\multicolumn{1}{|l|}{Resumen} \\ \hline
-		El contable entra al sistema mediante su cuenta de contable y accede al apartado consultar facturación, donde aparecerán distintas tablas con la facturación referente a la clínica.
-	\end{tabular}
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Visualizar la facturación de la clínica y las tareas en las que se ha invertido el dinero de ésta
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El contable entra al sistema mediante su cuenta de contable y accede al apartado consultar facturación, donde aparecerán distintas tablas con la facturación referente a la clínica
+	\end{tabularx}
 \end{table}
 
 % FIN CONSULTAR FACTURACIÓN
 
-
+\newpage
 
 % INICIO DE GESTIONAR FACTURAS
 
 \begin{table}[H]
-	\centering
-	\begin{tabular}{|l|lllll}
-		\cline{1-1} \cline{6-6}
-		\textbf{Caso de Uso}   & \textbf{Gestionar facturas} &   &  & \multicolumn{1}{l|}{\textbf{\textbf{CU(luego pongo el que le toque jeje)}}}        & \multicolumn{1}{l|}{\textbf{}} \\ \cline{1-1} \cline{6-6} 
-		\textbf{Actores}       & Contable, paciente &                                     &                       &                                       & \textbf{}                      \\ \cline{1-1}
-		\textbf{Tipo}          & Primario, esencial  &                                     &                       &                                       & \textbf{}                      \\ \cline{1-1}
-		\textbf{Referencias}   & RF-5, RF-24, RF-26, RNF-1                         &     & -                     &                                       & \textbf{}                      \\ \cline{1-1}
-		\textbf{Precondición}  & Plataforma activa y operativa, factura a la que se quiere acceder registrada en el sistema         &                      &                & \textbf{}                      \\ \cline{1-1}
-		\textbf{Postcondición} & Facturas correctamente modificadas. En caso de que el contable etiquete como moroso a un paciente por no haber pagado, notificar al paciente.     &      &      &       &         \\ \cline{1-1} \cline{3-3} \cline{5-5}
-		\textbf{Autor}         & \multicolumn{1}{l|}{Simón López} & \multicolumn{1}{l|}{\textbf{Fecha}} & \multicolumn{1}{l|}{06/04/18} & \multicolumn{1}{l|}{\textbf{Versión}} & \textbf{1.0}                      \\ \cline{1-1} \cline{3-3} \cline{5-5}
-	\end{tabular}
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Gestionar facturas & & & & \cu \\  
+		\textbf{Actores}       & Contable, paciente & & & \\ 
+		\textbf{Tipo}          & Primario, esencial & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-5, RF-24, RF-26, RNF-1}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, factura a la que se quiere acceder registrada en el sistema}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Facturas correctamente modificadas. En caso de que el contable etiquete como moroso a un paciente por no haber pagado, notificar al paciente}\\
+		\textbf{Autor}         & Grupo ? & \textbf{Fecha} & 06/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
 \end{table}
 
 \begin{table}[H]
-	\centering
-	\begin{tabular}{l}
-		\hline
-		\multicolumn{1}{|l|}{Propósito} \\ \hline
-		Dar la opción al paciente para que gestione su seguro médico referente a la clínica mediante el sistema informático, haciendo que no se tenga que desplazar a la clínica para gestionar sus facturas. Por parte del contable, gestionar las distintas facturas de cada paciente para comprobar que todas están pagadas y bien establecidas.
-	\end{tabular}
-	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Dar la opción al paciente para que gestione su seguro médico referente a la clínica mediante el sistema informático, haciendo que no se tenga que desplazar a la clínica para gestionar sus facturas. Por parte del contable, gestionar las distintas facturas de cada paciente para comprobar que todas están pagadas y bien establecidas
+	\end{tabularx}
 \end{table}
 
 \begin{table}[H]
-	\centering
-	\begin{tabular}{l}
-		\hline
-		\multicolumn{1}{|l|}{Resumen} \\ \hline
-		El paciente o el contable acceden al sistema mediante su usuario y seleccionan el apartado gestionar facturas, donde aparecerán sus facturas ordenadas junto a distintas opciones a realizar sobre ellas. El contable podrá hacer una búsqueda sobre todas las facturas del sistema y gestionar la de cualquier paciente.
-	\end{tabular}
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El paciente o el contable acceden al sistema mediante su usuario y seleccionan el apartado gestionar facturas, donde aparecerán sus facturas ordenadas junto a distintas opciones a realizar sobre ellas. El contable podrá hacer una búsqueda sobre todas las facturas del sistema y gestionar la de cualquier paciente
+	\end{tabularx}
 \end{table}
 
 % FIN DE GESTIONAR FACTURAS
 
+\newpage
 
 % TODO: CAMBIAR esto, sorry por el formato
 \begin{itemize}
