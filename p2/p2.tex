@@ -62,10 +62,10 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 \label{my-label}
 \begin{tabularx}{\textwidth}{l|Xlllr}
 	\textbf{Actor}           & \multicolumn{4}{l}{Paciente} & \act\\ 
-	\textbf{Descripción}     & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Paciente adscrito al centro médico que desea pedir cita, consultar su historial o informarse acerca de la clínica}\\
+	\textbf{Descripción}     & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Paciente adscrito al centro médico que desea pedir cita, consultar su historial, informarse acerca de la clínica y gestionar sus facturas}\\
 	\textbf{Características} & \multicolumn{5}{>{\hsize=2\hsize}X}{Todos los clientes de la clínica son pacientes}\\ 
 	\textbf{Relaciones}      & \multicolumn{5}{>{\hsize=2\hsize}X}{No tiene}\\ 
-	\textbf{Referencias}     & \multicolumn{5}{>{\hsize=2\hsize}X}{Pedir una cita, modificar, consultar}\\
+	\textbf{Referencias}     & \multicolumn{5}{>{\hsize=2\hsize}X}{Pedir una cita, modificar, consultar, gestionar facturas}\\
 	\textbf{Autor}           & Grupo ? & \textbf{Fecha} & 07/04/18 & \textbf{Versión} & {1.1}                      \\ 
 \end{tabularx}
 \end{table}
@@ -97,8 +97,8 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 \begin{tabularx}{\textwidth}{l|Xlllr}
 	\textbf{Actor}           & Médico & & & & \act \\ 
 	\textbf{Descripción}     & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Personal sanitario de la clínica que se encarga de atender a los pacientes en las consultas}\\
-	\textbf{Características} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Puede modificar la información del paciente así como recetar}\\ 
-	\textbf{Relaciones}      & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Paciente}\\ 
+	\textbf{Características} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Puede consultar y modificar la información del paciente además de recetar medicamentos a los pacientes}\\ 
+	\textbf{Relaciones}      & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{No tiene}\\ 
 	\textbf{Referencias}     & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Modificar, Recetar}\\ 
 	\textbf{Autor}           & Grupo ? & \textbf{Fecha} & 07/04/18 & \textbf{Versión} & 1.0\\ 
 \end{tabularx}
@@ -109,7 +109,7 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 \begin{tabularx}{\textwidth}{lXl}
 	\textbf{Atributos} &  & \\
 	\textbf{Nombre}    & \textbf{Descripción} & \textbf{Tipo} \\ \hline
-	Datos personales   &  Identifican al médico (\texttt{Id\_médico}, DNI, nombre y apellidos,...)     & \\
+	Datos personales   &  Identifican al médico (\texttt{Id\_médico}, DNI, nombre y apellidos, ...)     & \\
 	Datos laborales    & Relativos a su trabajo (horario, sueldo, vacaciones,...) &
 \end{tabularx}
 \end{table}
@@ -117,7 +117,7 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 \begin{table}[H]
 \begin{tabularx}{\textwidth}{X}
 	\textbf{Comentarios}\\ \hline
-	Los médicos son los únicos que pueden recetar.
+	Los médicos son los únicos que pueden recetar
 \end{tabularx}
 \end{table}
 
@@ -131,11 +131,11 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 	\label{my-label}
 	\begin{tabularx}{\textwidth}{l|Xlllr}
 		\textbf{Actor}           & \multicolumn{4}{l}{Contable} & \act\\ 
-		\textbf{Descripción}     & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Encargado de gestionar la facturación y los impuestos referentes a la clínica.}\\
-		\textbf{Características} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Puede consultar las facturas de todo cliente en el sistema y el sueldo del personal, así como etiquetar como moroso a aquel cliente que debe dinero.}\\ 
-		\textbf{Relaciones}      & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Paciente, personal.}\\ 
-		\textbf{Referencias}     & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Consultar facturación, gestionar impuestos, gestionar facturas.}\\
-		\textbf{Autor}           & Simón López & \textbf{Fecha} & 04/04/18 & \textbf{Versión} & \textbf{1.0}                      \\ 
+		\textbf{Descripción}     & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Encargado de gestionar la facturación y los impuestos referentes a la clínica}\\
+		\textbf{Características} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Puede consultar las facturas de todo cliente en el sistema y el sueldo del personal, así como etiquetar como moroso a aquel cliente que debe dinero}\\ 
+		\textbf{Relaciones}      & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{No tiene}\\ 
+		\textbf{Referencias}     & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Consultar facturación, gestionar impuestos, gestionar facturas}\\
+		\textbf{Autor}           & Grupo ? & \textbf{Fecha} & 04/04/18 & \textbf{Versión} & 1.1                    \\ 
 	\end{tabularx}
 \end{table}
 
@@ -144,15 +144,15 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 	\begin{tabularx}{\textwidth}{lXl}
 		\textbf{Atributos}  &  & \\
 		\textbf{Nombre}     & \textbf{Descripción} & \textbf{Tipo} \\ \hline
-		\textbf{IdContable} & Nombre o pseudónimo referente al contable, único en el sistema que identificará a este. & Texto \\
-		\textbf{Salario}    & Cantidad de dinero que cobra el contable al mes. & Numérico \\
+		IdContable & Nombre o pseudónimo referente al contable, único en el sistema que identificará a este & Texto \\
+		Salario    & Cantidad de dinero que cobra el contable al mes & Numérico \\
 	\end{tabularx}
 \end{table}
 
 \begin{table}[H]
 	\begin{tabularx}{\textwidth}{X}
 		\textbf{Comentarios}\\ \hline
-		Usualmente no habrá más de un contable por clínica.
+		Usualmente no habrá más de un contable por clínica
 	\end{tabularx}
 \end{table}
 
@@ -167,10 +167,10 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 	\begin{tabularx}{\textwidth}{l|Xlllr}
 		\textbf{Actor}           & \multicolumn{4}{l}{Usuario web} & \act\\ 
 		\textbf{Descripción}     & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Cualquier persona que acceda a la información disponible en la página web}\\
-		\textbf{Características} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Puede acceder a diversa información tal como las especialidades, tratamientos, horarios, instalaciones o médicos disponibles.}\\ 
-		\textbf{Relaciones}      & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{No tiene.}\\ 
-		\textbf{Referencias}     & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{}\\
-		\textbf{Autor}           & Miguel Lentisco & \textbf{Fecha} & 04/04/18 & \textbf{Versión} & \textbf{1.0}                      \\ 
+		\textbf{Características} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Puede acceder a diversa información tal como las especialidades, tratamientos, horarios, instalaciones o médicos disponibles}\\ 
+		\textbf{Relaciones}      & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{No tiene}\\ 
+		\textbf{Referencias}     & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Consultar}\\
+		\textbf{Autor}           & Grupo ? & \textbf{Fecha} & 04/04/18 & \textbf{Versión} & 1.1.1                      \\ 
 	\end{tabularx}
 \end{table}
 
@@ -191,18 +191,18 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 	\label{my-label}
 	\begin{tabularx}{\textwidth}{l|Xlllr}
 		\textbf{Actor}           & \multicolumn{4}{l}{Temporizador} & \act\\ 
-		\textbf{Descripción}     & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Daemon cuyo objetivo es recordar las citas a los demas usuarios del sistema}\\
-		\textbf{Características} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Accede a los horarios de los distintos usuarios del sistema de forma periódica y avisa tanto a clientes como a trabajadores de su horario.}\\ 
-		\textbf{Relaciones}      & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{No tiene.}\\ 
-		\textbf{Referencias}     & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{}\\
-		\textbf{Autor}           & José Antonio Álvarez & \textbf{Fecha} & 05/04/18 & \textbf{Versión} & \textbf{1.0}                      \\ 
+		\textbf{Descripción}     & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{\textit{Daemon} cuyo objetivo es recordar las citas a los demás usuarios del sistema}\\
+		\textbf{Características} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Accede a los horarios de los distintos usuarios del sistema de forma periódica y avisa tanto a clientes como a trabajadores de su horario}\\ 
+		\textbf{Relaciones}      & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{No tiene}\\ 
+		\textbf{Referencias}     & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Recordatorio de citas}\\
+		\textbf{Autor}           & Grupo ? & \textbf{Fecha} & 05/04/18 & \textbf{Versión} & 1.1                     \\ 
 	\end{tabularx}
 \end{table}
 
 \begin{table}[H]
 	\begin{tabularx}{\textwidth}{X}
 		\textbf{Comentarios}\\ \hline
-		Sobre este actor tampoco se almacenan información debido a sus funcionalidades
+		Sobre este actor tampoco se almacena información debido a sus funcionalidades
 	\end{tabularx}
 \end{table}
 
@@ -236,7 +236,7 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 \begin{table}[H]
 	\begin{tabularx}{\textwidth}{X}
 		\textbf{Resumen}\\ \hline
-		Tras la identificación del paciente éste podrá observar en qué fecha y horario su médico tiene citas disponibles y seleccionar una de ellas, el sistema la marcará como reservada por este paciente.
+		Tras la identificación del paciente éste podrá observar en qué fecha y horario su médico tiene citas disponibles y seleccionar una de ellas, el sistema la marcará como reservada por este paciente
 	\end{tabularx}
 \end{table}
 
@@ -249,12 +249,12 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 \begin{table}[H]
 	\begin{tabularx}{\textwidth}{l|Xlllr}
 		\textbf{Caso de Uso}   & Consultar & & & & \cu \\  
-		\textbf{Actores}       & Paciente, médico & & & \\ 
+		\textbf{Actores}       & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Paciente, médico, usuario web, administrador}\\ 
 		\textbf{Tipo}          & Primario, esencial & & & \\
 		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-2, RF-4, RF-5, RF-7, RF-8, RF-13, RF-14, RF-15, RF-27, RF-30, RN-1, RN-4, RN-6}\\
-		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, usuario y/o médico registrados en el sistema.}\\ 
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, usuario y/o médico registrados en el sistema}\\ 
 		\textbf{Postcondición} & - & & & & \\
-		\textbf{Autor}         & Grupo ? & \textbf{Fecha} & 05/04/18 & \textbf{Versión} & 1.0 \\ 
+		\textbf{Autor}         & Grupo ? & \textbf{Fecha} & 07/04/18 & \textbf{Versión} & 1.0 \\ 
 	\end{tabularx}
 \end{table}
 
@@ -263,6 +263,8 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 		\textbf{Propósito}\\ \hline
 		Permitir tanto a pacientes como a médicos acceder al historial clínico de los pacientes, entre otros datos como los medicamentos recetados o las listas de espera
 
+		Permite al usuario web acceder a diversa información tal como las especialidades, tratamientos, horarios, instalaciones o médicos disponibles
+
 		También permite al administrador consultar todas las bases de datos del sistema
 	\end{tabularx}
 \end{table}
@@ -270,7 +272,9 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 \begin{table}[H]
 	\begin{tabularx}{\textwidth}{X}
 		\textbf{Resumen}\\ \hline
-		El usuario accede a la aplicación y solicita acceder a su ficha médica, si es paciente, o a la de un paciente cualquiera, si es médico. En esta ficha se puede consultar el historial clínico, los medicamentos recetados o las listas de espera, entre otros datos.
+		El usuario accede a la aplicación, se identifica y solicita acceder a su ficha médica, si es paciente, o a la de un paciente cualquiera, si es médico. En esta ficha se puede consultar el historial clínico, los medicamentos recetados o las listas de espera, entre otros datos.
+
+		El usuario web accede a la web y sin necesidad de identificarse puede consultar la información sobre la clínica disponible públicamente
 
 		El administrador cuenta con una interfaz específica desde la que puede consultar todas las bases de datos del sistema 
 	\end{tabularx}
@@ -286,25 +290,25 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 	\begin{tabularx}{\textwidth}{l|Xlllr}
 		\textbf{Caso de Uso}   & Modificar & & & & \cu \\  
 		\textbf{Actores}       & Paciente, médico & & & \\ 
-		\textbf{Tipo}          & Secundario, esencial & & & \\
+		\textbf{Tipo}          & Primario, esencial & & & \\
 		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-2, RF-9, RF-13, RF-15, RNF-1, RNF-2}\\
 		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, usuario y/o médico registrados en el sistema.}\\ 
 		\textbf{Postcondición} & - & & & & \\
-		\textbf{Autor}         & Grupo ? & \textbf{Fecha} & 05/04/18 & \textbf{Versión} & 1.0 \\ 
+		\textbf{Autor}         & Grupo ? & \textbf{Fecha} & 05/04/18 & \textbf{Versión} & 1.1 \\ 
 	\end{tabularx}
 \end{table}
 
 \begin{table}[H]
 	\begin{tabularx}{\textwidth}{X}
 		\textbf{Propósito}\\ \hline
-		Dar la posibilidad de modificar los datos sobre un elemento del sistema tras haberlos introducido en su registro
+		Dar la posibilidad de modificar los datos sobre un elemento del sistema tras haberlos introducido en su registro si se tiene permiso para ello
 	\end{tabularx}
 \end{table}
 
 \begin{table}[H]
 	\begin{tabularx}{\textwidth}{X}
 		\textbf{Resumen}\\ \hline
-		El usuario accede a su ficha médica (o el médico a la de éste) y solicita modificar sus datos, introduciendo los nuevos y aceptando la modificación de éstos. También pueden modificarse las listas de espera y el horario de los médicos de manera similar
+		El usuario accede a su ficha médica (o el médico a la de éste) y solicita editar sus datos. En caso de que se acepte la petición, puede introducir los nuevos y aceptar la modificación de éstos. También pueden modificarse las listas de espera y el horario de los médicos de igual manera
 	\end{tabularx}
 \end{table}
 
@@ -317,10 +321,10 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 \begin{table}[H]
 	\begin{tabularx}{\textwidth}{l|Xlllr}
 		\textbf{Caso de Uso}   & Recetar & & & & \cu \\  
-		\textbf{Actores}       & Paciente, médico & & & \\ 
+		\textbf{Actores}       & Médico & & & \\ 
 		\textbf{Tipo}          & Primario, esencial & & & \\
-		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-12, Consultar}\\
-		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, usuario y médico registrados en el sistema}\\ 
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-12}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, médico registrado en el sistema}\\ 
 		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Historial médico correctamente modificado}\\
 		\textbf{Autor}         & Grupo ? & \textbf{Fecha} & 05/04/18 & \textbf{Versión} & 1.0 \\ 
 	\end{tabularx}
@@ -336,7 +340,7 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 \begin{table}[H]
 	\begin{tabularx}{\textwidth}{X}
 		\textbf{Resumen}\\ \hline
-		Seleccionado el paciente al que se le va a recetar, el médico solicita ver la lista de recetas disponibles poniendo un filtro adecuado si lo cree necesario (como por nombre, tipo...). El sistema le devuelve la lista de medicamentos disponibles, y el médico selecciona las recetas oportunas, entonces estas se cargan al historial médico del paciente
+		Seleccionado el paciente al que se le va a recetar, el médico solicita ver la lista de recetas disponibles poniendo un filtro adecuado si lo cree necesario (como por nombre, tipo...). El sistema le devuelve la lista de medicamentos disponibles, y el médico selecciona las recetas oportunas, cargándose éstas al historial médico del paciente
 	\end{tabularx}
 \end{table}
 
@@ -361,7 +365,7 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 \begin{table}[H]
 	\begin{tabularx}{\textwidth}{X}
 		\textbf{Propósito}\\ \hline
-		Facilitar al contable la gestión de los impuestos referente a la clínica, pudiendo gestionar la contabilidad mediante el sistema informático
+		Facilitar al contable la gestión de los impuestos referentes a la clínica, pudiendo gestionar la contabilidad mediante el sistema informático
 	\end{tabularx}
 \end{table}
 
@@ -382,7 +386,7 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 	\begin{tabularx}{\textwidth}{l|Xlllr}
 		\textbf{Caso de Uso}   & Consultar facturación & & & & \cu \\  
 		\textbf{Actores}       & Contable & & & \\ 
-		\textbf{Tipo}          & Opcional, esencial & & & \\
+		\textbf{Tipo}          & Primario, esencial & & & \\
 		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-5, RF-24, RF-26}\\
 		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa}\\ 
 		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{-}\\
@@ -425,14 +429,18 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 \begin{table}[H]
 	\begin{tabularx}{\textwidth}{X}
 		\textbf{Propósito}\\ \hline
-		Dar la opción al paciente para que gestione su seguro médico referente a la clínica mediante el sistema informático, haciendo que no se tenga que desplazar a la clínica para gestionar sus facturas. Por parte del contable, gestionar las distintas facturas de cada paciente para comprobar que todas están pagadas y bien establecidas
+		Dar la opción al paciente para que gestione su seguro médico referente a la clínica mediante el sistema informático, haciendo que no se tenga que desplazar a la clínica para gestionar sus facturas
+
+		Por parte del contable, gestionar las distintas facturas de cada paciente para comprobar que todas están pagadas y bien establecidas
 	\end{tabularx}
 \end{table}
 
 \begin{table}[H]
 	\begin{tabularx}{\textwidth}{X}
 		\textbf{Resumen}\\ \hline
-		El paciente o el contable acceden al sistema mediante su usuario y seleccionan el apartado gestionar facturas, donde aparecerán sus facturas ordenadas junto a distintas opciones a realizar sobre ellas. El contable podrá hacer una búsqueda sobre todas las facturas del sistema y gestionar la de cualquier paciente
+		El paciente o el contable acceden al sistema mediante su usuario y seleccionan el apartado gestionar facturas, donde aparecerán sus facturas ordenadas junto a distintas opciones a realizar sobre ellas. 
+
+		El contable podrá hacer una búsqueda sobre todas las facturas del sistema y gestionar la de cualquier paciente
 	\end{tabularx}
 \end{table}
 
