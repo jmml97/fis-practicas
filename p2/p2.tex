@@ -23,6 +23,9 @@
 \newcounter{ActCounter}
 \newcommand{\act}[1]{\addtocounter{ActCounter}{1}\textbf{\sffamily ACT-\theActCounter}\quad#1\\}
 
+\newcounter{CUCounter}
+\newcommand{\cu}[1]{\addtocounter{CUCounter}{1}\textbf{\sffamily CU-\theCUCounter}\quad#1\\}
+
 \usepackage{tabularx}
 \usepackage{float}
 \usepackage{adjustbox}
@@ -61,9 +64,9 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 	\textbf{Actor}           & \multicolumn{4}{l}{Paciente} & \act\\ 
 	\textbf{Descripción}     & \multicolumn{5}{>{\hsize=2\hsize}X}{Paciente adscrito al centro médico que desea pedir cita, consultar su historial o informarse acerca de la clínica}\\
 	\textbf{Características} & \multicolumn{5}{>{\hsize=2\hsize}X}{Todos los clientes de la clínica son pacientes}\\ 
-	\textbf{Relaciones}      & \multicolumn{5}{>{\hsize=2\hsize}X}{}\\ 
-	\textbf{Referencias}     & \multicolumn{5}{>{\hsize=2\hsize}X}{}\\
-	\textbf{Autor}           &  & \textbf{Fecha} &  & \textbf{Versión} & \textbf{}                      \\ 
+	\textbf{Relaciones}      & \multicolumn{5}{>{\hsize=2\hsize}X}{No tiene}\\ 
+	\textbf{Referencias}     & \multicolumn{5}{>{\hsize=2\hsize}X}{Pedir una cita, modificar, consultar}\\
+	\textbf{Autor}           & Grupo ? & \textbf{Fecha} & 07/04/18 & \textbf{Versión} & {1.1}                      \\ 
 \end{tabularx}
 \end{table}
 
@@ -185,7 +188,7 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 \begin{table}[H]
 	\begin{tabularx}{\textwidth}{lXX}
 		\textbf{Comentarios} &  &  \\ \hline
-		No se va a guardar información sobre estos usuarios, puede ser cualquier persona que quiera informarse sobre la clínica.
+		\multicolumn{3}{>{\hsize=2.5\hsize}X}{No se va a guardar información sobre estos usuarios, puede ser cualquier persona que quiera informarse sobre la clínica.}
 	\end{tabularx}
 \end{table}
 
@@ -210,7 +213,7 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 \begin{table}[H]
 	\begin{tabularx}{\textwidth}{lXX}
 		\textbf{Comentarios} &  &  \\ \hline
-		Sobre este actor tampoco se almacenan información debido a sus funcionalidades
+		\multicolumn{3}{>{\hsize=2.5\hsize}X}{Sobre este actor tampoco se almacenan información debido a sus funcionalidades}
 	\end{tabularx}
 \end{table}
 
@@ -218,9 +221,40 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 
 \section{Descripción de los casos de uso}
 
+% PEDIR CITA
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l|lllll}
+\textbf{Caso de Uso}   & Pedir cita & & & & \cu \\  
+\textbf{Actores}       & Paciente & & & \\ 
+\textbf{Tipo}          & Primario & & & \\
+\textbf{Referencias}   & RF-1, RN-1, RN-2, RI-1 & & & \\
+\textbf{Precondición}  & Plataforma activa y operativa, paciente correctamente identificado & & & & \\ 
+\textbf{Postcondición} & Cita añadida al sistema & & & & \\
+\textbf{Autor}         & Grupo ? & \textbf{Fecha} & 07/04/18 & \textbf{Versión} & 1.0 \\ 
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{lXX}
+		\textbf{Propósito} &  &  \\ \hline
+		\multicolumn{3}{>{\hsize=2.5\hsize}X}{Permitir que un paciente reserve una cita con su médico}
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{lXX}
+		\textbf{Resumen} &  &  \\ \hline
+		\multicolumn{3}{>{\hsize=2.5\hsize}X}{Tras la identificación del paciente éste podrá observar en qué fecha y horario su médico tiene citas disponibles y seleccionar una de ellas, el sistema la marcará como reservada por este paciente.}
+	\end{tabularx}
+\end{table}
+
+% FIN PEDIR CITA
+
 % MODIFICAR
 
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\begin{tabular}{|l|lllll}
 		\cline{1-1} \cline{6-6}
@@ -234,7 +268,7 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 	\end{tabular}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\begin{tabular}{l}
 		\hline
@@ -243,7 +277,7 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 	\end{tabular}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\begin{tabular}{l}
 		\hline
@@ -256,7 +290,7 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 
 % INICIO DE RECETAR
 
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\begin{tabular}{|l|lllll}
 		\cline{1-1} \cline{6-6}
@@ -270,7 +304,7 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 	\end{tabular}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\begin{tabular}{l}
 		\hline
@@ -279,7 +313,7 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 	\end{tabular}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\begin{tabular}{l}
 		\hline
@@ -290,7 +324,7 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 
 % INICIO DE GESTIÓN DE IMPUESTOS
 
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\begin{tabular}{|l|lllll}
 		\cline{1-1} \cline{6-6}
@@ -304,7 +338,7 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 	\end{tabular}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\begin{tabular}{l}
 		\hline
@@ -313,7 +347,7 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 	\end{tabular}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\begin{tabular}{l}
 		\hline
@@ -325,7 +359,7 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 % FIN DE GESTIÓN DE IMPUESTOS
 
 % INICIO CONSULTAR FACTURACION
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\begin{tabular}{|l|lllll}
 		\cline{1-1} \cline{6-6}
@@ -348,7 +382,7 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 	\end{tabular}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\begin{tabular}{l}
 		\hline
@@ -363,7 +397,7 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 
 % INICIO DE GESTIONAR FACTURAS
 
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\begin{tabular}{|l|lllll}
 		\cline{1-1} \cline{6-6}
@@ -377,7 +411,7 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 	\end{tabular}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\begin{tabular}{l}
 		\hline
@@ -387,7 +421,7 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 	
 \end{table}
 
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\begin{tabular}{l}
 		\hline
@@ -421,8 +455,7 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 
 % FIN DE RECETAR
 
-% Usar la plantilla general
-
+\newpage
 \section{Diagrama de paquetes}
 
 \begin{figure}[H]
