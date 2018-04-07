@@ -96,11 +96,11 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 \label{my-label}
 \begin{tabularx}{\textwidth}{l|Xlllr}
 	\textbf{Actor}           & Médico & & & & \act \\ 
-	\textbf{Descripción}     & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Personal sanitario de la clínica}\\
-	\textbf{Características} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Puede modificar la información del paciente}\\ 
-	\textbf{Relaciones}      & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{}\\ 
-	\textbf{Referencias}     & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{}\\ 
-	\textbf{Autor}           &  & \textbf{Fecha} & & \textbf{Versión} & \\ 
+	\textbf{Descripción}     & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Personal sanitario de la clínica que se encarga de atender a los pacientes en las consultas}\\
+	\textbf{Características} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Puede modificar la información del paciente así como recetar}\\ 
+	\textbf{Relaciones}      & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Paciente}\\ 
+	\textbf{Referencias}     & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Modificar, Recetar}\\ 
+	\textbf{Autor}           & Grupo ? & \textbf{Fecha} & 07/04/18 & \textbf{Versión} & 1.0\\ 
 \end{tabularx}
 \end{table}
 
@@ -117,6 +117,7 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 \begin{table}[H]
 \begin{tabularx}{\textwidth}{X}
 	\textbf{Comentarios}\\ \hline
+	Los médicos son los únicos que pueden recetar.
 \end{tabularx}
 \end{table}
 
@@ -243,6 +244,42 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 
 \newpage
 
+% CONSULTAR
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Consultar & & & & \cu \\  
+		\textbf{Actores}       & Paciente, médico & & & \\ 
+		\textbf{Tipo}          & Primario, esencial & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-2, RF-4, RF-5, RF-7, RF-8, RF-13, RF-14, RF-15, RF-27, RF-30, RN-1, RN-4, RN-6}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, usuario y/o médico registrados en el sistema.}\\ 
+		\textbf{Postcondición} & - & & & & \\
+		\textbf{Autor}         & Grupo ? & \textbf{Fecha} & 05/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Permitir tanto a pacientes como a médicos acceder al historial clínico de los pacientes, entre otros datos como los medicamentos recetados o las listas de espera
+
+		También permite al administrador consultar todas las bases de datos del sistema
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El usuario accede a la aplicación y solicita acceder a su ficha médica, si es paciente, o a la de un paciente cualquiera, si es médico. En esta ficha se puede consultar el historial clínico, los medicamentos recetados o las listas de espera, entre otros datos.
+
+		El administrador cuenta con una interfaz específica desde la que puede consultar todas las bases de datos del sistema 
+	\end{tabularx}
+\end{table}
+
+% FIN DE CONSULTAR
+
+\newpage
+
 % MODIFICAR
 
 \begin{table}[H]
@@ -279,7 +316,7 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 
 \begin{table}[H]
 	\begin{tabularx}{\textwidth}{l|Xlllr}
-		\textbf{Caso de Uso}   & Modificar & & & & \cu \\  
+		\textbf{Caso de Uso}   & Recetar & & & & \cu \\  
 		\textbf{Actores}       & Paciente, médico & & & \\ 
 		\textbf{Tipo}          & Primario, esencial & & & \\
 		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-12, Consultar}\\
