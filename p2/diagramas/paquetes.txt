@@ -9,9 +9,9 @@ skinparam monochrome true
 skinparam defaultFontName Roboto
 
 package "Gestión de datos" {
- object o
+ 
 }
 package "Contabilidad" {
- object a
+ 
 }
 @enduml
