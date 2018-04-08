@@ -448,6 +448,38 @@ En el presente documento se muestra el modelo de Casos de Uso obtenido en el pro
 
 \newpage
 
+% INICIO DE RECORDATORIO DE CITAS
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Recordatorio de citas & & & & \cu \\  
+		\textbf{Actores}       & Temporizador & & & \\ 
+		\textbf{Tipo}          & Opcional & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-6, RN-3}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, servicio de mensajería activo y existencia de cita a recordar.}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Recordatorio correctamente enviado.}\\
+		\textbf{Autor}         & Grupo ? & \textbf{Fecha} & 07/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Recordar al paciente que tiene una cita. Este acción se puede regular dependiendo del paciente si este quiere que se le notifique o no, con que regularidad o con cuanta antelación.
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		Se inicia el daemon del temporizador (ya sea de forma periodica o a una hora programada), consulta las citas programadas y envía un recordatorio a aquellos clientes que así lo tengan especificado, cumpliendo restricciones de tiempo especificadas por los mismos.
+	\end{tabularx}
+\end{table}
+
+% FIN DE RECORDATORIO DE CITAS
+
+\newpage
+
 % TODO: CAMBIAR esto, sorry por el formato
 \begin{itemize}
 	\item Médico: selección del recetario
