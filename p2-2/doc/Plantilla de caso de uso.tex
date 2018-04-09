@@ -1,0 +1,62 @@
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Recordatorio de citas & & & & \cu \\  
+		\textbf{Actores}       & Temporizador & & & \\ 
+		\textbf{Tipo}          & Opcional & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-6, RN-3}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, servicio de mensajería activo y existencia de cita a recordar}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Recordatorio correctamente enviado.}\\
+		\textbf{Autor}         & Grupo ? & \textbf{Fecha} & 07/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Recordar al paciente que tiene una cita. Este acción se puede regular dependiendo del paciente si este quiere que se le notifique o no, con qué regularidad o con cuánta antelación
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		Se inicia el proceso del temporizador (ya sea de forma periódica o a una hora programada), consulta las citas programadas y envía un recordatorio a aquellos clientes que así lo tengan especificado, cumpliendo restricciones de tiempo especificadas por los mismos
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Actor 1: Acción realizada por el actor & & \\
+		\textbf{2} & Actor 1: Acción realizada por el actor & \textbf{3} & Acción realizada por el sistema \\
+		 & & & \\
+		 & & \textbf{N} &  Cuando se realiza la inclusión de otro caso de uso lo representaremos de la forma Incluir(CU\_identificador.CU\_Nombre)\\
+		 & & & \\
+		 & << Se incluyen la secuencia de acciones realizadas por los actores que intervienen en el CU, se usarán frases cortas que describan el diálogo entre los actores y el sistema >> << Se pueden añadir referencias a elementos de un boceto de Interfaz del Usuario>> & & << Se incluyen la secuencia de acciones que realiza el sistema ante las acciones de los actores >>
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cX}
+		\textbf{1a} & Descripción de la secuencia de acciones alternas a la acción 1 del Curso Normal\\
+		\textbf{1b} & \\
+		 & << Secuencia de los cursos alternos del CU >>
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & << Numero de veces que se realiza el CU por unidad de tiempo >> & \textbf{Rendimiento} & << Rendimiento esperado de la secuencia de acciones del CU >>\\
+		\textbf{Importancia} & << Importancia de este CU en el sistema (vital, alta, moderada, baja) >> & \textbf{Urgencia} & << Urgencia en la realización de este CU, durante el desarrollo (alta, moderada, baja) >>\\
+		\textbf{Frecuencia esperada} & << Estado actual del CU en el desarrollo >> & \textbf{Rendimiento} & << estabilidad de los requisitos asociados a este CU (alta, moderada, baja) >>\\
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+		<< Comentarios adicionales sobre este CU >>
+	\end{tabularx}
+\end{table}
