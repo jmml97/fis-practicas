@@ -20,6 +20,8 @@
 
 \usepackage{changepage}
 
+\newcommand{\term}[2]{\textbf{#1}\quad#2\\}
+
 \newcounter{ActCounter}
 \newcommand{\act}[1]{\addtocounter{ActCounter}{1}\textbf{\sffamily ACT-\theActCounter}\quad#1\\}
 
@@ -100,6 +102,135 @@
 		<< Comentarios adicionales sobre este CU >>
 	\end{tabularx}
 \end{table}
+
+% TERMINAR CONSULTA 
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Terminar consulta & & & & \cu \\  
+		\textbf{Actores}       & Paciente, sanitario & & & \\ 
+		\textbf{Tipo}          & Primario, esencial & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Llamar siguiente paciente}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{El sanitario ya a tratado al paciente}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Paciente sale de la consulta}\\
+		\textbf{Autor}         & Sofía Almeida & \textbf{Fecha} & 09/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+        \bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+                Si el paciente no tiene más molestias, abandonar la consulta
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El sanitario pregunta al paciente si desea que traten más síntomas o problemas que éste pueda tener. Si responde de forma negativa se va de la consulta.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Sanitario: Pregunta al paciente si tiene alguna consulta más & & \\
+		\textbf{2} & Paciente: Responde negativamente & \textbf{3} & Se cierra el historial clínico del paciente \\
+		 & & \textbf{4} & Incluir (Llamar siguiente paciente) \\
+	\end{tabularx}
+        \begin{tabularx}{\textwidth}{X}
+	  \textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cX}
+	  \textbf{2a} & El paciente responde afirmativamente. El sanitario volvería a explorar al paciente, atendiendo a los nuevos síntomas descritos \\
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Cada media hora & \textbf{Rendimiento} & \\
+		\textbf{Importancia} & Alta & \textbf{Urgencia} & Alta\\
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline	
+	\end{tabularx}
+\end{table}
+% FIN TERMINAR CONSULTA
+
+% LLAMAR SIGUIENTE PACIENTE
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Llamar siguiente paciente & & & & \cu \\  
+		\textbf{Actores}       & Sanitario, sistema de avisos & & & \\ 
+		\textbf{Tipo}          & Primario, esencial & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Terminar consulta}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{La consulta ya ha terminado}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Habrá un nuevo aviso en el sistema de avisos}\\
+		\textbf{Autor}         & Sofía Almeida & \textbf{Fecha} & 09/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+                Notificar al siguiente paciente de que ya puede pasar a consulta
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+                El sanitario indica al sistema que quiere llamar a un nuevo paciente, el sistema buscará cuál es y se emitirá un aviso a través del sistema de avisos
+        \end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Sanitario: Indica que quiere llamar a un nuevo paciente & & \\
+	        & & \textbf{2} & Busca siguiente paciente \\
+		& & \textbf{3} & Informa del siguiente paciente \\
+		\textbf{4} & Sistema de avisos: Notifica al siguiente paciente & & \\
+	\end{tabularx}
 	
+	\begin{tabularx}{\textwidth}{X}
+	  \textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cX}
+		\textbf{2a} & Si no hay más pacientes se espera hasta que sea la hora del siguiente paciente y continúa con el curso normal\\
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Cada media hora & \textbf{Rendimiento} & Alto en la mayor parte de los casos\\
+		\textbf{Importancia} & Alta & \textbf{Urgencia} & Moderada\\
+	\end{tabularx}
 	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+		El sistema de avisos puede ser muy diferente (pantalla, altavoz, ...) pero las acciones a realizar son las mismas
+	\end{tabularx}
+\end{table}
+
+% FIN LLAMAR SIGUIENTE PACIENTE
+
+% GLOSARIO DE TÉRMINOS
+\section{Glosario de términos}
+\term{Historial clínico} Conjunto de documentos que contienen datos, valoraciones e información sobre la evolución clínica de un paciente a lo largo del proceso asistencial.
+
+\term{Sistema de avisos} Plataforma utilizada para informar en momentos concretos de diversos acontecimientos.
+
+% FIN GLOSARIO DE TÉRMINOS
 \end{document}
+
