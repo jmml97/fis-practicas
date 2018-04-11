@@ -225,6 +225,318 @@
 
 % FIN LLAMAR SIGUIENTE PACIENTE
 
+% CONSULTAR HORARIO DE CONSULTA 
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Consultar horario de consulta & & & & \cu \\  
+		\textbf{Actores}       & Usuario & & & \\ 
+		\textbf{Tipo}          & Primario, esencial & & & \\
+		\textbf{Referencias}   & \\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Sistema activo y operativo}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{}\\
+		\textbf{Autor}         & Sofía Almeida & \textbf{Fecha} & 11/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Permitir que un paciente consulte el horario
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		Un usuario entrará al sistema para ver en qué horario tiene una consulta médica, el sistema se lo mostrará
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Usuario: Se identifica & & \\
+		\textbf{2} & Usuario: Pregunta por su horario de consulta & & \\
+		 & & \textbf{3} & Busca el horario de la consulta del usuario\\
+		 & & \textbf{4} & Muestra al usuario el horario por el que preguntó\\
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cX}
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & 2 veces antes de la consulta & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Moderada & \textbf{Urgencia} & Moderada\\
+		\textbf{Estado} &  & \textbf{Estabilidad} & Alta \\
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+% FIN CONSULTAR HORARIO DE CONSULTA
+
+% CREAR CONSULTA MÉDICA 
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Crear consulta médica & & & & \cu \\  
+		\textbf{Actores}       & Administrativo & & & \\ 
+		\textbf{Tipo}          & Primario, esencial & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Se ha añadido la consulta al sistema}\\
+		\textbf{Autor}         & Sofía Almeida & \textbf{Fecha} & 11/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+        \bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+                Añadir una nueva consulta médica
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		Un paciente pide una nueva consulta a un administrativo, que la añadirá al sistema
+        \end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Paciente: pide una nueva consulta & & \\
+		\textbf{2} & Administrativo: busca al paciente en el sistema & \textbf{3} & Muestra datos del paciente, entre ellos quién es su médico \\
+		\textbf{4} & Administrativo: pregunta al paciente información sobre la consulta & & \\
+          \textbf{5} & Paciente: comunica lo necesario & & \\
+         \textbf{6} & Administrativo: introduce la información en el sistema &      \textbf{7} & Añade la consulta del paciente con toda la información necesaria
+	\end{tabularx}
+        \begin{tabularx}{\textwidth}{X}
+	  \textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cX}
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Una vez al mes & \textbf{Rendimiento} & Medio-Alto\\
+		\textbf{Importancia} & Alta & \textbf{Urgencia} & Alta\\
+                \textbf{Estado} & & \textbf{Estabilidad} & Alta\\
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline	
+	\end{tabularx}
+\end{table}
+% FIN CREAR CONSULTA MÉDICA
+
+% MODIFICAR CONSULTA MÉDICA
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Modificar consulta médica & & & & \cu \\  
+		\textbf{Actores}       & Administrativo & & & \\ 
+		\textbf{Tipo}          & Primario, esencial & & & \\
+		\textbf{Referencias}   & \\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Debe haber una consulta ya creada}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Consulta actualizada}\\
+		\textbf{Autor}         & Sofía Almeida & \textbf{Fecha} & 11/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+                Realizar un cambio en una consulta ya establecida
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+                Un usuario indica a un administrativo que quiere realizar un cambio en su consulta, éste lo añade al sistema, que queda actualizado
+        \end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Usuario: informa a un administrativo de que quiere realizar un cambio en una consulta médica & & \\
+                \textbf{2} & Administrativo: solicita la modificación en la consulta & \textbf{3} & Localiza la consulta \\
+		& & \textbf{4} & Realiza el cambio \\
+		\textbf{5} & Administrativo: notifica al paciente que se ha realizado el cambio & & \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+	  \textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cX}
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Baja & \textbf{Rendimiento} & Alto \\
+		\textbf{Importancia} & Moderada & \textbf{Urgencia} & Moderada\\
+                \textbf{Estado} & & \textbf{Estabilidad} & Alta \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+% FIN MODIFICAR CONSULTA MÉDICA
+
+% ELIMINAR CONSULTA MÉDICA
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Eliminar consulta médica & & & & \cu \\  
+		\textbf{Actores}       & Administrativo & & & \\ 
+		\textbf{Tipo}          & Primario, esencial & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Consulta existente}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Consulta eliminada del sistema}\\
+		\textbf{Autor}         & Sofía Almeida & \textbf{Fecha} & 11/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Eliminar una consulta médica
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+	  \textbf{Resumen}
+          El administrativo decide que hay que eliminar una consulta médica, informa al sistema, que la borra del mismo
+          \\ \hline
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Administrativo: indica que quiere eliminar una consulta & & \\
+		\textbf{2} & Administrativo: señala la consulta a eliminar & \textbf{3} & Busca la consulta y elimina toda su información \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cX}
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Una vez por consulta & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Alta & \textbf{Urgencia} & Alta\\
+		\textbf{Estado} &  & \textbf{Estabilidad} & Alta\\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+		El adiministrativo puede decirir que quiere eliminar una consulta por diferentes motivos: le informa un paciente, un médico, un paciente se da de baja, ...
+	\end{tabularx}
+\end{table}
+
+% FIN ELIMINAR CONSULTA MÉDICA
+
+% DEFINIR HORARIO DE CONSULTA MÉDICA
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Definir horario de consulta médica & & & & \cu \\  
+		\textbf{Actores}       & Administrativo & & & \\ 
+		\textbf{Tipo}          & Primario, esencial & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Consulta médica en el sistema}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Con sulta médica con horario definido}\\
+		\textbf{Autor}         & Sofía Almeida & \textbf{Fecha} & 11/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Añadir el horario a la consulta médica
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+	  \textbf{Resumen}\\ \hline
+          El administrativo informa al paciente del horario de su médico para que decida en cuál quiere hacer dejar la consulta médica, posteriormente registra esta información en el sistema
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+	  \textbf{1} & Administrativo: Busca el médico del paciente & & \\
+          & & \textbf{2} & Devuelve la información solicitada \\
+	  \textbf{3} & Administrativo: informa al usuario de los horarios de consulta disponible & \\
+          \textbf{4} & Paciente: decide en qué horario quiere realizar la consulta e informa al administrativo \\
+	  \textbf{5} & Administrativo: indica el horario decidido & & \\
+		 & & \textbf{6} & Almacena el horario de la consulta\\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cX}
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Una vez por consulta & \textbf{Rendimiento} & Alto \\
+		\textbf{Importancia} & Alta & \textbf{Urgencia} & Alta \\
+		\textbf{Estado} &  & \textbf{Estabilidad} & Alta\\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+% FIN DEFINIR HORARIO DE CONSULTA MÉDICA
+
 % GLOSARIO DE TÉRMINOS
 \section{Glosario de términos}
 \term{Historial clínico} Conjunto de documentos que contienen datos, valoraciones e información sobre la evolución clínica de un paciente a lo largo del proceso asistencial.
