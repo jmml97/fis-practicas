@@ -535,7 +535,631 @@
 	\end{tabularx}
 \end{table}
 
+\newpage
+
 % FIN DEFINIR HORARIO DE CONSULTA MÉDICA
+
+% PEDIR CAMBIO DE CITA
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Pedir cambio de cita & & & & \cu \\  
+		\textbf{Actores}       & Paciente, Administrativo & & & \\ 
+		\textbf{Tipo}          & Secundario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-1, RF-5, RF-27, RN-2}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, cita previa}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Cita modificada}\\
+		\textbf{Autor}         & José María Martín Luque & \textbf{Fecha} & 17/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Permitir al paciente cambiar las citas que tenga fijadas por si le ha surgido algún imprevisto en el momento de la cita.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El paciente indica a un administrativo que quiere realizar un cambio de cita. Este último comprueba la disponibilidad y solicita al sistema una nueva cita, eliminando la anterior.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Paciente: solicita al administrativo el cambio de cita & & \\
+		\textbf{2} & Administrativo: Comprueba disponibilidad y solicita al sistema el cambio de cita & \textbf{3} & Elimina la cita anterior y añade la nueva \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Baja & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Moderada & \textbf{Urgencia} & Baja\\
+		\textbf{Estado} &  & \textbf{Estabilidad} & Alta\\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\newpage
+
+% FIN PEDIR CAMBIO DE CITA
+
+% ANULAR CITA
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Anular cita & & & & \cu \\  
+		\textbf{Actores}       & Paciente, Administrativo & & & \\ 
+		\textbf{Tipo}          & Esencial & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-5, RF-27, RN-2}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, cita previa}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Cita eliminada}\\
+		\textbf{Autor}         & José Mª Martín Luque & \textbf{Fecha} & 17/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Permitir al paciente cancelar una cita por cualquier motivo por el que pueda ser necesario: disponibilidad, mejoría, cambio de centro, etc.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El paciente indica a un administrativo que quiere cancelar su cita. El administrativo accede al sistema y elimina la cita.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Paciente: Solicita al administrativo que elimine la cita & & \\
+		\textbf{2} & Administrativo: Accede al sistema y le indica que borre la cita & \textbf{3} & Elimina la cita \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Baja & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Alta & \textbf{Urgencia} & Baja\\
+		\textbf{Estado} &  & \textbf{Estabilidad} & Alta \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\newpage
+
+% FIN ANULAR CITA
+
+% ENTREGAR VALORACIÓN
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Entregar valoración & & & & \cu \\  
+		\textbf{Actores}       & Paciente, Administrativo & & & \\ 
+		\textbf{Tipo}          & Secundario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{-}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{}\\
+		\textbf{Autor} & José María Martín Luque & \textbf{Fecha} & 17/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Permitir al paciente valorar el servicio prestado.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El paciente indica a un administrativo que quiere entregar una valoración. El administrativo la recoge y la introduce en el sistema.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Paciente: Entrega al administrativo la valoración & & \\
+		\textbf{2} & Administrativo: Accede al sistema y la introduce la cita & \textbf{3} & Procesa la valoración \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Muy baja & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Media & \textbf{Urgencia} & Baja\\
+		\textbf{Estado} &  & \textbf{Estabilidad} & Alta \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\newpage
+
+% FIN ENTREGAR VALORACIÓN
+
+% PEDIR CITA REMOTO
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Pedir cita remoto & & & & \cu \\  
+		\textbf{Actores}       & Paciente & & & \\ 
+		\textbf{Tipo}          & Esencial & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-1, RF-3, RF-4, RN-3}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Cita guardada}\\
+		\textbf{Autor}         & José Mª Martín Luque & \textbf{Fecha} & 17/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Permitir al paciente pedir cita a través del servicio web escogiendo hora (si hay disponibilidad), médico y centro.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El paciente accede a la plataforma web con sus credenciales y entra en el apartado de pedir cita. Introduce la fecha, hora, centro, especialidad y médico deseados y confirma la cita.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Paciente: Accede al servicio web & & \\
+		\textbf{2} & Paciente: Accede al apartado de pedir cita & & \\
+		\textbf{3} & Paciente: Indica especialidad, fecha y hora & \textbf{4} & Comprueba la disponibilidad del momento especificado\\
+		\textbf{5} & Paciente: Confirma la cita & \textbf{3} & Almacena la cita \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Alta, varias veces al día & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Alta & \textbf{Urgencia} & Alta\\
+		\textbf{Estado} &  & \textbf{Estabilidad} & Alta \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\newpage
+
+% FIN PEDIR CITA REMOTO
+
+% PEDIR CAMBIO DE CITA REMOTO
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Pedir cambio de cita remoto & & & & \cu \\  
+		\textbf{Actores}       & Paciente & & & \\ 
+		\textbf{Tipo}          & Secundario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-1, RF-5, RF-27, RN-2}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, cita previa}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Cita modificada}\\
+		\textbf{Autor}         & José Mª Martín Luque & \textbf{Fecha} & 17/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Permitir al paciente cambiar las citas que tenga fijadas por si le ha surgido algún imprevisto en el momento de la cita.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El paciente accede al apartado de citas del servicio web e infica al sistema que quiere realizar un cambio de cita. El sistema comprueba la disponibilidad y elimina la cita anterior.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Paciente: Accede al servicio web & & \\
+		\textbf{2} & Paciente: Accede al apartado de citas & & \\
+		\textbf{3} & Paciente: Indica la cita que quiere cambiar & & \\
+		\textbf{4} & Paciente: Indica nueva fecha y hora & \textbf{5} & Comprueba la disponibilidad del momento especificado\\
+		\textbf{6} & Paciente: Confirma la nueva cita & \textbf{7} & Almacena la nueva cita \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Baja & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Moderada & \textbf{Urgencia} & Baja\\
+		\textbf{Estado} &  & \textbf{Estabilidad} & Alta\\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\newpage
+
+% FIN PEDIR CAMBIO DE CITA REMOTO
+
+% ANULAR CITA REMOTO
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Anular cita remoto & & & \cu \\  
+		\textbf{Actores}       & Paciente& & & \\ 
+		\textbf{Tipo}          & Esencial & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-5, RF-27, RN-2}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, cita previa}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Cita eliminada}\\
+		\textbf{Autor}         & José Mª Martín Luque & \textbf{Fecha} & 17/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Permitir al paciente cancelar una cita por cualquier motivo por el que pueda ser necesario: disponibilidad, mejoría, cambio de centro, etc.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El paciente accede al apartado de citas del servicio web e infica al sistema que quiere cancelar una cita. El sistema elimina la cita.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Paciente: Accede al servicio web & & \\
+		\textbf{2} & Paciente: Accede al apartado de citas & & \\
+		\textbf{3} & Paciente: Indica la cita que quiere eliminar & \textbf{4} & Elimina la cita \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Baja & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Alta & \textbf{Urgencia} & Baja\\
+		\textbf{Estado} &  & \textbf{Estabilidad} & Alta \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\newpage
+
+% FIN ANULAR CITA REMOTO
+
+% VALORACIÓN REMOTA
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Valoración remota & & & & \cu \\  
+		\textbf{Actores}       & Paciente & & & \\ 
+		\textbf{Tipo}          & Secundario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{-}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{}\\
+		\textbf{Autor} & José Mª Martín Luque & \textbf{Fecha} & 17/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Permitir al paciente valorar el servicio prestado.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El paciente accede al apartado de valoraciones del sistema e indica a lo que quiere valorar. El sistema almacena y procesa la valoración.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Paciente: Accede al servicio web & & \\
+		\textbf{2} & Paciente: Accede al apartado de valoraciones & & \\
+		\textbf{3} & Paciente: Selecciona el sanitario, la consulta o la unidad de diagnóstico que quiere valorar. & \textbf{4} & Almacena y procesa la valoración \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Muy baja & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Media & \textbf{Urgencia} & Baja\\
+		\textbf{Estado} &  & \textbf{Estabilidad} & Alta \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\newpage
+
+% FIN VALORACIÓN REMOTA
+
+% VALORACIÓN REMOTA DE SANITARIO
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Valoración remota de sanitario& & & & \cu \\  
+		\textbf{Actores}       & Paciente & & & \\ 
+		\textbf{Tipo}          & Secundario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Valoración remota}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{}\\
+		\textbf{Autor} & José Mª Martín Luque & \textbf{Fecha} & 17/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Permitir al paciente valorar el servicio prestado por un sanitario.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El paciente accede al apartado de valoraciones del sistema e indica a el sanitario que quiere valorar. El sistema almacena y procesa la valoración.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Paciente: Accede al servicio web & & \\
+		\textbf{2} & Paciente: Accede al apartado de valoraciones & & \\
+		\textbf{3} & Paciente: Selecciona el sanitario que quiere valorar. & \textbf{4} & Almacena y procesa la valoración \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Muy baja & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Media & \textbf{Urgencia} & Baja\\
+		\textbf{Estado} &  & \textbf{Estabilidad} & Alta \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\newpage
+
+% FIN VALORACIÓN REMOTA DE SANITARIO
+
+% VALORACIÓN REMOTA DE CONSULTA
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Valoración remota de consulta & & & & \cu \\  
+		\textbf{Actores}       & Paciente & & & \\ 
+		\textbf{Tipo}          & Secundario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Valoración remota}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{}\\
+		\textbf{Autor} & José Mª Martín Luque & \textbf{Fecha} & 17/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Permitir al paciente valorar el servicio prestado por el personal en una consulta.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El paciente accede al apartado de valoraciones del sistema e indica la consulta que quiere valorar. El sistema almacena y procesa la valoración.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Paciente: Accede al servicio web & & \\
+		\textbf{2} & Paciente: Accede al apartado de valoraciones & & \\
+		\textbf{3} & Paciente: Selecciona la consulta que quiere valorar. & \textbf{4} & Almacena y procesa la valoración \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Muy baja & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Media & \textbf{Urgencia} & Baja\\
+		\textbf{Estado} &  & \textbf{Estabilidad} & Alta \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\newpage
+
+% FIN VALORACIÓN REMOTA DE CONSULTA
+
+% VALORACIÓN REMOTA DE UNIDAD DE DIAGNOSTICO
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Valoración remota de unidad de diagnóstico& & & & \cu \\  
+		\textbf{Actores}       & Paciente & & & \\ 
+		\textbf{Tipo}          & Secundario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Valoración remota}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{}\\
+		\textbf{Autor} & José Mª Martín Luque & \textbf{Fecha} & 17/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Permitir al paciente valorar el servicio prestado por una unidad de diagnóstico
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El paciente accede al apartado de valoraciones del sistema e indica la unidad de diagnóstico que quiere valorar. El sistema almacena y procesa la valoración.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Paciente: Accede al servicio web & & \\
+		\textbf{2} & Paciente: Accede al apartado de valoraciones & & \\
+		\textbf{3} & Paciente: Selecciona la unidad de diagnóstico que quiere valorar. & \textbf{4} & Almacena y procesa la valoración \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Muy baja & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Media & \textbf{Urgencia} & Baja\\
+		\textbf{Estado} &  & \textbf{Estabilidad} & Alta \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\newpage
+
+% FIN VALORACIÓN REMOTA DE UNIDAD DE DIAGNOSTICO
 
 % GLOSARIO DE TÉRMINOS
 \section{Glosario de términos}
