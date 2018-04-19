@@ -539,6 +539,672 @@
 
 % FIN DEFINIR HORARIO DE CONSULTA MÉDICA
 
+% BAJA DE SANITARIO
+
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Baja de sanitario & & & & \cu \\  
+		\textbf{Actores}       &  Sanitario, Compañía Médica & & & \\ 
+		\textbf{Tipo}          & Secundario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-29, RN-1}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Datos de sanitario borrados del sistema}\\
+		\textbf{Autor}         &  Miguel Lentisco Ballesteros & \textbf{Fecha} & 18/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Permite dar de baja a un sanitario, borrando sus datos del sistema.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		O el sanitario puede solicitar darse de baja o lo hace la propia compañía médica. La compañía médica se encarga de ejecutar la solicitud si procede y el sistema borra la información sobre el sanitario.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Sanitario: solicita a la compañía médica su baja & & \\
+		\textbf{2} & Compañía médica: tramita la baja & & \\
+		& & \textbf{3} & Elimina toda la información del sanitario \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	
+		\begin{tabularx}{\textwidth}{cX}
+		\textbf{1a} & Compañía médica: solicita la baja de un sanitario forzosamente.
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Baja & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Moderada & \textbf{Urgencia} & Baja\\
+		\textbf{Estado} & En desarrollo & \textbf{Estabilidad} & Alta\\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\newpage
+
+% FIN BAJA DE SANITARIO
+
+% NUEVO RECURSO
+
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Nuevo recurso & & & & \cu \\  
+		\textbf{Actores}       &  Administrativo & & & \\ 
+		\textbf{Tipo}          & Primario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-28, RN-1}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Recurso nuevo correctamente añadido}\\
+		\textbf{Autor}         &  Miguel Lentisco Ballesteros & \textbf{Fecha} & 18/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Permite al administrativo añadir un nuevo recurso (salas, espacios, maquinaria)
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El administrativo añade un nuevo recurso indicando el tipo, nombre, datos... y el sistema añade la información.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Administrativo: añade un nuevo recurso con la información pertinente & & \\
+		& & \textbf{2} & Se registra el nuevo recurso y sus datos \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Media & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Moderada & \textbf{Urgencia} & Baja\\
+		\textbf{Estado} & En desarrollo & \textbf{Estabilidad} & Alta\\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\newpage
+
+% FIN NUEVO RECURSO
+
+% MODIFICAR RECURSO
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Modificar recurso & & & & \cu \\  
+		\textbf{Actores}       &  Administrativo & & & \\ 
+		\textbf{Tipo}          & Primario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-28, RN-1}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Recurso modificado correctamente}\\
+		\textbf{Autor}         &  Miguel Lentisco Ballesteros & \textbf{Fecha} & 18/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Permite modificar un recurso ya existente en el sistema.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El administrativo selecciona uno de los recursos ya existentes devueltos por el sistema y luego edita la información que desee, donde el sistema registra los cambios.  
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Administrativo: solicita la lista de recursos disponibles & & \\
+		& & \textbf{2} & Devuelve la lista de recursos \\
+		\textbf{3} & Administrativo: selecciona el recurso de la lista deseado y modifica la información & & \\
+		& & \textbf{4} & Se registran los cambios \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{cX}
+		\textbf{3a} & Si los cambios son incorrectos se descartan.
+	\end{tabularx}
+	
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Mediana & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Moderada & \textbf{Urgencia} & Mediana \\
+		\textbf{Estado} & En desarrollo & \textbf{Estabilidad} & Alta\\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\newpage
+
+% FIN MODIFICAR RECURSO
+
+% BAJA DE RECURSO
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Baja de recurso & & & & \cu \\  
+		\textbf{Actores}       &  Administrativo & & & \\ 
+		\textbf{Tipo}          & Primario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-28, RN-1}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Recurso eliminado correctamente}\\
+		\textbf{Autor}         &  Miguel Lentisco Ballesteros & \textbf{Fecha} & 18/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Permite eliminar un recurso ya existente en el sistema.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El administrativo selecciona uno de los recursos ya existentes devueltos del sistema y el sistema elimina el recurso.  
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Administrativo: solicita la lista de recursos disponibles & & \\
+		& & \textbf{2} & Devuelve la lista de recursos \\
+		\textbf{3} & Administrativo: selecciona el recurso de la lista deseado & & \\
+		& & \textbf{4} & Se elimina el recurso seleccionado \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	
+	
+	
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Baja & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Moderada & \textbf{Urgencia} & Mediana \\
+		\textbf{Estado} & En desarrollo & \textbf{Estabilidad} & Alta\\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\newpage
+
+% FIN BAJA DE RECURSO
+
+% ASIGNACIÓN PERMANENTE DE RECURSO
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Asignación permanente de recurso & & & & \cu \\  
+		\textbf{Actores}       &  Administrativo & & & \\ 
+		\textbf{Tipo}          & Primario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-28, RN-1}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Recurso asignado permanentemente correctamente}\\
+		\textbf{Autor}         &  Miguel Lentisco Ballesteros & \textbf{Fecha} & 18/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Permite asignar permanentemente un recurso a otro.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El administrativo selecciona uno de los recursos ya existentes sin asignar devueltos del sistema y después selecciona el recurso al que se le va asignar devuelto de los recursos compatibles disponibles, registrando la asignación.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Administrativo: solicita la lista de recursos disponibles & & \\
+		& & \textbf{2} & Devuelve la lista de recursos \\
+		\textbf{3} & Administrativo: selecciona el recurso de la lista deseado & & \\
+		& & \textbf{4} & Devuelve la lista de recursos disponibles compatibles a los que asignar \\
+		\textbf{5} & Administrativo: selecciona el recurso al que se va asignar & & \\
+		& & \textbf{6} & Se hace la asignación permanente \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Mediana & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Moderada & \textbf{Urgencia} & Mediana \\
+		\textbf{Estado} & En desarrollo & \textbf{Estabilidad} & Alta\\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\newpage
+
+% FIN ASIGNACIÓN PERMANENTE DE RECURSO
+
+% ELIMINAR ASIGNACIÓN DE RECURSO
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Eliminar asignación de recurso & & & & \cu \\  
+		\textbf{Actores}       &  Administrativo & & & \\ 
+		\textbf{Tipo}          & Primario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-28, RN-1}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Asignación de recurso eliminado correctamente}\\
+		\textbf{Autor}         &  Miguel Lentisco Ballesteros & \textbf{Fecha} & 18/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Permite eliminar la asignación de un recurso.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El administrativo selecciona uno de los recursos asignados devueltos del sistema y éste elimina la asignación.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Administrativo: solicita la lista de recursos asignados & & \\
+		& & \textbf{2} & Devuelve la lista de recursos asignados \\
+		\textbf{3} & Administrativo: selecciona el recurso de la lista deseado & & \\
+		& & \textbf{4} & Se hace la eliminación de la asignación \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Mediana & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Moderada & \textbf{Urgencia} & Mediana \\
+		\textbf{Estado} & En desarrollo & \textbf{Estabilidad} & Alta\\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\newpage
+
+% FIN ELIMINAR ASIGNACIÓN DE RECURSO
+
+% ASIGNACIÓN PUNTUAL DE RECURSO
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Asignación puntual de recurso & & & & \cu \\  
+		\textbf{Actores}       &  Administrativo & & & \\ 
+		\textbf{Tipo}          & Primario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-28, RN-1}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Recurso asignado puntualmente correctamente}\\
+		\textbf{Autor}         &  Miguel Lentisco Ballesteros & \textbf{Fecha} & 18/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Permite asignar puntualmente un recurso a otro.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El administrativo selecciona uno de los recursos ya existentes sin asignar devueltos del sistema y después selecciona el recurso al que se le va asignar devuelto de los recursos compatibles disponibles, registrando la asignación puntual indicando el tiempo de la asignación.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Administrativo: solicita la lista de recursos disponibles & & \\
+		& & \textbf{2} & Devuelve la lista de recursos \\
+		\textbf{3} & Administrativo: selecciona el recurso de la lista deseado y añade el tiempo de asignación & & \\
+		& & \textbf{4} & Devuelve la lista de recursos disponibles compatibles a los que asignar \\
+		\textbf{5} & Administrativo: selecciona el recurso al que se va asignar & & \\
+		& & \textbf{6} & Se hace la asignación puntual durante el tiempo asignado \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Mediana & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Moderada & \textbf{Urgencia} & Mediana \\
+		\textbf{Estado} & En desarrollo & \textbf{Estabilidad} & Alta\\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\newpage
+
+% FIN ASIGNACIÓN PUNTUAL DE RECURSO
+
+% PEDIR INFORMACIÓN
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Pedir información & & & & \cu \\  
+		\textbf{Actores}       &  Visitante y Administrativo & & & \\ 
+		\textbf{Tipo}          & Primario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-19, RF-20, RF-21, RF-22, RF-23}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Nada}\\
+		\textbf{Autor}         &  Miguel Lentisco Ballesteros & \textbf{Fecha} & 18/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Permite consultar la información deseada por el visitante.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El visitante desea saber una información sobre un tema, que solicita al administrativo que es el que hace la consulta al sistema.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Visitante: hace la petición de información al administrativo & & \\
+		\textbf{2} & Administrativo: toma la petición y hace la petición de información & & \\
+		& & \textbf{3} & Devuelve la información de la consulta \\
+		\textbf{4} & Administrativo: informa de la respuesta al visitante & & \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Alta & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Moderada & \textbf{Urgencia} & Baja \\
+		\textbf{Estado} & En desarrollo & \textbf{Estabilidad} & Alta\\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\newpage
+
+% FIN PEDIR INFORMACIÓN	
+
+% PEDIR CITA
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Pedir cita & & & & \cu \\  
+		\textbf{Actores}       &  Paciente y Administrativo & & & \\ 
+		\textbf{Tipo}          & Primario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-1, RF-7, RN-2}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Cita añadida correctamente}\\
+		\textbf{Autor}         &  Miguel Lentisco Ballesteros & \textbf{Fecha} & 18/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Permite al paciente pedir una cita al administrativo.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El paciente explica su problema al administrativo y éste elige el especialista que necesita, ofreciéndole al paciente una fecha que le pueda venir bien. Finalmente queda registrada la cita para el especialista en ese dia con ese paciente.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Paciente: explica su problema y que necesita una cita & & \\
+		\textbf{2} & Administrativo: elige el área de  especialidad & & \\
+		& & \textbf{3} & Devuelve la lista de médicos disponibles \\
+		\textbf{4} & Administrativo: selecciona un médicos & & \\
+		& & \textbf{5} & Muestra el horario disponible de ese médico \\
+		\textbf{6} & Administrativo: escoge el día libre más próximo & & \\
+		\textbf{7} & Paciente: confirma la fecha u elige otra & & \\
+		\textbf{8} & Administrativo: confirma la cita médica & & \\
+		& & \textbf{9} & Se registra correctamente la cita médica \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Alta & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Moderada & \textbf{Urgencia} & Baja \\
+		\textbf{Estado} & En desarrollo & \textbf{Estabilidad} & Alta\\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\newpage
+
+% FIN PEDIR CITA
+
+% ASISTIR CITA
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Asistir cita & & & & \cu \\  
+		\textbf{Actores}       &  Paciente y Administrativo & & & \\ 
+		\textbf{Tipo}          & Primario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-7}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Cita asistida confirmada}\\
+		\textbf{Autor}         &  Miguel Lentisco Ballesteros & \textbf{Fecha} & 18/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Permite confirmar al administrativo la asistencia del paciente a una cita médica concertada.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El paciente llega a la cita médica que había sido concertada y el administrativo lo confirma registrándolo.
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Paciente: se presenta para la cita médica que tenía & & \\
+		\textbf{2} & Administrativo: confirma la asistencia del paciente & & \\
+		& & \textbf{3} & Se registra la asistencia del paciente a la cita médica.
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Alta & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Moderada & \textbf{Urgencia} & Baja \\
+		\textbf{Estado} & En desarrollo & \textbf{Estabilidad} & Alta\\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\newpage
+
+% FIN ASISTIR CITA
+
+
 % PEDIR CAMBIO DE CITA
 
 \begin{table}[H]
@@ -1166,6 +1832,8 @@
 \term{Historial clínico} Conjunto de documentos que contienen datos, valoraciones e información sobre la evolución clínica de un paciente a lo largo del proceso asistencial.
 
 \term{Sistema de avisos} Plataforma utilizada para informar en momentos concretos de diversos acontecimientos.
+
+\term{Recurso} Espacio, sala o maquinaria (despachos de consulta, salas de aparatos, apartados de rayos X...) 
 
 % FIN GLOSARIO DE TÉRMINOS
 \end{document}
