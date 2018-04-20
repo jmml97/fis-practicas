@@ -679,72 +679,7 @@
 		[...] \\
 	\end{tabularx}
 \end{table}
-
-
-
-
-\begin{table}[H]
-	\begin{tabularx}{\textwidth}{l|Xlllr}
-		\textbf{Caso de Uso}   & Recordatorio de citas & & & & \cu \\  
-		\textbf{Actores}       & Temporizador & & & \\ 
-		\textbf{Tipo}          & Opcional & & & \\
-		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-6, RN-3}\\
-		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, servicio de mensajería activo y existencia de cita a recordar}\\ 
-		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Recordatorio correctamente enviado.}\\
-		\textbf{Autor}         & Grupo ? & \textbf{Fecha} & 07/04/18 & \textbf{Versión} & 1.0 \\ 
-	\end{tabularx}
-
-	\bigskip
-
-	\begin{tabularx}{\textwidth}{X}
-		\textbf{Propósito}\\ \hline
-		Recordar al paciente que tiene una cita. Este acción se puede regular dependiendo del paciente si este quiere que se le notifique o no, con qué regularidad o con cuánta antelación
-	\end{tabularx}
-
-	\bigskip
-
-	\begin{tabularx}{\textwidth}{X}
-		\textbf{Resumen}\\ \hline
-		Se inicia el proceso del temporizador (ya sea de forma periódica o a una hora programada), consulta las citas programadas y envía un recordatorio a aquellos clientes que así lo tengan especificado, cumpliendo restricciones de tiempo especificadas por los mismos
-	\end{tabularx}
-
-	\bigskip
-
-	\begin{tabularx}{\textwidth}{X}
-		\textbf{Curso Normal (Básico)}\\ \hline
-	\end{tabularx}
-	\begin{tabularx}{\textwidth}{cXcX}
-		\textbf{1} & Actor 1: Acción realizada por el actor & & \\
-		\textbf{2} & Actor 1: Acción realizada por el actor & \textbf{3} & Acción realizada por el sistema \\
-		 & & & \\
-		 & & \textbf{N} &  Cuando se realiza la inclusión de otro caso de uso lo representaremos de la forma Incluir(CU\_identificador.CU\_Nombre)\\
-		 & & & \\
-		 & << Se incluyen la secuencia de acciones realizadas por los actores que intervienen en el CU, se usarán frases cortas que describan el diálogo entre los actores y el sistema >> << Se pueden añadir referencias a elementos de un boceto de Interfaz del Usuario>> & & << Se incluyen la secuencia de acciones que realiza el sistema ante las acciones de los actores >>
-	\end{tabularx}
-\end{table}
-
-\begin{table}[H]
-	\begin{tabularx}{\textwidth}{X}
-		\textbf{Cursos Alternos}\\ \hline
-	\end{tabularx}
-	\begin{tabularx}{\textwidth}{cX}
-		\textbf{1a} & Descripción de la secuencia de acciones alternas a la acción 1 del Curso Normal\\
-		\textbf{1b} & \\
-		 & << Secuencia de los cursos alternos del CU >>
-	\end{tabularx}
-	\begin{tabularx}{\textwidth}{X}
-		\textbf{Otros datos}\\ \hline
-	\end{tabularx}
-	\begin{tabularx}{\textwidth}{lXlX}
-		\textbf{Frecuencia esperada} & << Numero de veces que se realiza el CU por unidad de tiempo >> & \textbf{Rendimiento} & << Rendimiento esperado de la secuencia de acciones del CU >>\\
-		\textbf{Importancia} & << Importancia de este CU en el sistema (vital, alta, moderada, baja) >> & \textbf{Urgencia} & << Urgencia en la realización de este CU, durante el desarrollo (alta, moderada, baja) >>\\
-		\textbf{Frecuencia esperada} & << Estado actual del CU en el desarrollo >> & \textbf{Rendimiento} & << estabilidad de los requisitos asociados a este CU (alta, moderada, baja) >>\\
-	\end{tabularx}
-	\begin{tabularx}{\textwidth}{X}
-		\textbf{Comentarios}\\ \hline
-		<< Comentarios adicionales sobre este CU >>
-	\end{tabularx}
-\end{table}
+\newpage
 
 % TERMINAR CONSULTA 
 
@@ -754,16 +689,16 @@
 		\textbf{Actores}       & Paciente, sanitario & & & \\ 
 		\textbf{Tipo}          & Primario, esencial & & & \\
 		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{Llamar siguiente paciente}\\
-		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{El sanitario ya a tratado al paciente}\\ 
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{El sanitario ya ha tratado al paciente}\\ 
 		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Paciente sale de la consulta}\\
-		\textbf{Autor}         & Sofía Almeida & \textbf{Fecha} & 09/04/18 & \textbf{Versión} & 1.0 \\ 
+		\textbf{Autor}         & Sofía Almeida & \textbf{Fecha} & 09/04/18 & \textbf{Versión} & 1.1 \\ 
 	\end{tabularx}
 
         \bigskip
 
 	\begin{tabularx}{\textwidth}{X}
 		\textbf{Propósito}\\ \hline
-                Si el paciente no tiene más molestias, abandonar la consulta
+                Si el paciente no tiene más molestias, abandona la consulta
 	\end{tabularx}
 
 	\bigskip
@@ -779,7 +714,7 @@
 		\textbf{Curso Normal (Básico)}\\ \hline
 	\end{tabularx}
 	\begin{tabularx}{\textwidth}{cXcX}
-		\textbf{1} & Sanitario: Pregunta al paciente si tiene alguna consulta más & & \\
+		\textbf{1} & Sanitario: Pregunta al paciente si tiene alguna molestia más & & \\
 		\textbf{2} & Paciente: Responde negativamente & \textbf{3} & Se cierra el historial clínico del paciente \\
 		 & & \textbf{4} & Incluir (Llamar siguiente paciente) \\
 	\end{tabularx}
@@ -1062,7 +997,7 @@
 		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{}\\
 		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Consulta existente}\\ 
 		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Consulta eliminada del sistema}\\
-		\textbf{Autor}         & Sofía Almeida & \textbf{Fecha} & 11/04/18 & \textbf{Versión} & 1.0 \\ 
+		\textbf{Autor}         & Sofía Almeida & \textbf{Fecha} & 11/04/18 & \textbf{Versión} & 1.1 \\ 
 	\end{tabularx}
 
 	\bigskip
@@ -1076,8 +1011,8 @@
 
 	\begin{tabularx}{\textwidth}{X}
 	  \textbf{Resumen}
-          El administrativo decide que hay que eliminar una consulta médica, informa al sistema, que la borra del mismo
           \\ \hline
+          El administrativo decide que hay que eliminar una consulta médica, informa al sistema, que la borra del mismo
 	\end{tabularx}
 
 	\bigskip
@@ -1124,8 +1059,8 @@
 		\textbf{Tipo}          & Primario, esencial & & & \\
 		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{}\\
 		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Consulta médica en el sistema}\\ 
-		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Con sulta médica con horario definido}\\
-		\textbf{Autor}         & Sofía Almeida & \textbf{Fecha} & 11/04/18 & \textbf{Versión} & 1.0 \\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Consulta médica con horario definido}\\
+		\textbf{Autor}         & Sofía Almeida & \textbf{Fecha} & 11/04/18 & \textbf{Versión} & 1.1 \\ 
 	\end{tabularx}
 
 	\bigskip
@@ -1181,6 +1116,191 @@
 \newpage
 
 % FIN DEFINIR HORARIO DE CONSULTA MÉDICA
+
+% MODIFICAR HORARIO DE UNA CONSULTA
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Modificar horario de una consulta & & & & \cu \\  
+		\textbf{Actores}       & Administrativo & & & \\ 
+		\textbf{Tipo}          & Primario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, consulta existente con horario ya definido}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Consulta actualizada en el sistema}\\
+		\textbf{Autor}         & Sofía Almeida & \textbf{Fecha} & 20/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+                Modificar el horario establecido para una consulta
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+                El administrativo busca una consulta y añade su nuevo horario.
+        \end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Administrativo: busca la consulta & & \\
+		 & & \textbf{2} & El sistema devuelve la consulta encontrada \\
+		 \textbf{3} & Administrativo: indica que quiere modificar el horario de la consulta, junto al nuevo horario & & \\
+		 & & \textbf{4} & El sistema cambia el horario guardado de esa consulta e indica que la operación se ha realizado con éxito\\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cX}
+		\textbf{4a} & Si el horario no está disponible, se vuelve al paso anterior\\
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & 1 o 2 veces por consulta & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Moderada & \textbf{Urgencia} & Moderada\\
+		\textbf{Estado} &  & \textbf{Estabilidad} & Alta\\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+		El administrativo cambiará un horario porque se lo señala un sanitario, paciente, ...
+	\end{tabularx}
+\end{table}
+
+% FIN MODIFICAR HORARIO CONSULTA
+
+% MODIFICACIÓN PUNTUAL DEL HORARIO DE CONSULTA
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Modificación puntual horario de consulta & & & & \cu \\  
+		\textbf{Actores}       & Administrativo & & & \\ 
+		\textbf{Tipo}          & Primario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, consulta existente con horario ya definido}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Consulta con indicador de que en alguna ocasión tendrá un horario diferente}\\
+		\textbf{Autor}         & Sofía Almeida & \textbf{Fecha} & 20/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+                Señalar que el horario de consulta se verá alterado una vez
+        \end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+                El administrativo busca la consulta y señala que se realizará un cambio no permanente en su horario
+        \end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Administrativo: Busca la consulta & & \\
+		 & & \textbf{2} & El sistema devuelve los datos de dicha consulta \\
+		\textbf{3} & Administrativo: señala que quiere modificar el horario de una consulta en una fecha específica & \textbf{4} & El sistema comprueba el cambio, si es posible lo almacena y muestra que se ha realizado con éxito\\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cX}
+		\textbf{4a} & Si la modificación no es posible se vuelve al paso anterior, permitiendo que el administrativo realice la modificación a otro horario\\
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Baja & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Moderada & \textbf{Urgencia} & Moderada\\
+		\textbf{Estado} &  & \textbf{Estabilidad} & Alta\\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+% FIN MODIFICACIÓN PUNTAL HORARIO DE CONSULTA
+
+% CONSULTAR DATOS PACIENTE
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Consultar datos de paciente & & & & \cu \\  
+		\textbf{Actores}       & Usuario & & & \\ 
+		\textbf{Tipo}          & Primario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, paciente dado de alta en el sistema}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{}\\
+		\textbf{Autor}         & Sofía Almeida & \textbf{Fecha} & 20/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+                Permitir a un usuario consultar datos de un paciente
+	\end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+                Un usuario accede al sistema e indica el identificador de un paciente, el sistema le devuelve sus datos
+        \end{tabularx}
+
+	\bigskip
+
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Usuario: señala la opción consultar datos de paciente & & \\
+		\textbf{2} & Usuario: introduce el identificador de paciente & \textbf{3} & El sistema muestra los datos del paciente \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cX}
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Varias veces por paciente & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Alta & \textbf{Urgencia} & Moderada\\
+		\textbf{Estado} &  & \textbf{Estabilidad} & Alta\\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+% FIN CONSULTAR DATOS DE PACIENTE
 
 % BAJA DE SANITARIO
 
