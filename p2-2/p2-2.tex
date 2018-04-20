@@ -39,6 +39,649 @@
 
 \maketitle
 
+	
+% INICIAR CONSULTA %
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Iniciar Consulta & & & & \cu \\  
+		\textbf{Actores}       & Sanitario, Paciente & & & & \\ 
+		\textbf{Tipo}          & Primario, esencial & & & & \\
+		\textbf{Referencias}   & RF-9, RF-10 & & Abrir HC & &\\
+		%\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-9}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, existencia de una cita con dicho paciente en dicho momento, existencia de historial clínico del paciente; si no es así, se creará.}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Creación del historial clínico del paciente si éste no se encuentra en el sistema.}\\
+		\textbf{Autor}         & Simón López & \textbf{Fecha} & 19/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Comenzar una consulta con un paciente.
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El Sanitario accede al sistema, consultando el historial clínico del paciente y creándolo si éste no existe. Tras ello, comienza la consulta.
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & El sanitario pregunta sus datos al paciente & & \\
+		
+		\textbf{2} & El paciente responde con sus datos.         & & \\
+		
+		\textbf{3} & El sanitario introduce los datos del paciente en el sistema para acceder a su historial clínico. & \textbf{4} & Si no existe su historial clínico, se realiza el caso de uso CrearHC. \\
+		
+		\textbf{5} & El sanitario accede al historial clínico del paciente mediante AbrirHC & & \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cX}
+		\textbf{4a} & Si no existe el historial clínico asociado al DNI del paciente:
+		\small
+		\begin{itemize}
+			\item 4a.1: El sanitario pide al paciente sus datos y solicita su historial clínico a su anterior hospital (si lo tiene).
+			\item 4a.2: El sanitario introduce en el sistema la información.
+			\item 4a.3: El sistema almacena la información referente al paciente con el DNI de éste como clave principal.
+		\end{itemize}\\
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} &  & \textbf{Rendimiento} & \\
+		\textbf{Importancia} & Vital & \textbf{Urgencia} & Alta\\
+		\textbf{Estado} &  & \textbf{Estabilidad} & \\
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+		[...] \\
+	\end{tabularx}
+\end{table}
+
+\newpage
+
+
+
+
+% ABRIR HC %
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Abrir HC & & & & \cu \\  
+		\textbf{Actores}       & Sanitario, Paciente  & & & & \\ 
+		\textbf{Tipo}          & Secundario, esencial & & & & \\
+		%\textbf{Referencias}   & RF-9 & & CU-2 &\\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-9, RF-10}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{ }\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{ }\\
+		\textbf{Autor}         & Simón López & \textbf{Fecha} & 20/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Obtener información sobre el historial clínico de un paciente.
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El sanitario solicita su DNI al paciente y el sistema le proporciona la información que tiene sobre el mismo.
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & El sanitario solicita el DNI al paciente. & \textbf{2} & El sistema busca el historial clínico sobre dicho paciente. \\
+		& & \textbf{3} & Se obtiene el historial clínico y se muestra al sanitario. \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cX}
+		\textbf{2a} & Si no existe el historial clínico asociado al DNI del paciente se cancela la operación.\\
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} &  & \textbf{Rendimiento} & \\
+		\textbf{Importancia} & Alta & \textbf{Urgencia} & Media \\
+		\textbf{Estado} &  & \textbf{Estabilidad} & \\
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+		[...] \\
+	\end{tabularx}
+\end{table}
+
+\newpage
+
+
+
+
+% AÑADIR DATOS CLÍNICOS %
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Añadir datos clínicos & & & & \cu \\  
+		\textbf{Actores}       & Sanitario, Paciente  & & & & \\ 
+		\textbf{Tipo}          & Secundario, esencial & & & & \\
+		%\textbf{Referencias}   & RF-9 & & CU-2 &\\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-9}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Existencia del historial clínico al que se quieren añadir los datos.}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Historial clínico modificado sin problemas ni fallos.}\\
+		\textbf{Autor}         & Simón López & \textbf{Fecha} & 20/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Añadir nuevos datos clínicos al historial de un paciente.
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El sanitario pide el DNI al paciente y solicita el cambio del historial clínico de éste, proporcionando los nuevos datos y realizando los cambios en el sistema.
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & El sanitario solicita añadir datos a un historial clínico.   & & \\
+		\textbf{2} & El sanitario introduce los nuevos datos. & \textbf{3} & Se almacenan los nuevos datos. \\
+		& & \textbf{4} & Se informa de que el proceso se ha realizado correctamente. \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cX}
+		\textbf{1a} & Si no existe el historial clínico asociado al DNI del paciente se cancela la operación.\\
+		\textbf{2a} & Si los datos a introducir son incorrectos se informa y se piden los datos correctos. Si no se proporcionan los datos, concluye el proceso. \\
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} &  & \textbf{Rendimiento} & \\
+		\textbf{Importancia} & Alta & \textbf{Urgencia} & Media \\
+		\textbf{Estado} &  & \textbf{Estabilidad} & \\
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+		[...] \\
+	\end{tabularx}
+\end{table}
+
+\newpage
+
+
+
+
+% EXPLORAR PACIENTE %
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Explorar paciente & & & & \cu \\  
+		\textbf{Actores}       & Sanitario, Paciente & & & & \\ 
+		\textbf{Tipo}          & Primario, esencial  & & & & \\
+		%\textbf{Referencias}   & RF-9 & & CU-2 &\\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{ }\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{ }\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Añadir la información obtenida tras la exploración al historial clínico del paciente. }\\
+		\textbf{Autor}         & Simón López & \textbf{Fecha} & 20/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Comprobar el estado del paciente para realizar un diagnóstico.
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El sanitario realiza distintas pruebas al paciente, determinando el estado de salud de éste y añadiendo o eliminando información de su historial clínico sobre las condiciones de salud en las que se encuentra. \\
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & El sanitario realiza pruebas médicas sobre el paciente. & & \\
+		\textbf{2} & El sanitario introduce los datos obtenidos mediante las pruebas en el historial clínico del paciente. & \textbf{3} & Se almacenan los nuevos datos. \\
+		& & \textbf{4} & Se informa de que el proceso se ha realizado correctamente. \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cX}
+		\textbf{2a} & Si no existe el historial clínico asociado al DNI del paciente, se crea un nuevo historial clínico.\\
+		\textbf{2b} & Si los datos a introducir son incorrectos se informa y se piden los datos correctos. Si no se proporcionan los datos, concluye el proceso. \\
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Una por consulta & \textbf{Rendimiento} & \\
+		\textbf{Importancia} & Alta & \textbf{Urgencia} & \\
+		\textbf{Estado} &  & \textbf{Estabilidad} & \\
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+		[...] \\
+	\end{tabularx}
+\end{table}
+
+
+\newpage
+
+
+
+
+% CURA %
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Cura & & & & \cu \\  
+		\textbf{Actores}       & Sanitario, Paciente & & & & \\ 
+		\textbf{Tipo}          & Primario, esencial  & & & & \\
+		%\textbf{Referencias}   & RF-9 & & & &\\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{ RF-10 }\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{ }\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{ }\\
+		\textbf{Autor}         & Simón López & \textbf{Fecha} & 20/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Realizar una cura al paciente para mejorar su estado de salud. \\
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El sanitario realiza un tipo de cura sobre el paciente en función del problema que éste tenga. \\
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & El sanitario cura al paciente & & \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cX}
+		& \\
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} &  & \textbf{Rendimiento} & \\
+		\textbf{Importancia} & Alta & \textbf{Urgencia} & Alta \\
+		\textbf{Estado} &  & \textbf{Estabilidad} & \\
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+		Una cura no tiene por qué ser realizada sobre todos los pacientes que acudan a la consulta; la cura se realizará si el paciente muestra signos de que es necesaria. \\
+	\end{tabularx}
+\end{table}
+
+\newpage
+
+
+
+
+% RECETAR MEDICAMENTO %
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Recetar medicamento & & & & \cu \\  
+		\textbf{Actores}       & Médico, Paciente & & & & \\ 
+		\textbf{Tipo}          & Secundario, esencial  & & & & \\
+		%\textbf{Referencias}   & RF-9 & & CU-2 &\\
+		\textbf{Referencias}   &  \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{ RF-11, RF-12 }\\
+		\textbf{Precondición}  &  \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{ }\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{ Emisión de una receta para que el paciente pueda obtener el medicamento. }\\
+		\textbf{Autor}         & Simón López & \textbf{Fecha} & 20/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Proporcionar al paciente un medicamento para mejorar su estado de salud. \\
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El médico genera una receta de un medicamento en función del historial clínico y de las necesidades del paciente. \\
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & El médico decide según su conocimiento el medicamento necesario para tratar al paciente. & & \\
+		\textbf{2} & El médico introduce los datos de la receta a emitir. & \textbf{3} & Se almacenan los nuevos datos. \\
+		& & \textbf{4} & Se informa de que el proceso se ha realizado correctamente. \\
+		\textbf{5} & Se entrega una receta al paciente para que éste pueda adquirir el medicamento. & & \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cX}
+		\textbf{2a} & Si los datos introducidos son incorrectos se informa y se piden los datos correctos. Si no se proporcionan los datos, concluye el proceso. \\
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} &  & \textbf{Rendimiento} & \\
+		\textbf{Importancia} & & \textbf{Urgencia} & \\
+		\textbf{Estado} &  & \textbf{Estabilidad} & \\
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+		El médico no entrega el medicamento al paciente, sino una receta con la que acudir a la farmacia y adquirir el medicamento. \\
+	\end{tabularx}
+\end{table}
+
+\newpage
+
+
+
+
+% IMPONER TRATAMIENTO %
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Imponer tratamiento & & & & \cu \\  
+		\textbf{Actores}       & Médico, Paciente & & & & \\ 
+		\textbf{Tipo}          & Secundario, esencial  & & & & \\
+		%\textbf{Referencias}   & RF-9 & & CU-2 &\\
+		\textbf{Referencias}   &  \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{ RF-19 }\\
+		\textbf{Precondición}  &  \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{ }\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{ Dejar reflejado en el sistema que el paciente está recibiendo dicho tratamiento. }\\
+		\textbf{Autor}         & Simón López & \textbf{Fecha} & 20/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Proporcionar al paciente un tratamiento médico para mejorar su estado de salud. \\
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El médico consulta los distintos tratamientos disponibles en la clínica, decidiendo cuál de todos es el más adecuando para tratar al paciente y mejorar su estado de salud. \\
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & El médico consulta los distintos tratamientos disponibles. & & \\
+		\textbf{2} & El médico decide el tratamiento a imponer e introduce el tratamiento en la ficha del paciente.  & \textbf{3} & Se almacenan los nuevos datos. \\
+		& & \textbf{4} & Se informa de que el proceso se ha realizado correctamente. \\
+		\textbf{5} & Se informa al paciente del tratamiento asignado. & & \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cX}
+		\textbf{2a} & Si el tratamiento introducido no está disponible en la clínica, se pide que se introduzca un nuevo tratamiento que sí lo esté; si no lo hace, se aborta el proceso. \\
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} &  & \textbf{Rendimiento} & \\
+		\textbf{Importancia} & & \textbf{Urgencia} & \\
+		\textbf{Estado} &  & \textbf{Estabilidad} & \\
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+		[...] \\
+	\end{tabularx}
+\end{table}
+
+
+\newpage
+
+
+
+
+% PEDIR PRUEBA MÉDICA %
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Pedir prueba médica & & & & \cu \\  
+		\textbf{Actores}       & Médico, Paciente & & & & \\ 
+		\textbf{Tipo}          & Secundario, esencial  & & & & \\
+		%\textbf{Referencias}   & RF-9 & & CU-2 &\\
+		\textbf{Referencias}   &  \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{ RNF-2 }\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{ La fecha elegida para la prueba está disponible. }\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{ Reflejar la fecha elegida como no disponible. }\\
+		\textbf{Autor}         & Simón López & \textbf{Fecha} & 20/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Pedir turno para realizar una prueba médica específica sobre el paciente. \\
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El médico accede al sistema y busca una posible fecha para realizar una prueba médica sobre el paciente, la cual realizará este mismo médico u otro especialista. \\
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & El médico consulta las posibles fechas para realizar la prueba. & & \\
+		\textbf{2} & El médico acuerda con el paciente la mejor fecha posible y la introduce en el sistema.  & \textbf{3} & Se almacenan los nuevos datos. \\
+		& & \textbf{4} & Se informa de que el proceso se ha realizado correctamente. \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cX}
+		\textbf{2a} & Si la fecha acordada para realizar la prueba médica ya está ocupada, se pide que se introduzca una fecha distinta; si no se introduce, se aborta el procedimiento. \\
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} &  & \textbf{Rendimiento} & \\
+		\textbf{Importancia} & & \textbf{Urgencia} & \\
+		\textbf{Estado} &  & \textbf{Estabilidad} & \\
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+		[...] \\
+	\end{tabularx}
+\end{table}
+
+
+\newpage
+
+
+
+
+% DESVIAR A ESPECIALISTA %
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Desviar a especialista. & & & & \cu \\  
+		\textbf{Actores}       & Médico, Paciente & & & & \\ 
+		\textbf{Tipo}          & Secundario, esencial  & & & & \\
+		%\textbf{Referencias}   & RF-9 & & CU-2 &\\
+		\textbf{Referencias}   &  \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{ }\\
+		\textbf{Precondición}  &  \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{ El especialista tiene disponibilidad para un nuevo paciente. }\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{ Dejar reflejado en el sistema que el paciente está con el especialista elegido. }\\
+		\textbf{Autor}         & Simón López & \textbf{Fecha} & 20/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Mejorar el estado de salud del paciente mediante un médico más especializado en su problema. \\
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		Tras realizar un diagnóstico al paciente, el médico le asigna un especialista para profundizar más en la enfermedad que el paciente tenga, comunicándole al paciente quién será su nuevo médico. \\
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & El médico decide que el paciente debe de ser tratado por un especialista. & & \\
+		\textbf{2} & El médico accede al sistema comprobando los especialistas disponibles para tratar la enfermedad del paciente e introduce el nuevo médico asignado para el paciente.  & \textbf{3} & Se almacenan los nuevos datos. \\
+		& & \textbf{4} & Se informa de que el proceso se ha realizado correctamente. \\
+		\textbf{5} & Se informa al paciente del nuevo médico asignado. & & \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cX}
+		\textbf{2a} & Si el especialista asignado no tiene disponibilidad para un nuevo paciente, se pide que se le asigne otro especialista distinto; si no se le asigna, se aborta el proceso. \\
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} &  & \textbf{Rendimiento} & \\
+		\textbf{Importancia} & & \textbf{Urgencia} & \\
+		\textbf{Estado} &  & \textbf{Estabilidad} & \\
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+		[...] \\
+	\end{tabularx}
+\end{table}
+
+
+
 
 \begin{table}[H]
 	\begin{tabularx}{\textwidth}{l|Xlllr}
