@@ -1300,10 +1300,652 @@
 		\textbf{Comentarios}\\ \hline
 	\end{tabularx}
 \end{table}
+
 % FIN CONSULTAR DATOS DE PACIENTE
 
-% BAJA DE SANITARIO
+% ALTA DE PACIENTE
 
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Alta de paciente & & & & \cu \\  
+		\textbf{Actores}       & Administrativo, Paciente & & & \\ 
+		\textbf{Tipo}          & Primario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Paciente correctamente añadido al sistema}\\
+		\textbf{Autor}         &  José Antonio Álvarez & \textbf{Fecha} & 21/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Dar de alta a un nuevo paciente en el sistema.
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		Un nuevo paciente solicita los servicios de la clínica. El administrador toma sus datos personales y los añade al sistema.
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Paciente: solicita los servicios de la clínica & & \\
+		\textbf{2} & Administrador: toma los datos del paciente & & \\
+		& & \textbf{3} & Administrador: añade los datos al sistema y lo da de alta. \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}	
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Moderada & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Muy alta & \textbf{Urgencia} & Moderada \\
+		\textbf{Estado} & En desarrollo & \textbf{Estabilidad} & Alta\\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+% FIN ALTA DE PACIENTE
+
+% MODIFICAR PACIENTE
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Modificar paciente & & & & \cu \\  
+		\textbf{Actores}       & Administrativo, Paciente & & & \\ 
+		\textbf{Tipo}          & Primario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, paciente dado de alta en el sistema}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Información del paciente correctamente modificada}\\
+		\textbf{Autor}         &  José Antonio Álvarez & \textbf{Fecha} & 21/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Modificar los datos personales de un paciente.
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El paciente notifica una actualización necesario de sus datos personales. Tras esto, el administrador verifica que sean coherentes y los modifica en el sistema.
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Paciente: solicita una actualización en sus datos personales & & \\
+		\textbf{2} & Administrador: verifica la coherencia de dicha actualización & & \\
+		& & \textbf{3} & Administrador: realiza la modificación pertinente \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}	
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Baja & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Moderada & \textbf{Urgencia} & Baja \\
+		\textbf{Estado} & En desarrollo & \textbf{Estabilidad} & Alta\\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+		Cabe destacar que mediante esta acción unicamente modificamos la información personal del paciente, no su historial clínico.
+	\end{tabularx}
+\end{table}
+
+% FIN MODIFICAR PACIENTE
+
+% BAJA DE PACIENTE
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Baja de paciente & & & & \cu \\  
+		\textbf{Actores}       & Administrativo, Paciente & & & \\ 
+		\textbf{Tipo}          & Primario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, paciente dado de alta en el sistema}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Información sobre el paciente correctamete eliminada del sistema}\\
+		\textbf{Autor}         &  José Antonio Álvarez & \textbf{Fecha} & 21/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Dar de baja a un paciente
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		O bien el usuario realiza una petición de ser dado de baja en el sistema o bien el administrador lo hace por otras razones. En ambos casos, el administrativo accede al paciente mediante su información personal (DNI o identificador) y le da de baja, borrando toda la información que hay sobre él en el sistema. 
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Paciente: solicita ser dado de baja en el sistema & & \\
+		\textbf{2} & Administrador: accede a toda su información utilizando los datos del paciente & & \\
+		& & \textbf{3} & Administrador: da de baja al paciente. \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{cX}
+		\textbf{1a} & Administrador: da de baja al paciente por razones externas.
+	\end{tabularx}
+	
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Muy baja & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Moderada & \textbf{Urgencia} & Baja \\
+		\textbf{Estado} & En desarrollo & \textbf{Estabilidad} & Alta\\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+		Esta acción no debe realizarse a la ligera pues todos los datos del paciente, incluido su historial clínico.
+	\end{tabularx}
+\end{table}
+
+% FIN BAJA DE PACIENTE
+
+% CONSULTAR HORARIO PERSONAL
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Consultar horario personal & & & & \cu \\  
+		\textbf{Actores}       & Personal & & & \\ 
+		\textbf{Tipo}          & Primario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, miembro del personal con horario asignado}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{}\\
+		\textbf{Autor}         &  José Antonio Álvarez & \textbf{Fecha} & 21/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Permitir a un miembro del personal consultar su horario
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El miembro del personal accede al sistema e introduce su identificador. El sistema le muestra su horario.
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Usuario: introduce su identificador & \textbf{2} & El sistema le muestra su horario \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Muy alta & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Media & \textbf{Urgencia} & Moderada\\
+		\textbf{Estado} & En desarrollo & \textbf{Estabilidad} & Alta\\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+% FIN CONSULTAR HORARIO PERSONAL
+
+% ASIGNAR FIN DE CONTRATO
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Fin de contrato & & & & \cu \\  
+		\textbf{Actores}       & Administrador, Personal & & & \\ 
+		\textbf{Tipo}          & Primario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-29, RN-1}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, contrato del miembro del personal expirando}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Datos del miembro del personal correctamente actualizados, incluyendo su contrato si fuese necesario.}\\
+		\textbf{Autor}         &  José Antonio Álvarez & \textbf{Fecha} & 21/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Modificar los datos personales del miembro del personal o bien para que aparezca como no contratado o bien con una nueva fecha de expiración en su contrato si este ha sido renovado.
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		Una vez se ha alcanzado la fecha de expiración del contrato del miembro del personal, se comprueba si ha sido renovado. En ambos casos se actualizan sus datos en el sistema.
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Administrador: Comprueba si se ha renovado el contrato & & \\
+		\textbf{2} & Administrador: En caso afirmativo, modifica la información del contrato \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{cX}
+		\textbf{2a} & Administrador: En caso negativo, actualiza la información del miembro del personal para que aparezca como no contratado.
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Baja & \textbf{Rendimiento} & Alto \\
+		\textbf{Importancia} & Moderada & \textbf{Urgencia} & Alta \\
+		\textbf{Estado} & En desarrollo & \textbf{Estabilidad} & Alta \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+	
+\end{table}
+
+\newpage
+
+% FIN FIN DE CONTRATO
+
+% ASIGNAR HORARIO PERSONAL
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Asignar horario personal & & & & \cu \\  
+		\textbf{Actores}       & Administrador, Personal & & & \\ 
+		\textbf{Tipo}          & Primario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-29, RN-1}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Horario del miembro del personal modificado correctamente}\\
+		\textbf{Autor}         &  José Antonio Álvarez & \textbf{Fecha} & 21/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Asignar correctamente el nuevo horario del miembro de personal.
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		O bien el miembro del personal solicita una variación de su horario, o bien se asigna un horario nuevo a un miembro del personal que ya tenía uno, o bien el miembro del personal no tenía ningún horario y se le asigna uno de primeras. En cualquiera de estos casos el administrador sopesa la alteración del horario, así como su validez, y la realiza si lo considera oportuno.
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Personal: solicita variación en su horario & & \\
+		\textbf{2} & Administrador: sopesa la validez de la alteración propuesta & & \\
+		& & \textbf{3} & Administrador: en caso afirmativo, realiza la modificación oportuna \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{cX}
+		\textbf{1a} & Administrador: ha de asignarle un nuevo horario al miembro del personal sin que sea una petición de este.
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Moderada & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Baja & \textbf{Urgencia} & Moderada \\
+		\textbf{Estado} & En desarrollo & \textbf{Estabilidad} & Alta\\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+	
+\end{table}
+
+\newpage
+
+% FIN ASIGNAR HORARIO PERSONAL
+
+% CONTRATACIÓN
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Contratación & & & & \cu \\  
+		\textbf{Actores}       & Administrador, Personal & & & \\ 
+		\textbf{Tipo}          & Primario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-29, RN-1}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Miembro del personal contratado}\\
+		\textbf{Autor}         &  José Antonio Álvarez & \textbf{Fecha} & 21/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Correcta contratación de un nuevo miembro del personal.
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El futuro contratado realiza una petición para que se le contrate, el administrativo decide si hacerlo o no y realiza la contratación utilizando el sistema.
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Personal: solicita su contratación & & \\
+		\textbf{2} & Administrador: decide si contratarlo & & \\
+		& & \textbf{3} & Administrador: en caso afirmativo, lo contrata \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Baja & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Moderada & \textbf{Urgencia} & Moderada \\
+		\textbf{Estado} & En desarrollo & \textbf{Estabilidad} & Alta\\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\newpage
+
+% FIN CONTRATACIÓN
+
+% LIBERAR SANITARIO A CONSULTAR MÉDICA
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Liberar sanitario a consulta médica & & & & \cu \\  
+		\textbf{Actores}       & Administrador, Sanitario & & & \\ 
+		\textbf{Tipo}          & Primario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-29, RN-1}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, sanitario dado de alto como tal}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Sanitario liberado correctamente de la consulta}\\
+		\textbf{Autor}         &  José Antonio Álvarez & \textbf{Fecha} & 21/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Correcta liberación de un sanitario y una consulta médica.
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		O bien el sanitario realiza una petición para que se le libere una consulta, o bien el propio administrativo es quien decide liberarla, ya sea por tema de incompatibilidad de horarios o cualquier otra razón. En ambos casos el administrador realiza la asignación utilizando el sistema.
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Sanitario: solicita la liberación de la consulta & & \\
+		\textbf{2} & Administrador: comprueba detalles sobre la consulta & & \\
+		& & \textbf{3} & Administrador: libera de la consulta al sanitario \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{cX}
+		\textbf{1a} & Administrador: decide liberar al sanitario de la consulta
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Media & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Moderada & \textbf{Urgencia} & Moderada \\
+		\textbf{Estado} & En desarrollo & \textbf{Estabilidad} & Alta\\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\newpage
+
+% FIN LIBERAR SANITARIO A CONSULTA MÉDICA
+
+% ASIGNAR SANITARIO A CONSULTAR MÉDICA
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Asignar sanitario a consulta médica & & & & \cu \\  
+		\textbf{Actores}       & Administrador, Sanitario & & & \\ 
+		\textbf{Tipo}          & Primario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-29, RN-1}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, sanitario dado de alto como tal}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Sanitario asignado correctamente a la consulta}\\
+		\textbf{Autor}         &  José Antonio Álvarez & \textbf{Fecha} & 21/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Correcta asignación de un sanitario a una consulta médica.
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		O bien el sanitario realiza una petición para que se le asigne una consulta, o bien el propio administrativo es quien decide asignarla, ya sea por tema de reparto de horarios o cualquier otra razón. En ambos casos el administrador realiza la asignación utilizando el sistema.
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Sanitario: solicita la asignación de la consulta & & \\
+		\textbf{2} & Administrador: comprueba detalles sobre la consulta & & \\
+		& & \textbf{3} & Administrador: asigna la consulta al sanitario \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{cX}
+		\textbf{1a} & Administrador: decide asignar el sanitario a la consulta
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Media & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Moderada & \textbf{Urgencia} & Moderada \\
+		\textbf{Estado} & En desarrollo & \textbf{Estabilidad} & Alta\\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\newpage
+
+% FIN ASIGNAR SANITARIO A CONSULTA MÉDICA
+
+% ALTA DE SANITARIO
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{l|Xlllr}
+		\textbf{Caso de Uso}   & Alta de sanitario & & & & \cu \\  
+		\textbf{Actores}       & Sanitario, Compañía Médica & & & \\ 
+		\textbf{Tipo}          & Secundario & & & \\
+		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-29, RN-1}\\
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa}\\ 
+		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Datos de sanitario añadidos del sistema}\\
+		\textbf{Autor}         &  José Antonio Álvarez & \textbf{Fecha} & 21/04/18 & \textbf{Versión} & 1.0 \\ 
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Propósito}\\ \hline
+		Añadir un nuevo sanitario al sistema.
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Resumen}\\ \hline
+		El nuevo santario solicita darse de alta como tal a la compañía y esta se encarga de ejecutar la solicitud si procede y añadir al sistema la información sobre el sanitario.
+	\end{tabularx}
+	
+	\bigskip
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Curso Normal (Básico)}\\ \hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{cXcX}
+		\textbf{1} & Sanitario: solicita a la compañía médica darse de alta como sanitario & & \\
+		\textbf{2} & Compañía médica: tramita la petición & & \\
+		& & \textbf{3} & En caso de ser aceptado, añade su información al sistema \\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Cursos Alternos}\\ \hline
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{cX}
+		\textbf{1a} & Compañía médica: añade al nuevo sanitario sin una petición explícita del mismo (pero con su consentimiento).
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Otros datos}\\ \hline
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{lXlX}
+		\textbf{Frecuencia esperada} & Baja & \textbf{Rendimiento} & Alto\\
+		\textbf{Importancia} & Moderada & \textbf{Urgencia} & Baja\\
+		\textbf{Estado} & En desarrollo & \textbf{Estabilidad} & Alta\\
+	\end{tabularx}
+	
+	\begin{tabularx}{\textwidth}{X}
+		\textbf{Comentarios}\\ \hline
+	\end{tabularx}
+\end{table}
+
+\newpage
+
+% FIN ALTA DE SANITARIO
+
+% BAJA DE SANITARIO
 
 \begin{table}[H]
 	\begin{tabularx}{\textwidth}{l|Xlllr}
