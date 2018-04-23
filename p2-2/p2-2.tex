@@ -1337,8 +1337,8 @@
 	\end{tabularx}
 	\begin{tabularx}{\textwidth}{cXcX}
 		\textbf{1} & Paciente: solicita los servicios de la clínica & & \\
-		\textbf{2} & Administrador: toma los datos del paciente & & \\
-		& & \textbf{3} & Administrador: añade los datos al sistema y lo da de alta. \\
+		\textbf{2} & Administrador: toma los datos del paciente y los añade al sistema & & \\
+		& & \textbf{3} & Da de alta al nuevo apciente. \\
 	\end{tabularx}
 	
 	\begin{tabularx}{\textwidth}{X}
@@ -1396,8 +1396,8 @@
 	\end{tabularx}
 	\begin{tabularx}{\textwidth}{cXcX}
 		\textbf{1} & Paciente: solicita una actualización en sus datos personales & & \\
-		\textbf{2} & Administrador: verifica la coherencia de dicha actualización & & \\
-		& & \textbf{3} & Administrador: realiza la modificación pertinente \\
+		\textbf{2} & Administrador: verifica la coherencia de dicha actualización y la realiza & & \\
+		& & \textbf{3} & Se modifica el paciente \\
 	\end{tabularx}
 	
 	\begin{tabularx}{\textwidth}{X}
@@ -1455,9 +1455,10 @@
 		\textbf{Curso Normal (Básico)}\\ \hline
 	\end{tabularx}
 	\begin{tabularx}{\textwidth}{cXcX}
-		\textbf{1} & Paciente: solicita ser dado de baja en el sistema & & \\
-		\textbf{2} & Administrador: accede a toda su información utilizando los datos del paciente & & \\
-		& & \textbf{3} & Administrador: da de baja al paciente. \\
+		\textbf{1} & Administrativo: solicita la lista de sanitarios disponibles & & \\
+		& & \textbf{2} & El sistema devuelve la lista de sanitarios \\
+		\textbf{3} & Administrativo: selecciona el paciente de la lista deseado & & \\
+		& & \textbf{4} & Se elimina el paciente seleccionado \\
 	\end{tabularx}
 	
 	\begin{tabularx}{\textwidth}{X}
@@ -1520,7 +1521,7 @@
 		\textbf{Curso Normal (Básico)}\\ \hline
 	\end{tabularx}
 	\begin{tabularx}{\textwidth}{cXcX}
-		\textbf{1} & Usuario: introduce su identificador & \textbf{2} & El sistema le muestra su horario \\
+		\textbf{1} & Personal: introduce su identificador & \textbf{2} & Muestra su horario \\
 	\end{tabularx}
 	
 	\begin{tabularx}{\textwidth}{X}
@@ -1546,7 +1547,7 @@
 
 % FIN CONSULTAR HORARIO PERSONAL
 
-% ASIGNAR FIN DE CONTRATO
+% FIN DE CONTRATO
 
 \begin{table}[H]
 	\begin{tabularx}{\textwidth}{l|Xlllr}
@@ -1579,8 +1580,9 @@
 		\textbf{Curso Normal (Básico)}\\ \hline
 	\end{tabularx}
 	\begin{tabularx}{\textwidth}{cXcX}
-		\textbf{1} & Administrador: Comprueba si se ha renovado el contrato & & \\
-		\textbf{2} & Administrador: En caso afirmativo, modifica la información del contrato \\
+		\textbf{1} & Paciente: solicita una actualización en sus datos personales & & \\
+		& & \textbf{2} & Muestra el contrato del miembro del personal & & \\
+		\textbf{3} & Administrador: verifica la coherencia de dicha actualización y la realiza\\
 	\end{tabularx}
 	
 	\begin{tabularx}{\textwidth}{X}
@@ -1647,8 +1649,8 @@
 	\end{tabularx}
 	\begin{tabularx}{\textwidth}{cXcX}
 		\textbf{1} & Personal: solicita variación en su horario & & \\
-		\textbf{2} & Administrador: sopesa la validez de la alteración propuesta & & \\
-		& & \textbf{3} & Administrador: en caso afirmativo, realiza la modificación oportuna \\
+		\textbf{2} & Administrador: sopesa la validez de la alteración propuesta y la realiza en caso afirmativo & & \\
+		& & \textbf{3} & Muestra la modificación realizada \\
 	\end{tabularx}
 	
 	\begin{tabularx}{\textwidth}{X}
@@ -1716,7 +1718,8 @@
 	\begin{tabularx}{\textwidth}{cXcX}
 		\textbf{1} & Personal: solicita su contratación & & \\
 		\textbf{2} & Administrador: decide si contratarlo & & \\
-		& & \textbf{3} & Administrador: en caso afirmativo, lo contrata \\
+		\textbf{3} & Administrador: en caso afirmativo, lo contrata \\
+		& & \textbf{4} & Se actualiza \\
 	\end{tabularx}
 	
 	\begin{tabularx}{\textwidth}{X}
@@ -1752,7 +1755,7 @@
 		\textbf{Actores}       & Administrador, Sanitario & & & \\ 
 		\textbf{Tipo}          & Primario & & & \\
 		\textbf{Referencias}   & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-\hsize\relax}X}{RF-29, RN-1}\\
-		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, sanitario dado de alto como tal}\\ 
+		\textbf{Precondición}  & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Plataforma activa y operativa, sanitario dado de alto como tal y sanitario asociado a la consulta}\\ 
 		\textbf{Postcondición} & \multicolumn{5}{>{\hsize=\dimexpr\textwidth-0.85\hsize\relax}X}{Sanitario liberado correctamente de la consulta}\\
 		\textbf{Autor}         &  José Antonio Álvarez & \textbf{Fecha} & 21/04/18 & \textbf{Versión} & 1.0 \\ 
 	\end{tabularx}
@@ -1777,9 +1780,11 @@
 		\textbf{Curso Normal (Básico)}\\ \hline
 	\end{tabularx}
 	\begin{tabularx}{\textwidth}{cXcX}
-		\textbf{1} & Sanitario: solicita la liberación de la consulta & & \\
-		\textbf{2} & Administrador: comprueba detalles sobre la consulta & & \\
-		& & \textbf{3} & Administrador: libera de la consulta al sanitario \\
+		\textbf{1} & Sanitario: solicita la asignación de la consulta & & \\
+		\textbf{2} & Administrador: comprueba las consultas asociadas al sanitario & & \\
+		& & \textbf{3} & Muestra las consultas asociadas al sanitario \\
+		\textbf{4} & Administrador: Selecciona la consulta a liberar & & \\
+		& & \textbf{5} & Se libera el sanitario asociado a la consulta \\
 	\end{tabularx}
 	
 	\begin{tabularx}{\textwidth}{X}
@@ -1845,8 +1850,10 @@
 	\end{tabularx}
 	\begin{tabularx}{\textwidth}{cXcX}
 		\textbf{1} & Sanitario: solicita la asignación de la consulta & & \\
-		\textbf{2} & Administrador: comprueba detalles sobre la consulta & & \\
-		& & \textbf{3} & Administrador: asigna la consulta al sanitario \\
+		\textbf{2} & Administrador: accede a las consultas disponibles & & \\
+		& & \textbf{3} & Muestra las consultas disponibles \\
+		\textbf{4} & Administrador: Selecciona la consulta a asignar & & \\
+		& & \textbf{5} & Se actualiza el sanitario asociado a la consulta \\
 	\end{tabularx}
 	
 	\begin{tabularx}{\textwidth}{X}
@@ -1913,7 +1920,7 @@
 	\begin{tabularx}{\textwidth}{cXcX}
 		\textbf{1} & Sanitario: solicita a la compañía médica darse de alta como sanitario & & \\
 		\textbf{2} & Compañía médica: tramita la petición & & \\
-		& & \textbf{3} & En caso de ser aceptado, añade su información al sistema \\
+		& & \textbf{3} & En caso de ser aceptado, añade su informació\\
 	\end{tabularx}
 	
 	\begin{tabularx}{\textwidth}{X}
@@ -1978,9 +1985,10 @@
 		\textbf{Curso Normal (Básico)}\\ \hline
 	\end{tabularx}
 	\begin{tabularx}{\textwidth}{cXcX}
-		\textbf{1} & Sanitario: solicita a la compañía médica su baja & & \\
-		\textbf{2} & Compañía médica: tramita la baja & & \\
-		& & \textbf{3} & Elimina toda la información del sanitario \\
+		\textbf{1} & Administrativo: solicita la lista de sanitarios disponibles & & \\
+		& & \textbf{2} & Devuelve la lista de sanitarios \\
+		\textbf{3} & Administrativo: selecciona el sanitario de la lista deseado & & \\
+		& & \textbf{4} & Se elimina el sanitario seleccionado \\
 	\end{tabularx}
 	
 	\begin{tabularx}{\textwidth}{X}
