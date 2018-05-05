@@ -1,0 +1,48 @@
+@startuml
+actor Sanitario
+actor Médico
+actor Paciente
+actor SistAvisos
+
+
+Sanitario -> ClinicaFIS : IniciarConsulta
+
+alt primeraVisita
+	Sanitario -> Paciente : PreguntarInfo
+	Paciente -> Sanitario : ResponderInfo
+	Sanitario -> ClinicaFIS : CrearHC
+end
+
+Sanitario -> ClinicaFIS : AbrirHC
+
+Sanitario -> Paciente : ExplorarPaciente
+
+Sanitario -> ClinicaFIS : AñadirDatosClínicos
+
+alt curaNecesaria
+	Sanitario -> Paciente : Cura
+end
+
+alt necesitaMedicamento
+	Médico -> ClinicaFIS : RecetarMedicamento
+	ClinicaFIS -> Paciente : DevolverReceta
+end
+
+alt necesitaTratamiento
+	Médico -> Paciente : ImponerTratamiento
+end
+
+alt necesitaPrueba
+	Médico -> ClinicaFIS : PedirPrueba
+	ClinicaFIS -> Paciente : AsignarPrueba
+end
+
+alt necesitaEspecialista
+	Médico -> Paciente : DesviarAEspecialista
+end
+
+Sanitario -> ClinicaFIS : TerminarConsulta
+
+ClinicaFIS -> SistAvisos : LlamarSiguientePaciente
+
+@enduml
