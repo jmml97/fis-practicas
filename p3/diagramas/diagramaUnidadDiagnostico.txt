@@ -1,0 +1,39 @@
+@startuml
+actor Paciente
+
+box
+participant ClinicaFIS
+end box
+
+actor Administrativo
+actor Sanitario
+actor Médico
+
+alt paciente_asiste = true
+ Paciente->ClinicaFIS: registrarAsistencia()
+end
+
+Sanitario->ClinicaFIS: registrarResultadoPrueba()
+activate Sanitario
+activate ClinicaFIS
+deactivate Sanitario
+deactivate ClinicaFIS
+
+Médico->ClinicaFIS: enviarInforme(fecha, hora, resultado)
+activate Médico
+activate ClinicaFIS
+deactivate Médico
+deactivate ClinicaFIS
+
+Administrativo->ClinicaFIS: solicitarResultadoInforme(ID_informe)
+activate Administrativo
+activate ClinicaFIS
+deactivate Administrativo
+deactivate ClinicaFIS
+
+Paciente->ClinicaFIS: solicitarResultadoInforme(ID_informe)
+activate Paciente
+activate ClinicaFIS
+deactivate Paciente
+deactivate ClinicaFIS
+@enduml
