@@ -3,12 +3,17 @@ actor Sanitario
 actor Médico
 actor Paciente
 actor SistAvisos
+box
+	participant ClinicaFIS
+end box
+
+hide footbox
 
 activate Sanitario
 
 Sanitario -> ClinicaFIS : IniciarConsulta()
 
-alt primeraVisita
+alt #transparent primeraVisita 
 	Sanitario -> Paciente : informacion = PreguntarInfo()
 	Sanitario -> ClinicaFIS : CrearHC(informacion)
 end
@@ -19,12 +24,12 @@ Sanitario -> Paciente : resultados = ExplorarPaciente()
 
 Sanitario -> ClinicaFIS : AñadirDatosClínicos(resultados)
 
-alt curaNecesaria
+alt #transparent curaNecesaria
 	Sanitario -> Paciente : Cura()
 end
 
 
-alt necesitaMedicamento
+alt #transparent necesitaMedicamento
 	Médico -> ClinicaFIS : medicamento = RecetarMedicamento()
 	activate Médico
 	activate ClinicaFIS
@@ -32,18 +37,18 @@ alt necesitaMedicamento
 	deactivate ClinicaFIS
 end
 
-alt necesitaTratamiento
+alt #transparent necesitaTratamiento
 	Médico -> Paciente : ImponerTratamiento()
 end
 
-alt necesitaPrueba
+alt #transparent necesitaPrueba
 	Médico -> ClinicaFIS : prueba = PedirPrueba()
 	activate ClinicaFIS
 	ClinicaFIS --> Paciente : AsignarPrueba(prueba)
 	deactivate ClinicaFIS
 end
 
-alt necesitaEspecialista
+alt #transparent necesitaEspecialista
 	Médico -> Paciente : DesviarAEspecialista()
 	deactivate Médico
 end
