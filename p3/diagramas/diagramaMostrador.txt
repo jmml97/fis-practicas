@@ -32,9 +32,9 @@ alt #transparent sinCita
  activate A
  A-> ClinicaFIS: PedirCita(Especialidad)
  Activate ClinicaFIS
- ClinicaFIS-->A: infoCita
  create Cita
  ClinicaFIS -> Cita: new
+ ClinicaFIS-->A: infoCita
  deactivate ClinicaFIS
  A-->P: infoCita
  deactivate A
@@ -51,7 +51,9 @@ else conCita
  P->A: AsistirCita(IdPaciente)
  activate A
  A->ClinicaFIS: AsistirCita(IdPaciente)
+ activate ClinicaFIS
  ClinicaFIS -> Cita: citaConfirmada()
+ deactivate ClinicaFIS
  deactivate A
  autonumber stop
 
