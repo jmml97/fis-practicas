@@ -1,0 +1,68 @@
+@startuml
+skinparam SequenceBoxBackgroundColor white
+skinparam SequenceBoxBorderColor black
+
+actor Administrativo as A
+
+box
+ participant ClinicaFIS as C
+end box
+
+activate A
+
+autonumber 1
+A -> C : NuevoRecurso(infoRecurso)
+activate C
+create Recurso as R
+C -> R: new
+deactivate C
+
+autonumber stop
+
+opt #transparent existeRecurso
+ autonumber 1
+ A -> C : ModificarRecurso(IdRecurso)
+ activate C
+ C -> R : delete
+ destroy R
+ create Recurso as R
+ C -> R : new
+ deactivate C
+ autonumber stop
+
+ autonumber 1
+ A -> C : BajaRecurso(IdRecurso)
+ activate C
+ C -> R : delete
+ destroy R
+ deactivate C
+ autonumber stop
+
+ alt #transparent sinAsignar
+   autonumber 1
+   A -> C : AsignacionPermanenteRecurso(IdRecurso1, IdRecurso2)
+   activate C
+   C -> R : AsignarEn(IdRecurso2)
+   deactivate C
+   autonumber stop
+ else
+   autonumber 1
+   A -> C : EliminarAsignacionRecurso(IdRecurso)
+   activate C
+   C -> R : EliminarAsignacion()
+   deactivate C
+   autonumber stop
+ end
+
+ opt #transparent noPermanente
+  autonumber 1
+  A -> C : AsignacionPuntualRecurso(IdRecurso, IdRecurso2, tiempo)
+  activate C
+  C -> R: AsignarEn(IdRecurso2, tiempo)
+  deactivate C
+  autonumber stop
+ end
+end
+
+deactivate A
+@enduml

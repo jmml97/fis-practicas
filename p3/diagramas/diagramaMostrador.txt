@@ -45,7 +45,6 @@ alt #transparent sinCita
 
 else conCita
  |||
- alt #transparent pacienteAsiste
 
  autonumber 1
  P->A: AsistirCita(IdPaciente)
@@ -57,19 +56,9 @@ else conCita
  deactivate A
  autonumber stop
 
-autonumber 1
- P->A: EntregarValoracion(IdPaciente, valoracion)
- activate A
- A->ClinicaFIS: EntregarValoracion(IdPaciente, valoracion)
- activate ClinicaFIS
- create Valoracion
- ClinicaFIS -> Valoracion : new
- deactivate ClinicaFIS
- deactivate A
- autonumber stop
+
 
  |||
- else pacienteModifica
 
  autonumber 1
   P->A: PedirCambioCita(IdPaciente)
@@ -86,7 +75,6 @@ autonumber 1
  autonumber stop
  |||
 
- else pacienteCancela
   autonumber 1
   P->A: CancelarCita(IdPaciente)
   activate A
@@ -96,8 +84,18 @@ autonumber 1
   destroy Cita
   deactivate ClinicaFIS
   deactivate A
- end
 
+else citaAsistida
+ autonumber 1
+ P->A: EntregarValoracion(IdPaciente, valoracion)
+ activate A
+ A->ClinicaFIS: EntregarValoracion(IdPaciente, valoracion)
+ activate ClinicaFIS
+ create Valoracion
+ ClinicaFIS -> Valoracion : new
+ deactivate ClinicaFIS
+ deactivate A
+ autonumber stop
 end
 
 deactivate P
