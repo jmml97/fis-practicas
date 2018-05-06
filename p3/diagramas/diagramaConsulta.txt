@@ -4,45 +4,55 @@ actor Médico
 actor Paciente
 actor SistAvisos
 
+activate Sanitario
 
-Sanitario -> ClinicaFIS : IniciarConsulta
+Sanitario -> ClinicaFIS : IniciarConsulta()
 
 alt primeraVisita
-	Sanitario -> Paciente : PreguntarInfo
-	Paciente -> Sanitario : ResponderInfo
-	Sanitario -> ClinicaFIS : CrearHC
+	Sanitario -> Paciente : informacion = PreguntarInfo()
+	Sanitario -> ClinicaFIS : CrearHC(informacion)
 end
 
-Sanitario -> ClinicaFIS : AbrirHC
+Sanitario -> ClinicaFIS : AbrirHC()
 
-Sanitario -> Paciente : ExplorarPaciente
+Sanitario -> Paciente : resultados = ExplorarPaciente()
 
-Sanitario -> ClinicaFIS : AñadirDatosClínicos
+Sanitario -> ClinicaFIS : AñadirDatosClínicos(resultados)
 
 alt curaNecesaria
-	Sanitario -> Paciente : Cura
+	Sanitario -> Paciente : Cura()
 end
 
+
 alt necesitaMedicamento
-	Médico -> ClinicaFIS : RecetarMedicamento
-	ClinicaFIS -> Paciente : DevolverReceta
+	Médico -> ClinicaFIS : medicamento = RecetarMedicamento()
+	activate Médico
+	activate ClinicaFIS
+	ClinicaFIS --> Paciente : DevolverReceta(medicamento)
+	deactivate ClinicaFIS
 end
 
 alt necesitaTratamiento
-	Médico -> Paciente : ImponerTratamiento
+	Médico -> Paciente : ImponerTratamiento()
 end
 
 alt necesitaPrueba
-	Médico -> ClinicaFIS : PedirPrueba
-	ClinicaFIS -> Paciente : AsignarPrueba
+	Médico -> ClinicaFIS : prueba = PedirPrueba()
+	activate ClinicaFIS
+	ClinicaFIS --> Paciente : AsignarPrueba(prueba)
+	deactivate ClinicaFIS
 end
 
 alt necesitaEspecialista
-	Médico -> Paciente : DesviarAEspecialista
+	Médico -> Paciente : DesviarAEspecialista()
+	deactivate Médico
 end
 
-Sanitario -> ClinicaFIS : TerminarConsulta
+Sanitario -> ClinicaFIS : TerminarConsulta()
+deactivate Sanitario
 
-ClinicaFIS -> SistAvisos : LlamarSiguientePaciente
+activate ClinicaFIS
+ClinicaFIS --> SistAvisos : LlamarSiguientePaciente()
+deactivate ClinicaFIS
 
 @enduml
