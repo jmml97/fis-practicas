@@ -1,0 +1,63 @@
+@startuml
+
+actor Usuario
+actor Administrativo
+box
+ participant ClinicaFIS
+end box
+
+
+Usuario->ClinicaFIS : Identificarse(usuario, contraseña)
+activate Usuario
+activate ClinicaFIS
+Usuario->ClinicaFIS : horario = solicitarHorarioConsulta(consulta)
+deactivate ClinicaFIS
+deactivate Usuario
+
+
+Administrativo->ClinicaFIS : buscarPaciente(DNI)
+activate Administrativo
+activate ClinicaFIS
+ClinicaFIS-->Administrativo : DatosPaciente
+Administrativo->ClinicaFIS : crearConsulta(paciente, médico, datosConsulta)
+deactivate Administrativo
+deactivate ClinicaFIS
+
+alt #transparent consulta existe
+
+Administrativo->ClinicaFIS : modificarConsulta(consulta)
+activate Administrativo
+activate ClinicaFIS
+deactivate ClinicaFIS
+deactivate Administrativo
+
+Administrativo->ClinicaFIS : eliminarConsulta(consulta)
+activate Administrativo
+activate ClinicaFIS
+deactivate ClinicaFIS
+deactivate Administrativo
+
+Administrativo->ClinicaFIS : horarioDisponible = horarioDisponible(consulta.médico)
+activate Administrativo
+activate ClinicaFIS
+Administrativo->ClinicaFIS : definirHorario(consulta)
+deactivate ClinicaFIS
+deactivate Administrativo
+
+ loop #transparent horario no disponible
+  Administrativo->ClinicaFIS : modificarHorarioConsulta(consulta, nuevoHorario)
+  activate Administrativo
+  activate ClinicaFIS
+  
+ deactivate ClinicaFIS
+deactivate Administrativo
+ end
+
+
+ Administrativo->ClinicaFIS : modificacionPuntualHorarioConsulta(consulta, fecha, nuevoHorario)
+ activate Administrativo
+activate ClinicaFIS
+deactivate ClinicaFIS
+deactivate Administrativo
+end
+@enduml
