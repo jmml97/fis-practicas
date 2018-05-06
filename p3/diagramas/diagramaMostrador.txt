@@ -1,0 +1,98 @@
+@startuml
+skinparam SequenceBoxBackgroundColor white
+skinparam SequenceBoxBorderColor black
+
+actor Visitante as V
+actor Paciente as P
+actor Administrativo as A
+
+box
+ participant ClinicaFIS
+end box
+
+autonumber 1
+activate V
+V-> A: PedirInformacion(pregunta)
+activate A
+A->ClinicaFIS: PedirInformacion(pregunta)
+activate ClinicaFIS
+ClinicaFIS-->A: info
+deactivate ClinicaFIS
+A--> V: info
+deactivate A
+autonumber stop
+deactivate V
+
+
+
+alt #transparent sinCita
+ autonumber 1
+ activate P
+ P-> A: PedirCita(IdPaciente, infoDolencia)
+ activate A
+ A-> ClinicaFIS: PedirCita(Especialidad)
+ Activate ClinicaFIS
+ ClinicaFIS-->A: infoCita
+ create control Cita
+ ClinicaFIS -> Cita: new
+ activate Cita
+ deactivate ClinicaFIS
+ A-->P: infoCita
+ deactivate A
+ autonumber stop
+
+
+ |||
+
+else conCita
+ |||
+ alt #transparent pacienteAsiste
+
+ autonumber 1
+ P->A: AsistirCita(IdPaciente)
+ activate A
+ A->ClinicaFIS: AsistirCita(IdPaciente)
+ ClinicaFIS -> Cita: citaConfirmada()
+ deactivate A
+ autonumber stop
+
+autonumber 1
+ P->A: EntregarValoracion(IdPaciente, valoracion)
+ activate A
+ A->ClinicaFIS: EntregarValoracion(IdPaciente, valoracion)
+ deactivate A
+ autonumber stop
+
+ |||
+ else pacienteModifica
+
+ autonumber 1
+  P->A: PedirCambioCita(IdPaciente)
+  activate A
+  A->ClinicaFIS: PedirCambioCita(Especialidad)
+  activate ClinicaFIS
+  ClinicaFIS -> Cita: delete
+  destroy Cita
+  create control Cita
+  ClinicaFIS -> Cita: new
+  activate Cita
+  ClinicaFIS-->A: infoNuevaCita
+  deactivate ClinicaFIS
+  A-->P: infoNuevaCita
+  deactivate A
+ autonumber stop
+ |||
+
+ else pacienteCancela
+  autonumber 1
+  P->A: CancelarCita(IdPaciente)
+  activate A
+  A->ClinicaFIS: CancelarCita(IdPaciente)
+  destroy Cita
+  deactivate A
+ end
+
+end
+
+deactivate P
+@enduml
