@@ -1,7 +1,8 @@
 ﻿@startuml
 
 class Contrato{
-  Duracion
+  Duración
+  Tipo
   Datos Contrato
 }
 
@@ -9,7 +10,8 @@ class Usuario{
   Username
   Password
   DNI
-  Nombre y apellidos
+  Nombre
+  Apellidos
 }
 
 class Paciente {
@@ -20,76 +22,90 @@ class Paciente {
 
 class Personal {
   Clínica
-  Despacho asignado
+  Planta
   Horario
+  Salario
 }
 
-class Administrativo{
-  Tarea a desempeñar
+class Administrativo {
+  Cargo
+  Despacho
 }
 
-class Sanitario{
+class Sanitario {
   Fecha Titulación
+  Lista Pacientes
 }
 
-class Enfermero{
+class Enfermero {
   IdEnfermero
 }
 
 class Médico {
-  IdMedico
-  Lista Pacientes
+  IdMédico
   Especialidad
 }
 
 class Cita {
   Fecha
   IdPaciente
-  IdMedico
+  IdMédico
   Asistencia
   Diagnóstico
 }
 
-class "Sistema de avisos" as SA{
+class "Sistema de avisos" as SA {
   Temporizador
+  Tipo
 }
 
-class "Objeto valorable" as OV
+class "Objeto valorable" as OV 
 
-class Valoración{
+class Valoración {
   Nota
   Comentarios
 }
 
-class Visitante
+class Visitante {
+  Nombre
+  Apellidos
+  DNI
+}
 
-class "Compañía médica" as CM
+class "Compañía médica" as CM {
+  Nombre
+}
 
 class Recurso {
   IdRecurso
 }
 
-class Salas{
+class Salas {
   Localización
   Capacidad
 }
 
-class Maquinaria{
+class Maquinaria {
+  Tipo
   Fecha Adquisicion
   Fecha Última Revisión
 }
 
 class "Procedimiento médico" as Proc {
+  Tipo
   Resultado
+  Urgencia
 }
 
-class "Prueba médica" as Prue
+class "Prueba médica" as Prue {
+  
+}
 
-class Cura{
+class Cura {
   Material Usado
 }
 
-class Medicamento{
+class Medicamento {
   Código Medicamento
   Tipo
 }
