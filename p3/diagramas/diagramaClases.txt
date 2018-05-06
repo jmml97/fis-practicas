@@ -24,7 +24,7 @@ class "Objeto valorable" as OV
 class Valoración
 class Visitante
 class "Compañía médica" as CM
-class Recursos
+class Recurso
 class Salas
 class Maquinaria
 class "Procedimiento médico" as Proc {
@@ -56,7 +56,7 @@ OV -- "0..*" Valoración : valorado mediante >
 
 Personal --|> OV
 Cita --|> OV
-Recursos --|> OV
+Recurso --|> OV
 
 Paciente "0..*" -- CM : dado de altan en >
 Personal "0..*" -- CM : trabaja para >
@@ -65,11 +65,11 @@ Administrativo "0..*" -- CM  : gestiona >
 Cita "0..*" -- Salas : realiza en >
 Cita "0..*" -- "0..*" Proc : requiere de >
 
-Recursos <|-- Salas
-Recursos <|-- Maquinaria
+Recurso <|-- Salas
+Recurso <|-- Maquinaria
 Salas "0..*" -- "0..*" Maquinaria : tienen >
 
-CM -- "0..*" Recursos : posee >
+CM -- "0..*" Recurso : posee >
 Visitante "0..*" -- CM : informa <
 
 Maquinaria "0..*" -- "1..*" Prue : necesita <
