@@ -2,6 +2,7 @@
 class Contrato
 class Usuario
 class Paciente {
+  IdPaciente
   Historial clínico
   Datos clínicos
 }
