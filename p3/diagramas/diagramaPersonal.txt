@@ -1,0 +1,37 @@
+@startuml
+actor Personal
+actor Administrativo
+actor Sanitario
+actor CompañíaMédica
+
+Personal -> ClinicaFIS : ConsultarHorarioPersonal
+ClinicaFIS --> Personal : horario
+
+alt No contratado
+	Personal -> ClinicaFIS : Contratación
+	Administrativo -> ClinicaFIS : Contratación
+end
+
+Personal -> ClinicaFIS : AsignarHorarioPersonal
+Administrativo -> ClinicaFIS : AsignarHorarioPersonal
+
+Personal -> ClinicaFIS : FinDeContrato
+Administrativo -> ClinicaFIS : FinDeContrato
+
+Personal -> ClinicaFIS : LiberarSanitarioConsultaMedica
+Administrativo -> ClinicaFIS : LiberarSanitarioConsultaMedica
+
+Personal -> ClinicaFIS : AsignarSanitarioConsultaMedica
+Administrativo -> ClinicaFIS : AsignarSanitarioConsultaMedica
+
+alt Sanitario no dado de alta
+	Sanitario -> ClinicaFIS : AltaSanitario
+	CompañíaMédica -> ClinicaFIS : AltaSanitario
+end
+
+alt Sanitario dado de alta
+	Sanitario -> ClinicaFIS : BajaSanitario
+	CompañíaMédica -> ClinicaFIS : BajaSanitario
+end
+
+@enduml
