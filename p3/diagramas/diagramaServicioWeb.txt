@@ -1,0 +1,27 @@
+@startuml
+actor Paciente
+
+box
+participant ClinicaFIS
+end box
+
+loop hayDisponibilidad
+ Paciente->ClinicaFIS: solicitarCita(especialidad, fecha, hora)
+
+ ClinicaFIS-->Paciente: disponibilidad
+end
+
+Paciente->ClinicaFIS: confirmarCita(cita)
+
+loop hayDisponibilidad
+ Paciente->ClinicaFIS: cambiarCita(cita, fecha, hora)
+
+ ClinicaFIS-->Paciente: disponibilidad
+end
+
+Paciente->ClinicaFIS: confirmarCambio()
+
+Paciente->ClinicaFIS: anularCita(cita)
+
+Paciente->ClinicaFIS: valoracion(sujetoValorable, comentario)
+@enduml
