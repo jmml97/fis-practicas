@@ -1,5 +1,4 @@
-﻿@startuml
-
+@startuml
 class Contrato{
   Duración
   Tipo
@@ -48,8 +47,6 @@ class Médico {
 
 class Cita {
   Fecha
-  IdPaciente
-  IdMédico
   Asistencia
   Diagnóstico
 }
@@ -59,7 +56,7 @@ class "Sistema de avisos" as SA {
   Tipo
 }
 
-class "Objeto valorable" as OV 
+class "Objeto valorable" as OV
 
 class Valoración {
   Nota
@@ -98,7 +95,7 @@ class "Procedimiento médico" as Proc {
 }
 
 class "Prueba médica" as Prue {
-  
+
 }
 
 class Cura {
@@ -110,8 +107,12 @@ class Medicamento {
   Tipo
 }
 
+class Asignacion {
+  Tiempo
+}
+
 Contrato -- Personal : firmado por >
-Contrato "0..*" -- Administrativo : < tramita 
+Contrato "0..*" -- Administrativo : < tramita
 
 Usuario <|-- Paciente
 Usuario <|-- Personal
@@ -155,4 +156,6 @@ Proc <|-- Cura
 
 Cura "0..*" -- "0..*" Medicamento : recetado <
 
+Asignacion "0..*" -- Recurso : asignado a <
+Asignacion "0..*" -- Recurso: le asignan <
 @enduml
