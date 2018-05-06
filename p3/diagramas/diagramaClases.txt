@@ -1,0 +1,81 @@
+@startuml
+class Contrato
+class Usuario
+class Paciente {
+  Historial clínico
+  Datos clínicos
+}
+class Personal {
+  Horario
+}
+class Administrativo
+class Sanitario
+class Enfermero
+class Médico {
+  Especialidad
+}
+class Cita {
+  Asistencia
+  Diagnóstico
+}
+class "Sistema de avisos" as SA
+class "Objeto valorable" as OV
+class Valoración
+class Visitante
+class "Compañía médica" as CM
+class Recursos
+class Salas
+class Maquinaria
+class "Procedimiento médico" as Proc {
+  Resultado
+}
+class "Prueba médica" as Prue
+class Cura
+class Medicamento
+
+Contrato -- Personal : firmado por >
+Contrato "0..*" -- Administrativo : < tramita 
+
+Usuario <|-- Paciente
+Usuario <|-- Personal
+
+Personal <|-- Administrativo
+Personal <|-- Sanitario
+
+Sanitario <|-- Enfermero
+Sanitario <|-- Médico
+
+Médico -- "0..*" Cita : atiende >
+Cita "0..*" -- Paciente : acude a <
+
+SA -- "0..*" Cita : recuerda >
+
+Paciente -- "0..*" Valoración : hace >
+OV -- "0..*" Valoración : valorado mediante >
+
+Personal --|> OV
+Cita --|> OV
+Recursos --|> OV
+
+Paciente "0..*" -- CM : dado de altan en >
+Personal "0..*" -- CM : trabaja para >
+Administrativo "0..*" -- CM  : gestiona >
+
+Cita "0..*" -- Salas : realiza en >
+Cita "0..*" -- "0..*" Proc : requiere de >
+
+Recursos <|-- Salas
+Recursos <|-- Maquinaria
+Salas "0..*" -- "0..*" Maquinaria : tienen >
+
+CM -- "0..*" Recursos : posee >
+Visitante "0..*" -- CM : informa <
+
+Maquinaria "0..*" -- "1..*" Prue : necesita <
+
+Proc <|-- Prue
+Proc <|-- Cura
+
+Cura "0..*" -- "0..*" Medicamento : recetado <
+
+@enduml
