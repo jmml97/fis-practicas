@@ -123,7 +123,7 @@ Personal <|-- Sanitario
 Sanitario <|-- Enfermero
 Sanitario <|-- Médico
 
-Médico -- "0..*" Cita : atiende >
+Sanitario -- "0..*" Cita : atiende >
 Cita "0..*" -- Paciente : acude a <
 
 SA -- "0..*" Cita : recuerda >
