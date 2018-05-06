@@ -1,0 +1,27 @@
+@startuml
+actor Usuario
+actor Administrativo
+actor Paciente
+
+Usuario -> ClinicaFIS : ConsultarDatosPaciente
+ClinicaFIS --> Usuario : datos_paciente
+
+alt Paciente no dado de alta
+	Administrativo -> ClinicaFIS : AltaPaciente
+  Paciente -> ClinicaFIS : AltaPaciente
+end
+
+note left
+	Se entiende que al dar de alta a
+  un paciente se le crea
+  automáticamente una cuenta en
+  el sistema aunque no la use
+end note
+
+Administrativo -> ClinicaFIS : ModificarPaciente
+Paciente -> ClinicaFIS : ModificarPaciente
+
+Administrativo -> ClinicaFIS : BajaPaciente
+Paciente -> ClinicaFIS : BajaPaciente
+
+@enduml
