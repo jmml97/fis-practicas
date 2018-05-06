@@ -1,37 +1,112 @@
 @startuml
 actor Personal
-actor Administrativo
 actor Sanitario
+actor Administrativo
 actor CompañíaMédica
 
-Personal -> ClinicaFIS : ConsultarHorarioPersonal
+box
+	participant ClinicaFIS
+end box
+
+hide footbox
+
+activate Personal
+
+autonumber 1
+Personal -> ClinicaFIS : ConsultarHorarioPersonal(idPersonal)
+activate ClinicaFIS
 ClinicaFIS --> Personal : horario
+deactivate ClinicaFIS
+autonumber stop
 
-alt No contratado
-	Personal -> ClinicaFIS : Contratación
-	Administrativo -> ClinicaFIS : Contratación
+alt #transparent No contratado
+	autonumber 1
+	Personal -> Administrativo : Contratación(datos_personal)
+	activate Administrativo
+	Administrativo -> ClinicaFIS : Contratación(datos_personal)
+	activate ClinicaFIS
+	ClinicaFIS --> Administrativo : id_personal
+	deactivate ClinicaFIS
+	Administrativo --> Personal : id_personal
+	deactivate Administrativo
+	autonumber stop
 end
 
-Personal -> ClinicaFIS : AsignarHorarioPersonal
-Administrativo -> ClinicaFIS : AsignarHorarioPersonal
+autonumber 1
+Personal -> Administrativo : AsignarHorarioPersonal(id_personal, nuevo_horario)
+activate Administrativo
+Administrativo -> ClinicaFIS : AsignarHorarioPersonal(id_personal, nuevo_horario)
+activate ClinicaFIS
+ClinicaFIS --> Administrativo : confirmacion
+deactivate ClinicaFIS
+Administrativo --> Personal : confirmacion
+deactivate Administrativo
+autonumber stop
 
-Personal -> ClinicaFIS : FinDeContrato
-Administrativo -> ClinicaFIS : FinDeContrato
+autonumber 1
+Personal -> Administrativo : FinDeContrato(id_personal)
+activate Administrativo
+Administrativo -> ClinicaFIS : FinDeContrato(id_personal)
+activate ClinicaFIS
+ClinicaFIS --> Administrativo : confirmacion
+deactivate ClinicaFIS
+Administrativo --> Personal : confirmacion
+deactivate Administrativo
+deactivate Personal
+autonumber stop
 
-Personal -> ClinicaFIS : LiberarSanitarioConsultaMedica
-Administrativo -> ClinicaFIS : LiberarSanitarioConsultaMedica
+autonumber 1
+Sanitario -> Administrativo : LiberarSanitarioConsultaMedica(id_sanitario, id_cita)
+activate Administrativo
+activate Sanitario
+Administrativo -> ClinicaFIS : LiberarSanitarioConsultaMedica(id_sanitario, id_cita)
+activate ClinicaFIS
+ClinicaFIS --> Administrativo : confirmacion
+deactivate ClinicaFIS
+Administrativo --> Sanitario : confirmacion
+deactivate Administrativo
+autonumber stop
 
-Personal -> ClinicaFIS : AsignarSanitarioConsultaMedica
-Administrativo -> ClinicaFIS : AsignarSanitarioConsultaMedica
+autonumber 1
+Sanitario -> Administrativo : AsignarSanitarioConsultaMedica(id_sanitario, id_cita)
+activate Administrativo
+Administrativo -> ClinicaFIS : AsignarSanitarioConsultaMedica(id_sanitario, id_cita)
+activate ClinicaFIS
+ClinicaFIS --> Administrativo : confirmacion
+deactivate ClinicaFIS
+Administrativo --> Sanitario : confirmacion
+deactivate Administrativo
+autonumber stop
 
-alt Sanitario no dado de alta
-	Sanitario -> ClinicaFIS : AltaSanitario
-	CompañíaMédica -> ClinicaFIS : AltaSanitario
-end
+alt #transparentSanitario no dado de alta
+	autonumber 1
+	Sanitario -> CompañíaMédica : AltaSanitario(datos_sanitario)
+	activate CompañíaMédica
+	CompañíaMédica -> ClinicaFIS : AltaSanitario(datos_sanitario)
+	activate ClinicaFIS
+	ClinicaFIS --> CompañíaMédica : id_sanitario
+	deactivate ClinicaFIS
+	CompañíaMédica --> Sanitario : id_sanitario
+	deactivate CompañíaMédica
+	autonumber stop
 
-alt Sanitario dado de alta
-	Sanitario -> ClinicaFIS : BajaSanitario
-	CompañíaMédica -> ClinicaFIS : BajaSanitario
+	|||
+
+ else dado de alta
+
+	|||
+
+	autonumber 1
+	Sanitario -> CompañíaMédica : BajaSanitario(id_sanitario)
+	activate CompañíaMédica
+	CompañíaMédica -> ClinicaFIS : BajaSanitario(id_sanitario)
+	activate ClinicaFIS
+	ClinicaFIS --> CompañíaMédica : confirmacion
+	deactivate ClinicaFIS
+	CompañíaMédica --> Sanitario : confirmacion
+	deactivate CompañíaMédica
+	deactivate Sanitario
+	autonumber stop
 end
 
 @enduml

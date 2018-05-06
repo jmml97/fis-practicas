@@ -9,12 +9,14 @@ end box
 
 hide footbox
 
+autonumber 1
 Usuario -> ClinicaFIS : ConsultarDatosPaciente(id_paciente)
 activate Usuario
 activate ClinicaFIS
 ClinicaFIS --> Usuario : datos_paciente
 deactivate Usuario
 deactivate ClinicaFIS
+autonumber stop
 
 autonumber 1
 alt #transparent Paciente no dado de alta
