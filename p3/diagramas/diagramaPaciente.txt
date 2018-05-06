@@ -1,15 +1,35 @@
 @startuml
 actor Usuario
-actor Administrativo
 actor Paciente
+actor Administrativo
 
-Usuario -> ClinicaFIS : ConsultarDatosPaciente
+box
+	participant ClinicaFIS
+end box
+
+hide footbox
+
+Usuario -> ClinicaFIS : ConsultarDatosPaciente(id_paciente)
+activate Usuario
+activate ClinicaFIS
 ClinicaFIS --> Usuario : datos_paciente
+deactivate Usuario
+deactivate ClinicaFIS
 
-alt Paciente no dado de alta
-	Administrativo -> ClinicaFIS : AltaPaciente
-  Paciente -> ClinicaFIS : AltaPaciente
+autonumber 1
+alt #transparent Paciente no dado de alta
+	Paciente -> Administrativo : AltaPaciente(datos_paciente)
+	activate Paciente
+	activate Administrativo
+	Administrativo -> ClinicaFIS : AltaPaciente(datos_paciente)
+	activate ClinicaFIS
+	ClinicaFIS --> Administrativo : id_paciente
+	deactivate ClinicaFIS
+	Administrativo --> Paciente : id_paciente
+	deactivate Administrativo
 end
+autonumber stop
+
 
 note left
 	Se entiende que al dar de alta a
@@ -18,10 +38,28 @@ note left
   el sistema aunque no la use
 end note
 
-Administrativo -> ClinicaFIS : ModificarPaciente
-Paciente -> ClinicaFIS : ModificarPaciente
+autonumber 1
+Paciente -> Administrativo : ModificarPaciente (id_paciente, nuevos_datos_paciente)
+activate Administrativo
+Administrativo -> ClinicaFIS : ModificarPaciente (id_paciente, nuevos_datos_paciente)
+activate ClinicaFIS
+ClinicaFIS --> Administrativo : confirmacion
+deactivate ClinicaFIS
+Administrativo --> Paciente : confirmacion
+deactivate Administrativo
+autonumber stop
 
-Administrativo -> ClinicaFIS : BajaPaciente
-Paciente -> ClinicaFIS : BajaPaciente
+autonumber 1
+Paciente -> Administrativo : BajaPaciente (id_paciente)
+activate Administrativo
+Administrativo -> ClinicaFIS : BajaPaciente (id_paciente)
+activate ClinicaFIS
+ClinicaFIS --> Administrativo : confirmacion
+deactivate ClinicaFIS
+Administrativo --> Paciente : confirmacion
+deactivate Administrativo
+autonumber stop
+
+deactivate Paciente
 
 @enduml
