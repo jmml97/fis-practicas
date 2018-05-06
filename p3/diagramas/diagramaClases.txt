@@ -1,4 +1,4 @@
-@startuml
+﻿@startuml
 
 class Contrato{
   Duracion
@@ -13,7 +13,7 @@ class Usuario{
 }
 
 class Paciente {
-  Código Paciente
+  IdPaciente
   Historial clínico
   Datos clínicos
 }
@@ -33,19 +33,19 @@ class Sanitario{
 }
 
 class Enfermero{
-  Código Enfermero
+  IdEnfermero
 }
 
 class Médico {
-  Código Médico
+  IdMedico
   Lista Pacientes
   Especialidad
 }
 
 class Cita {
   Fecha
-  Codigo Paciente
-  Codigo Médico
+  IdPaciente
+  IdMedico
   Asistencia
   Diagnóstico
 }
@@ -65,7 +65,9 @@ class Visitante
 
 class "Compañía médica" as CM
 
-class Recurso
+class Recurso {
+  IdRecurso
+}
 
 class Salas{
   Localización
