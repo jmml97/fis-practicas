@@ -42,14 +42,16 @@ opt #transparent existeRecurso
    autonumber 1
    A -> C : AsignacionPermanenteRecurso(IdRecurso1, IdRecurso2)
    activate C
-   C -> R : AsignarEn(IdRecurso2)
+   create Asignacion as As
+   C -> As : new
    deactivate C
    autonumber stop
  else
    autonumber 1
    A -> C : EliminarAsignacionRecurso(IdRecurso)
    activate C
-   C -> R : EliminarAsignacion()
+   C -> As : delete
+   destroy As
    deactivate C
    autonumber stop
  end
@@ -58,7 +60,8 @@ opt #transparent existeRecurso
   autonumber 1
   A -> C : AsignacionPuntualRecurso(IdRecurso, IdRecurso2, tiempo)
   activate C
-  C -> R: AsignarEn(IdRecurso2, tiempo)
+  create Asignacion as As
+  C -> As: new
   deactivate C
   autonumber stop
  end
