@@ -44,54 +44,69 @@
 \begin{table}[H]
 \centering
 \label{my-label}
-\begin{tabular}{l|l}
+\begin{tabularx}{\textwidth}{l|X}
 \textbf{Nombre}          & llamarSiguientePaciente(idSanitario) \\
 \textbf{Responsabilidad} & Llamar al siguiente paciente del sanitario identificado por idSanitario \\
 \textbf{Tipo}            & ClinicaFIS \\
 \textbf{Notas}           &  \\
-\textbf{Excepciones}     & - El sanitario identificado por idSanitario no existe \\
+\textbf{Excepciones}     & 
+\begin{itemize}
+\item El sanitario identificado por idSanitario no existe
+\end{itemize}\\
 \textbf{Salida}          & idPaciente \\
 \textbf{Precondiciones}  &  \\
-\textbf{Poscondiciones}  & - Se creó un objeto cita de tipo Cita correctamente inicializado\\
- & - Se creó un enlace entre cita y el sanitario identificado por idSanitario\\
- & - Se creó un enlace entre cita y el siguiente paciente, identificado por idPaciente\\
-\end{tabular}
+\textbf{Poscondiciones}  &
+\begin{itemize}
+\item Se creó un objeto cita de tipo Cita correctamente inicializado
+\item Se creó un enlace entre cita y el sanitario identificado por idSanitario
+\item Se creó un enlace entre cita y el siguiente paciente, identificado por idPaciente 
+\end{itemize}\\
+\textbf{Autor} & Sofía Almeida Bruno\\
+\end{tabularx}
 \end{table}
 
 \begin{table}[H]
 \centering
 \label{my-label}
-\begin{tabular}{l|l}
+\begin{tabularx}{\textwidth}{l|X}
 \textbf{Nombre}          & terminarConsulta(idPaciente, idSanitario) \\
 \textbf{Responsabilidad} & Finalizar la cita realizada por el sanitario identificado por idSanitario al paciente identificado por idPaciente\\
 \textbf{Tipo}            & ClinicaFIS \\
 \textbf{Notas}           &  \\
-\textbf{Excepciones}     & -El paciente identificado por idPaciente no existe\\
-& - El sanitario identificado por idSanitario no existe \\
+\textbf{Excepciones}     & 
+\begin{itemize}
+\item El paciente identificado por idPaciente no existe
+\item El sanitario identificado por idSanitario no existe
+\end{itemize}\\
 \textbf{Salida}          &  \\
 \textbf{Precondiciones}  &  \\
-\textbf{Poscondiciones}  & - Se destruyó el objeto cita asociado al enlace entre el sanitario identificado por idSanitario y el paciente identificado por idPaciente\\
- & - ???\\
- & - Se ???\\
-\end{tabular}
+\textbf{Poscondiciones}  & \begin{itemize}
+	\item Se destruyó el objeto cita asociado al enlace entre el sanitario identificado por idSanitario y el paciente identificado por idPaciente
+\end{itemize}\\
+\textbf{Autor}           & Sofía Almeida Bruno
+\end{tabularx}
 \end{table}
 
 \begin{table}[H]
 \centering
 \label{my-label}
-\begin{tabular}{l|l}
-\textbf{Nombre}          & terminarConsulta(idPaciente, idSanitario) \\
-\textbf{Responsabilidad} & Finalizar la cita realizada por el sanitario identificado por idSanitario al paciente identificado por idPaciente\\
+\begin{tabularx}{\textwidth}{l|X}
+\textbf{Nombre}          & iniciarConsulta(idPaciente) \\
+\textbf{Responsabilidad} & Comenzar la consulta al paciente identificado por idPaciente\\
 \textbf{Tipo}            & ClinicaFIS \\
 \textbf{Notas}           &  \\
-\textbf{Excepciones}     & -El paciente identificado por idPaciente no existe\\
-& - El sanitario identificado por idSanitario no existe \\
-\textbf{Salida}          &  \\
+\textbf{Excepciones}     &
+\begin{itemize}
+\item El paciente identificado por idPaciente no existe
+\end{itemize}\\
+\textbf{Salida}          &  idHC\\
 \textbf{Precondiciones}  &  \\
-\textbf{Poscondiciones}  & - Se destruyó el objeto cita asociado al enlace entre el sanitario identificado por idSanitario y el paciente identificado por idPaciente\\
- & - ???\\
- & - Se ???\\
-\end{tabular}
+\textbf{Poscondiciones}  &
+\begin{itemize}
+\item Se destruyó el objeto cita asociado al enlace entre el sanitario identificado por idSanitario y el paciente identificado por idPaciente
+\end{itemize}\\
+\textbf{Autor}           & Sofía Almeida Bruno
+\end{tabularx}
 \end{table}
 
 \end{document}
