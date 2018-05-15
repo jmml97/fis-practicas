@@ -95,7 +95,7 @@
 \textbf{Responsabilidad} & Comenzar la consulta al paciente identificado por idPaciente\\
 \textbf{Tipo}            & ClinicaFIS \\
 \textbf{Notas}           &  \\
-\textbf{Excepciones}     &
+\textbf{Excepciones}     & 
 \begin{itemize}
 \item El paciente identificado por idPaciente no existe
 \end{itemize}\\
@@ -103,11 +103,91 @@
 \textbf{Precondiciones}  &  \\
 \textbf{Poscondiciones}  &
 \begin{itemize}
-\item Se destruyó el objeto cita asociado al enlace entre el sanitario identificado por idSanitario y el paciente identificado por idPaciente
+\item Se creó un objeto de la clase HistoriaClinica debidamente inicializado e identificado por idHC
+\item Se creó un enlace entre el objeto de la clase HistoriaClinica identificado por idHC y el objeto Paciente identificado por idPaciente
 \end{itemize}\\
 \textbf{Autor}           & Sofía Almeida Bruno
 \end{tabularx}
 \end{table}
+
+\begin{table}[H]
+\centering
+\label{my-label}
+\begin{tabularx}{\textwidth}{l|X}
+\textbf{Nombre}          & registrarAlergia(idHC, tipoAlergia, textoExplicativo) \\
+\textbf{Responsabilidad} & Almacenar un objeto Alergia de tipo tipoAlergia en el objeto HistoriaClinica identificado por idHC con su textoExplicativo correspondiente\\
+\textbf{Tipo}            & ClinicaFIS \\
+\textbf{Notas}           &  \\
+\textbf{Excepciones}     & 
+\begin{itemize}
+\item No existe la HistoriaClinica identificada por idHC
+\item No extiste el tipo de alergia tipoAlergia
+\end{itemize}\\
+\textbf{Salida}          &  \\
+\textbf{Precondiciones}  &  \\
+\textbf{Poscondiciones}  &
+\begin{itemize}
+\item Se creó un objeto de la clase Alergia identificado por al
+\item Se inicializó al.textoExplicativo a textoExplicativo
+\item Se inicializó al.tipoAlergia a tipoAlergia
+\item Se creó un enlace entre el objeto de la clase Alergia identificado por al y el objeto de la clase HistoriaClinica identificado por idHC
+\end{itemize}\\
+\textbf{Autor}           & Sofía Almeida Bruno
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\centering
+\label{my-label}
+\begin{tabularx}{\textwidth}{l|X}
+\textbf{Nombre}          & diagnosticar(idHC, codDiagnostico,textoExplicativo) \\
+\textbf{Responsabilidad} & Añadir el Diagnostico identificado por codDignostico a la HistoriaClinica identificada por idHC\\
+\textbf{Tipo}            & ClinicaFIS \\
+\textbf{Notas}           &  \\
+\textbf{Excepciones}     & 
+\begin{itemize}
+\item La HistoriaClinica identificada por idHC no existe
+\end{itemize}\\
+\textbf{Salida}          &  \\
+\textbf{Precondiciones}  &  \\
+\textbf{Poscondiciones}  &
+\begin{itemize}
+\item Se creó un objeto de la clase Diagnostico identificado diag
+\item Se añadió a diag codDiagnostico en el atributo correspondiente
+\item Se inicializó diag.fechaAnotacion a la fecha actual
+\item Se inicializó diag.comentario a textoExplicativo
+\item Se creó un enlace entre el diag y el objeto de la clase HistoriaClinica identificado por idHC
+\end{itemize}\\
+\textbf{Autor}           & Sofía Almeida Bruno
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\centering
+\label{my-label}
+\begin{tabularx}{\textwidth}{l|X}
+\textbf{Nombre}          & recetar(idHC, idTratamiento, nombreMedicamento, posologia) \\
+\textbf{Responsabilidad} & Añadir una receta a la HistoriaClinica identificada por idHC\\
+\textbf{Tipo}            & ClinicaFIS \\
+\textbf{Notas}           &  \\
+\textbf{Excepciones}     & 
+\begin{itemize}
+\item La HistoriaClinica identificada por idHC no existe
+\item El Tratamiento identificado por idTratamiento no existe
+\end{itemize}\\
+\textbf{Salida}          &  \\
+\textbf{Precondiciones}  &  \\
+\textbf{Poscondiciones}  &
+\begin{itemize}
+\item Se creó un objeto de la clase Receta identificado por rec debidamente inicializado
+\item Se creó un enlace entre el objeto de la clase Receta identificado por rec y el objeto Tratamiento identificado por idTratamiento
+\item Se actualizó idTratamiento.fechaAnotacion a la fecha actual
+\item Se creó un enlace entre el objeto de la clase Tratamiento identificado por idTratamiento y el objeto de la clase HistoriaClinica identificado por idHC
+\end{itemize}\\
+\textbf{Autor}           & Sofía Almeida Bruno
+\end{tabularx}
+\end{table}
+
 
 \end{document}
 
