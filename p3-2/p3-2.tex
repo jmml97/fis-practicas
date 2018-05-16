@@ -239,7 +239,7 @@
 			\item Se creó un objeto de la clase AnotacionHC (anot), con el atributo this.comentario=comentario, y debidamente inicializado.
 			\item Se creó un enlace entre anot y el objeto de la clase HistoriaClínica identificado por idHC.
 		\end{itemize} \\
-		\textbf{Autor}			 & Simón López Vico
+		\textbf{Autor}			 & Simón López Vico 
 	\end{tabularx}
 \end{table}
 
@@ -276,20 +276,19 @@
 	\label{my-label}
 	\begin{tabularx}{\textwidth}{l|X}
 		\textbf{Nombre}          & crearCM(especialidad, idSanitario) \\
-		\textbf{Responsabilidad} & Un administrativo se encarga de crear un contrato médico con especialidadMedica=especialidad al sanitario identificado con idSanitario, y al médico se le asigna una consulta con idConsulta. \\
+		\textbf{Responsabilidad} & Crear una consulta médica con tespecialidad=especialidad y asociada al sanitario identificado con idSanitario. \\
 		\textbf{Tipo}            & ClinicaFIS \\
 		\textbf{Notas}           & \\
 		\textbf{Excepciones}     &
 		\begin{itemize}
 			\item No existe un sanitario identificado con idSanitario.
 			\item No existe la especialidad indicada.
+			\item El sanitario idSanitario no es especialista en especialidad.
 		\end{itemize} \\
 		\textbf{Salida}          & idConsulta \\
 		\textbf{Precondiciones}  & \\
 		\textbf{Poscondiciones}  & 
 		\begin{itemize}
-			\item Se creó un objeto de la clase Contrato (cont), debidamente inicializado.
-			\item Se creó un enlace entre cont y el objeto de la clase Sanitario identificado mediante idSanitario.
 			\item Se creó un objeto de la clase Consulta (cons), con tespecialidad=especialidad, y debidamente inicializado.
 			\item Se creó un enlace entre cons y el objeto de la clase Sanitario identificado mediante idSanitario.
 		\end{itemize} \\
@@ -304,7 +303,7 @@
 	\label{my-label}
 	\begin{tabularx}{\textwidth}{l|X}
 		\textbf{Nombre}          & modificarCM(idConsulta, especialidad, idSanitario) \\
-		\textbf{Responsabilidad} & Modificar el contrato médico del sanitario identificado con idSanitario, que tiene asignada la consulta idConsulta, con tespecialidad=especialidad. \\
+		\textbf{Responsabilidad} & Modificar la consulta médica idConsulta asociada al sanitario identificado con idSanitario, con tespecialidad=especialidad. \\
 		\textbf{Tipo}            & ClinicaFIS \\
 		\textbf{Notas}           &  \\
 		\textbf{Excepciones}     &
@@ -312,6 +311,9 @@
 			\item No existe una consulta identificada con idConsulta.
 			\item La consulta idConsulta no tiene tespecialidad=especialidad.
 			\item No existe un sanitario identificado con idSanitario. 
+			\item La consulta idConsulta no está asociada a idSanitario.
+			\item No existe la especialidad indicada.
+			\item El sanitario idSanitario no es especialista en especialidad.
 		\end{itemize} \\
 		\textbf{Salida}          &  \\
 		\textbf{Precondiciones}  &  \\
@@ -327,7 +329,7 @@
 	\label{my-label}
 	\begin{tabularx}{\textwidth}{l|X}
 		\textbf{Nombre}          & eliminarCM(idConsulta)\\
-		\textbf{Responsabilidad} & Eliminar el contrato médico relacionado con la consulta identificada por idConsulta. \\
+		\textbf{Responsabilidad} & Eliminar la consulta médica identificada por idConsulta. \\
 		\textbf{Tipo}            & ClinicaFIS \\
 		\textbf{Notas}           &  \\
 		\textbf{Excepciones}     &
@@ -344,10 +346,6 @@
 		\textbf{Autor}			 & Simón López Vico
 	\end{tabularx}
 \end{table}
-
-
-
-
 
 \end{document}
 
