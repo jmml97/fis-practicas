@@ -189,5 +189,165 @@
 \end{table}
 
 
+\begin{table}[H]
+	\centering
+	\label{my-label}
+	\begin{tabularx}{\textwidth}{l|X}
+		\textbf{Nombre}          & imponerTratamiento(idHC, codDiagnostico, textoExplicativo)\\
+		\textbf{Responsabilidad} & Asignar el tratamiento relacionado con el diagnóstico identificado con codDiagnostico al paciente con el historial clínico identificado por idHC y añadir textoExplicativo a AnotaciónHC.  \\
+		\textbf{Tipo}            & ClinicaFIS \\
+		\textbf{Notas}           & La variable textoExplicativo tendrá información de como realizar el tratamiento asignado. \\
+		\textbf{Excepciones}     & 
+		\begin{itemize}
+			\item No existe una historia clínica identificada por idHC.
+			\item No existe un diagnóstico identificado por codDiagnostico.
+		\end{itemize} \\
+		\textbf{Salida}          &  \\
+		\textbf{Precondiciones}  &  \\
+		\textbf{Poscondiciones}  &
+		\begin{itemize}
+			\item Se creó un objeto de la clase Tratamiento (trat), debidamente inicializado.
+			\item Se creó un enlace entre trat y el objeto de la clase Diagnostico identificado por codDiagnostico. 
+			\item Se creó un enlace entre trat y el objeto de la clase HistoriaClinica identificado por idHC.
+			\item Se creó un objeto de la clase AnotacionHC (anot), con el atributo comentario=textoExplicativo, y debidamente inicializado.
+			\item Se creó un enlace entre anot y el objeto de la clase HistoriaClínica identificado por idHC.
+		\end{itemize} \\
+		\textbf{Autor}			 & Simón López Vico
+	\end{tabularx}
+\end{table}
+
+
+\begin{table}[H]
+	\centering
+	\label{my-label}
+	\begin{tabularx}{\textwidth}{l|X}
+		\textbf{Nombre}          & pedirPrueba(idHC, tipoPrueba, comentario) \\
+		\textbf{Responsabilidad} & Pedir una prueba tipoPrueba para realizar sobre el paciente con historial clínico idHC.\\
+		\textbf{Tipo}            & ClinicaFIS \\
+		\textbf{Notas}           & La variable comentario contendrá información sobre la prueba a realizar. \\
+		\textbf{Excepciones}     &
+		\begin{itemize}
+			\item No existe una historia clínica identificada por idHC.
+			\item No existe una prueba médica de tipo=tipoPrueba.
+			\item No existe el tipo de prueba indicada.
+		\end{itemize} \\
+		\textbf{Salida}          &  \\
+		\textbf{Precondiciones}  &  \\
+		\textbf{Poscondiciones}  &
+		\begin{itemize}
+			\item Se creó un enlace entre el objeto de la clase HistoriaClinica identificado por idHC y un objeto de la clase PruebaMedica el cual tiene el atributo tipo=tipoPrueba.
+			\item Se creó un objeto de la clase AnotacionHC (anot), con el atributo this.comentario=comentario, y debidamente inicializado.
+			\item Se creó un enlace entre anot y el objeto de la clase HistoriaClínica identificado por idHC.
+		\end{itemize} \\
+		\textbf{Autor}			 & Simón López Vico
+	\end{tabularx}
+\end{table}
+
+
+\begin{table}[H]
+	\centering
+	\label{my-label}
+	\begin{tabularx}{\textwidth}{l|X}
+		\textbf{Nombre}          & desviarAEspecialista(idHC, especialidad, comentario)\\
+		\textbf{Responsabilidad} & Asignar al paciente con historial clínico identificado por idHC un médico con especialidadMédica=especialidad.\\
+		\textbf{Tipo}            & ClinicaFIS \\
+		\textbf{Notas}           & La variable comentario contendrá información de por qué el paciente necesita un desvío a un especialista. \\
+		\textbf{Excepciones}     &
+		\begin{itemize}
+			\item No existe una historia clínica identificada por idHC.
+			\item No existe un médico con especialidadMédica=especialidad.
+			\item No existe la especialidad indicada.
+		\end{itemize} \\
+		\textbf{Salida}          &  \\
+		\textbf{Precondiciones}  &  \\
+		\textbf{Poscondiciones}  &
+		\begin{itemize}
+			\item Se creó un enlace entre el objeto de la clase HistoriaClinica identificado por idHC y un objeto de la clase Médico el cual tiene el atributo especialidadMédica=especialidad.
+			\item Se creó un objeto de la clase AnotacionHC (anot), con el atributo this.comentario=comentario, y debidamente inicializado.
+			\item Se creó un enlace entre anot y el objeto de la clase HistoriaClínica identificado por idHC.
+		\end{itemize} \\
+		\textbf{Autor}			 & Simón López Vico
+	\end{tabularx}
+\end{table}
+
+
+\begin{table}[H]
+	\centering
+	\label{my-label}
+	\begin{tabularx}{\textwidth}{l|X}
+		\textbf{Nombre}          & crearCM(especialidad, idSanitario) \\
+		\textbf{Responsabilidad} & Un administrativo se encarga de crear un contrato médico con especialidadMedica=especialidad al sanitario identificado con idSanitario, y al médico se le asigna una consulta con idConsulta. \\
+		\textbf{Tipo}            & ClinicaFIS \\
+		\textbf{Notas}           & \\
+		\textbf{Excepciones}     &
+		\begin{itemize}
+			\item No existe un sanitario identificado con idSanitario.
+			\item No existe la especialidad indicada.
+		\end{itemize} \\
+		\textbf{Salida}          & idConsulta \\
+		\textbf{Precondiciones}  & \\
+		\textbf{Poscondiciones}  & 
+		\begin{itemize}
+			\item Se creó un objeto de la clase Contrato (cont), debidamente inicializado.
+			\item Se creó un enlace entre cont y el objeto de la clase Sanitario identificado mediante idSanitario.
+			\item Se creó un objeto de la clase Consulta (cons), con tespecialidad=especialidad, y debidamente inicializado.
+			\item Se creó un enlace entre cons y el objeto de la clase Sanitario identificado mediante idSanitario.
+		\end{itemize} \\
+		\textbf{Autor}			 & Simón López Vico
+	\end{tabularx}
+\end{table}
+
+
+
+\begin{table}[H]
+	\centering
+	\label{my-label}
+	\begin{tabularx}{\textwidth}{l|X}
+		\textbf{Nombre}          & modificarCM(idConsulta, especialidad, idSanitario) \\
+		\textbf{Responsabilidad} & Modificar el contrato médico del sanitario identificado con idSanitario, que tiene asignada la consulta idConsulta, con tespecialidad=especialidad. \\
+		\textbf{Tipo}            & ClinicaFIS \\
+		\textbf{Notas}           &  \\
+		\textbf{Excepciones}     &
+		\begin{itemize}
+			\item No existe una consulta identificada con idConsulta.
+			\item La consulta idConsulta no tiene tespecialidad=especialidad.
+			\item No existe un sanitario identificado con idSanitario. 
+		\end{itemize} \\
+		\textbf{Salida}          &  \\
+		\textbf{Precondiciones}  &  \\
+		\textbf{Poscondiciones}  &  \\
+		\textbf{Autor}			 & Simón López Vico
+	\end{tabularx}
+\end{table}
+
+
+
+\begin{table}[H]
+	\centering
+	\label{my-label}
+	\begin{tabularx}{\textwidth}{l|X}
+		\textbf{Nombre}          & eliminarCM(idConsulta)\\
+		\textbf{Responsabilidad} & Eliminar el contrato médico relacionado con la consulta identificada por idConsulta. \\
+		\textbf{Tipo}            & ClinicaFIS \\
+		\textbf{Notas}           &  \\
+		\textbf{Excepciones}     &
+		\begin{itemize}
+			\item No existe una consulta identificada por idConsulta.
+		\end{itemize} \\
+		\textbf{Salida}          &  \\
+		\textbf{Precondiciones}  &  \\
+		\textbf{Poscondiciones}  & 
+		\begin{itemize}
+			\item Se destruyó el enlace entre el objeto de la clase consulta identificado por idConsulta y el sanitario asociado.
+			\item Se destruyó el objeto de la clase consulta identificado por idConsulta.
+		\end{itemize} \\
+		\textbf{Autor}			 & Simón López Vico
+	\end{tabularx}
+\end{table}
+
+
+
+
+
 \end{document}
 
