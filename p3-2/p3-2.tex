@@ -46,7 +46,7 @@
 \label{my-label}
 \begin{tabularx}{\textwidth}{l|X}
 \textbf{Nombre}          & llamarSiguientePaciente(idSanitario) \\
-\textbf{Responsabilidad} & Llamar al siguiente paciente del sanitario identificado por idSanitario \\
+\textbf{Responsabilidad} & Llamar al siguiente paciente del Sanitario identificado por idSanitario \\
 \textbf{Tipo}            & ClinicaFIS \\
 \textbf{Notas}           &  \\
 \textbf{Excepciones}     & 
@@ -57,9 +57,7 @@
 \textbf{Precondiciones}  &  \\
 \textbf{Poscondiciones}  &
 \begin{itemize}
-\item Se creó un objeto cita de tipo Cita correctamente inicializado
-\item Se creó un enlace entre cita y el sanitario identificado por idSanitario
-\item Se creó un enlace entre cita y el siguiente paciente, identificado por idPaciente 
+\item Se creó un enlace entre un objeto de tipo Cita enlazada con un valor de estado PENDIENTE y el paciente identificado por idPaciente 
 \end{itemize}\\
 \textbf{Autor} & Sofía Almeida Bruno\\
 \end{tabularx}
@@ -70,7 +68,7 @@
 \label{my-label}
 \begin{tabularx}{\textwidth}{l|X}
 \textbf{Nombre}          & terminarConsulta(idPaciente, idSanitario) \\
-\textbf{Responsabilidad} & Finalizar la cita realizada por el sanitario identificado por idSanitario al paciente identificado por idPaciente\\
+\textbf{Responsabilidad} & Finalizar la cita realizada por el Sanitario identificado por idSanitario al Paciente identificado por idPaciente\\
 \textbf{Tipo}            & ClinicaFIS \\
 \textbf{Notas}           &  \\
 \textbf{Excepciones}     & 
@@ -81,7 +79,8 @@
 \textbf{Salida}          &  \\
 \textbf{Precondiciones}  &  \\
 \textbf{Poscondiciones}  & \begin{itemize}
-	\item Se destruyó el objeto cita asociado al enlace entre el sanitario identificado por idSanitario y el paciente identificado por idPaciente
+\item Se destruyó el enlace entre el Paciente identificado por idPaciente y la Cita a la que también está enlazado el Sanitario identificado por idSanitario
+\item Se actualizó el estado de la cita a ATENDIDA
 \end{itemize}\\
 \textbf{Autor}           & Sofía Almeida Bruno
 \end{tabularx}
@@ -92,12 +91,12 @@
 \label{my-label}
 \begin{tabularx}{\textwidth}{l|X}
 \textbf{Nombre}          & iniciarConsulta(idPaciente) \\
-\textbf{Responsabilidad} & Comenzar la consulta al paciente identificado por idPaciente\\
+\textbf{Responsabilidad} & Comenzar la consulta al Paciente identificado por idPaciente\\
 \textbf{Tipo}            & ClinicaFIS \\
 \textbf{Notas}           &  \\
 \textbf{Excepciones}     & 
 \begin{itemize}
-\item El paciente identificado por idPaciente no existe
+\item El Paciente identificado por idPaciente no existe
 \end{itemize}\\
 \textbf{Salida}          &  idHC\\
 \textbf{Precondiciones}  &  \\
