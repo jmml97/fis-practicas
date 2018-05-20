@@ -353,6 +353,117 @@
 	\centering
 	\label{my-label}
 	\begin{tabularx}{\textwidth}{l|X}
+		\textbf{Nombre}          & consultarCM(idConsulta)\\
+		\textbf{Responsabilidad} & Obtener la información del objeto de la clase Consulta identificado por idConsulta. \\
+		\textbf{Tipo}            & ClinicaFIS \\
+		\textbf{Notas}           & La información se refiere a la especialidad y al sanitario enlazado con la consulta médica (y cualquier otra información extra que se considere oportuna). \\
+		\textbf{Excepciones}     &  
+			\begin{itemizenomargins}
+				\item No existe un objeto de la clase Consulta identificado por idConsulta.
+			\end{itemizenomargins}		\\
+		\textbf{Salida}          &  infoConsulta \\
+		\textbf{Precondiciones}  &  \\
+		\textbf{Poscondiciones}  &  \\
+		\textbf{Autor}			 & Miguel Lentisco Ballesteros
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\label{my-label}
+	\begin{tabularx}{\textwidth}{l|X}
+		\textbf{Nombre}          & modificarHorarioCM(idConsulta, datosNuevoHorario) \\
+		\textbf{Responsabilidad} & Modificar el horario del enlace HorarioUso entre el objeto de clase Consulta identificado por idConsulta y el relacionado de clase Recurso, con datosNuevoHorario. \\
+		\textbf{Tipo}            & ClinicaFIS \\
+		\textbf{Notas}           &  \\
+		\textbf{Excepciones}     &  
+			\begin{itemizenomargins}
+				\item No existe un objeto de la clase Consulta identificado por idConsulta.
+				\item El objeto de clase Consulta identificado por idConsulta no tiene un enlace de la clase de asociación HorarioUso con un objeto de clase Recurso. 
+				\item La modificación del horario entra en conflicto con otra asignación ya existente.
+			\end{itemizenomargins}		\\
+		\textbf{Salida}          &  \\
+		\textbf{Precondiciones}  &  \\
+		\textbf{Poscondiciones}  &  
+			\begin{itemizenomargins}
+				\item Se modificaron los atributos, con datosNuevoHorario, del enlace de la clase de asociación HorarioUso entre el objeto Consulta identificado por idConsulta y el objeto Recurso relacionado.
+			\end{itemizenomargins} \\
+		\textbf{Autor}			 & Miguel Lentisco Ballesteros
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\label{my-label}
+	\begin{tabularx}{\textwidth}{l|X}
+		\textbf{Nombre}          & consultarHorarioCM(idConsulta)\\
+		\textbf{Responsabilidad} & Obtener el horario asignado del objeto de tipo Consulta identificado por idConsulta. \\
+		\textbf{Tipo}            & ClinicaFIS \\
+		\textbf{Notas}           &  Si no tiene un horario definido devolver un horario vacío. \\
+		\textbf{Excepciones}     &  
+			\begin{itemizenomargins}
+				\item No existe un objeto de tipo Consulta identificado por idConsulta.
+			\end{itemizenomargins}		\\
+		\textbf{Salida}          &  infoHorarioConsulta \\
+		\textbf{Precondiciones}  &  \\
+		\textbf{Poscondiciones}  &  \\
+		\textbf{Autor}			 & Miguel Lentisco Ballesteros
+	\end{tabularx}
+\end{table}
+
+
+\begin{table}[H]
+	\centering
+	\label{my-label}
+	\begin{tabularx}{\textwidth}{l|X}
+		\textbf{Nombre}          & consultaPaciente(idPaciente)\\
+		\textbf{Responsabilidad} & Obtener la información del objeto de clase Paciente identificado por idPaciente. \\
+		\textbf{Tipo}            & ClinicaFIS \\
+		\textbf{Notas}           &  En la información se dará el dni, nombre, numero de tarjeta, dirección, teléfono, fecha de nacimiento y una lista de idCita que tenga. \\
+		\textbf{Excepciones}     &  
+			\begin{itemizenomargins}
+				\item No existe un objeto de tipo Paciente identificado por idPaciente.
+			\end{itemizenomargins}		\\
+		\textbf{Salida}          &  infoPaciente \\
+		\textbf{Precondiciones}  &  
+			\begin{itemizenomargins}
+				\item El usuario tenía acceso (accesoAutorizado = true).
+			\end{itemizenomargins} \\
+		\textbf{Poscondiciones}  &  \\
+		\textbf{Autor}			 & Miguel Lentisco Ballesteros
+	\end{tabularx}
+\end{table}
+
+
+\begin{table}[H]
+	\centering
+	\label{my-label}
+	\begin{tabularx}{\textwidth}{l|X}
+		\textbf{Nombre}          & crearPaciente(dni, nombre, numeroTarjeta)\\
+		\textbf{Responsabilidad} &  Registrar un nuevo objeto de clase Paciente enlazado con ClinicaFIS, devolviendo la identificación del nuevo objeto con idPaciente\\
+		\textbf{Tipo}            & ClinicaFIS \\
+		\textbf{Notas}           &  Su historial clínico se creará cuando pase consulta por primera vez. \\
+		\textbf{Excepciones}     &  
+			\begin{itemizenomargins}
+				\item DNI inválido.
+				\item Numero de tarjeta inválido.
+				\item DNI o número de tarjeta ya registrados en otro objeto de clase Paciente.
+			\end{itemizenomargins}		\\
+		\textbf{Salida}          &  idPaciente \\
+		\textbf{Precondiciones}  &  \\
+		\textbf{Poscondiciones}  & 
+			\begin{itemizenomargins}
+				\item Se creó un nuevo objeto de clase Paciente debidamente inicializado con parámetros dni, nombre y numeroTarjeta y con identificación idPaciente.
+				\item Se creó un enlace entre el objeto Paciente identificado por idPaciente y el objeto ClinicaFIS.
+			\end{itemizenomargins} \\
+		\textbf{Autor}			 & Miguel Lentisco Ballesteros
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\label{my-label}
+	\begin{tabularx}{\textwidth}{l|X}
     \textbf{Nombre}          & verConsultas()\\
 		\textbf{Responsabilidad} & Muestra todas las consultas de la Clínica. \\
 		\textbf{Tipo}            & ClinicaFIS \\
