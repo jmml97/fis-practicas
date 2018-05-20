@@ -396,7 +396,7 @@
 	\centering
 	\label{my-label}
 	\begin{tabularx}{\textwidth}{l|X}
-		\textbf{Nombre}          & consultarHorarioCM(idConsulta)\\
+		\textbf{Nombre}          & CM(idConsulta)\\
 		\textbf{Responsabilidad} & Obtener el horario asignado del objeto de tipo Consulta identificado por idConsulta. \\
 		\textbf{Tipo}            & ClinicaFIS \\
 		\textbf{Notas}           &  Si no tiene un horario definido devolver un horario vacío. \\
@@ -434,7 +434,6 @@
 	\end{tabularx}
 \end{table}
 
-
 \begin{table}[H]
 	\centering
 	\label{my-label}
@@ -464,8 +463,146 @@
 	\centering
 	\label{my-label}
 	\begin{tabularx}{\textwidth}{l|X}
+		\textbf{Nombre}          & modificarPaciente(idPaciente, dni, nombre, numeroTarjeta, direccion, telefono) \\
+		\textbf{Responsabilidad} & Actualizar los atributos del a los valores dni, nombre, numeroTarjeta, direccion y telefono para el paciente identificado por idPaciente \\
+		\textbf{Tipo}            & ClinicaFIS \\
+		\textbf{Notas}           &  \\
+		\textbf{Excepciones}     & 
+		\begin{itemizenomargins}
+			\item El Paciente identificado por idPaciente no existe
+			\item El DNI identificado por dni es inválido
+			\item El número de tarjeta identificado por numeroTarjeta es inválido
+			\item El teléfono identificado por telefono es inválido
+		\end{itemizenomargins}\\
+		\textbf{Salida}          &  \\
+		\textbf{Precondiciones}  &  \\
+		\textbf{Poscondiciones}  & \begin{itemizenomargins}
+			\item idPaciente.dni pasó a ser el parámetro dni
+			\item idPaciente.nombre pasó a ser el parámetro nombre
+			\item idPaciente.numeroTarjeta pasó a ser el parámetro numeroTarjeta
+			\item idPaciente.direccion pasó a ser el parámetro direccion
+			\item idPaciente.telefono pasó a ser el parámetro telefono
+		\end{itemizenomargins}\\
+		\textbf{Autor}           & José Antonio Álvarez Ocete
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\label{my-label}
+	\begin{tabularx}{\textwidth}{l|X}
+		\textbf{Nombre}          & eliminarPaciente(idPaciente) \\
+		\textbf{Responsabilidad} & Eliminar el paciente identificado por idPaciente del sistema \\
+		\textbf{Tipo}            & ClinicaFIS \\
+		\textbf{Notas}           &  \\
+		\textbf{Excepciones}     & 
+		\begin{itemizenomargins}
+			\item El Paciente identificado por idPaciente no existe
+		\end{itemizenomargins}\\
+		\textbf{Salida}          &  \\
+		\textbf{Precondiciones}  &  \\
+		\textbf{Poscondiciones}  & \begin{itemizenomargins}
+			\item Se destruyeron todos los enlaces entre el objeto Paciente identificado por idPaciente y cualquier objeto de la clase Cita enlazado previamente a dicho Paciente.
+			\item Se destruyó el enlace entre el objeto Paciente identificado por idPaciente y el objeto de la clase HistoriaClinica enlazado al paciente identificado por idPaciente.
+			\item Se destruyó el enlace entre el objeto Paciente identificado por idPaciente y el objeto de la clase Sanitario enlazado al paciente identificado por idPaciente.
+			\item Se destruyó el enlace entre el objeto Paciente identificado por idPaciente y el objeto de la clase ClinicaFIS enlazado al paciente identificado por idPaciente.
+			\item Se destruyó el objeto de la clase Paciente identificado por idPaciente.
+		\end{itemizenomargins}\\
+		\textbf{Autor}           & José Antonio Álvarez Ocete
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\label{my-label}
+	\begin{tabularx}{\textwidth}{l|X}
+		\textbf{Nombre}          & consultarCitas(idPaciente) \\
+		\textbf{Responsabilidad} & Obtener el listado de citas del objeto de la clase Paciente identificado por idPaciente \\
+		\textbf{Tipo}            & ClinicaFIS \\
+		\textbf{Notas}           &  \\
+		\textbf{Excepciones}     & 
+		\begin{itemizenomargins}
+			\item El Paciente identificado por idPaciente no existe
+		\end{itemizenomargins}\\
+		\textbf{Salida}          &  listadoCita\\
+		\textbf{Precondiciones}  &  \\
+		\textbf{Poscondiciones}  & \\
+		\textbf{Autor}           & José Antonio Álvarez Ocete
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\label{my-label}
+	\begin{tabularx}{\textwidth}{l|X}
+		\textbf{Nombre}          & pedirCitaRemoto(idPaciente, idConsulta) \\
+		\textbf{Responsabilidad} & Obtener el listado de fechas y horas posibles para una cita del Paciente identificado por idPaciente en la Consulta identificada por idConsulta \\
+		\textbf{Tipo}            & ClinicaFIS \\
+		\textbf{Notas}           &  \\
+		\textbf{Excepciones}     & 
+		\begin{itemizenomargins}
+			\item El Paciente identificado por idPaciente no existe
+			\item La consulta identificada por idConsulta no existe
+		\end{itemizenomargins}\\
+		\textbf{Salida}          &  listaPosiblesFechasHoras\\
+		\textbf{Precondiciones}  & \\
+		\textbf{Poscondiciones}  & \\
+		\textbf{Autor}           & José Antonio Álvarez Ocete
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\label{my-label}
+	\begin{tabularx}{\textwidth}{l|X}
+		\textbf{Nombre}          & pedirCita(idPaciente, idConsulta, fecha, hora) \\
+		\textbf{Responsabilidad} & Obtener el listado de fechas y horas posibles para una cita del Paciente identificado por idPaciente en la Consulta identificada por idConsulta \\
+		\textbf{Tipo}            & ClinicaFIS \\
+		\textbf{Notas}           &  \\
+		\textbf{Excepciones}     & 
+		\begin{itemizenomargins}
+			\item El Paciente identificado por idPaciente no existe
+			\item La consulta identificada por idConsulta no existe
+			\item No es posible reservar la consulta identificado por idConsulta para las fecha y hora determinadas
+		\end{itemizenomargins}\\
+		\textbf{Salida}          &  listaPosiblesFechasHoras\\
+		\textbf{Precondiciones}  & \\
+		\textbf{Poscondiciones}  & 
+		\begin{itemizenomargins}
+			\item Se creó un objeto cit de la clase Cita debidamente inicializado con estado PENDIENTE.
+			\item Se creó un enlace entre cit y el objeto Consulta identificado por idConsulta.
+			\item Se creó un enlace entre el paciente identificado por idPaciente y el Sanitario sanit recién asignado a la cita. Se enlaza cit a dicho enlace.
+			\item Se agregó cit al objeto de la clase Agenda enlazado a sanit.
+		\end{itemizenomargins}\\
+		\textbf{Autor}           & José Antonio Álvarez Ocete
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\label{my-label}
+	\begin{tabularx}{\textwidth}{l|X}
+		\textbf{Nombre}          & consultaHorarioEnfermeria(fecha) \\
+		\textbf{Responsabilidad} & Obtener información sobre el horario de la enfermería en la fecha identificada por fecha \\
+		\textbf{Tipo}            & ClinicaFIS \\
+		\textbf{Notas}           &  \\
+		\textbf{Excepciones}     & 
+		\begin{itemizenomargins}
+			\item El parámetro fecha es inválido
+		\end{itemizenomargins}\\
+		\textbf{Salida}          & infoHorarioConsultaEnfermeria\\
+		\textbf{Precondiciones}  & \\
+		\textbf{Poscondiciones}  & \\
+		\textbf{Autor}           & José Antonio Álvarez Ocete
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\label{my-label}
+	\begin{tabularx}{\textwidth}{l|X}
 		\textbf{Nombre}          & consultarEspecialidadesConsultas() \\
-		\textbf{Responsabilidad} & Devuelve una lista de las distintas especialidades que hay, mirando el atributo tespecialidad de todos los objetos de tipo Consulta existentes.\\
+		\textbf{Responsabilidad} & Devuelve una lista de las distintas especialidades que hay, mirando el  tespecialidad de todos los objetos de tipo Consulta existentes.\\
 		\textbf{Tipo}            & ClinicaFIS \\
 		\textbf{Notas}           & Si no hubiera objetos de tipo Consulta devolver una lista vacía. \\
 		\textbf{Excepciones}     &  \\
@@ -490,7 +627,7 @@
 			\item No hay consultas registradas.
 		\end{itemizenomargins} \\
 		\textbf{Salida}          &  listadoConsulta\\
-		\textbf{Precondiciones}  &  Hay consultas registradas en el sistema.\\
+		\textbf{Precondiciones}  & \\
 		\textbf{Poscondiciones}  & \\  
 		\textbf{Autor}			 & José María Martín Luque
 	\end{tabularx}
@@ -509,7 +646,7 @@
 			\item Si la cita identificada por idCita no existe.
 		\end{itemizenomargins} \\
 		\textbf{Salida}          &  listaPosiblesFechasHoras\\
-		\textbf{Precondiciones}  &  Debe existir previamente una cita.\\
+		\textbf{Precondiciones}  &  \\
 		\textbf{Poscondiciones}  & 
 		\begin{itemizenomargins}
 			\item Se modificó el objeto de la Cita identificado por idCita.
@@ -531,7 +668,7 @@
 			\item Si la cita identificada por idCita no existe.
 		\end{itemizenomargins} \\
 		\textbf{Salida}          &  infoCita\\
-		\textbf{Precondiciones}  &  Debe existir previamente una cita.\\
+		\textbf{Precondiciones}  &  \\
 		\textbf{Poscondiciones}  & 
 		\begin{itemizenomargins}
 			\item Se modificó el objeto de la Cita identificado por idCita.
@@ -553,7 +690,7 @@
 			\item Si la cita identificada por idCita no existe.
 		\end{itemizenomargins} \\
 		\textbf{Salida}          &  mensajeConfirmacion\\
-		\textbf{Precondiciones}  &  Debe existir previamente una cita.\\
+		\textbf{Precondiciones}  &  \\
 		\textbf{Poscondiciones}  & 
 		\begin{itemizenomargins}
 			\item Se destruyó el enlace entre el objeto de la clase Consulta identificado por idCita y la agenda del sanitario asociado.
@@ -577,7 +714,7 @@
       \item Si no hay sanitarios asociados al paciente.
 		\end{itemizenomargins} \\
 		\textbf{Salida}          &  listaSanitarios\\
-		\textbf{Precondiciones}  &  Debe existir previamente un paciente.\\
+		\textbf{Precondiciones}  &  \\
 		\textbf{Poscondiciones}  & \\
 		\textbf{Autor}			 & José María Martín Luque
 	\end{tabularx}
@@ -599,7 +736,7 @@
       \item Si no se añade puntuación ni comentario.
 		\end{itemizenomargins} \\
 		\textbf{Salida}          &  infoValoracion\\
-		\textbf{Precondiciones}  &  Debe existir previamente una cita y un paciente asociado.\\
+		\textbf{Precondiciones}  &  \\
 		\textbf{Poscondiciones}  & 
 		\begin{itemizenomargins}
 			\item Se registró la valoración en el sistema.
