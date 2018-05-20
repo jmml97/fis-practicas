@@ -225,7 +225,7 @@
 	\label{my-label}
 	\begin{tabularx}{\textwidth}{l|X}
 		\textbf{Nombre}          & pedirPrueba(idHC, tipoPrueba, comentario) \\
-		\textbf{Responsabilidad} & Pedir una prueba tipoPrueba para realizar sobre el paciente con historial clínico idHC.\\
+		\textbf{Responsabilidad} & Pedir una prueba tipoPrueba para realizar sobre el paciente con historial clínico idHC y añadir comentario a AnotaciónHC.\\
 		\textbf{Tipo}            & ClinicaFIS \\
 		\textbf{Notas}           & La variable comentario contendrá información sobre la prueba a realizar. \\
 		\textbf{Excepciones}     &
@@ -252,13 +252,13 @@
 	\label{my-label}
 	\begin{tabularx}{\textwidth}{l|X}
 		\textbf{Nombre}          & desviarAEspecialista(idHC, especialidad, comentario)\\
-		\textbf{Responsabilidad} & Asignar al paciente con historial clínico identificado por idHC un médico con especialidadMédica=especialidad.\\
+		\textbf{Responsabilidad} & Asignar al paciente con historial clínico identificado por idHC un médico con especialidadMédica=especialidad y añadir comentario a AnotaciónHC.\\
 		\textbf{Tipo}            & ClinicaFIS \\
 		\textbf{Notas}           & La variable comentario contendrá información de por qué el paciente necesita un desvío a un especialista. \\
 		\textbf{Excepciones}     &
 		\begin{itemizenomargins}
 			\item No existe una historia clínica identificada por idHC.
-			\item No existe un médico con especialidadMédica=especialidad.
+			\item No existe una instancia de médico con especialidadMédica=especialidad.
 			\item No existe la especialidad indicada.
 		\end{itemizenomargins} \\
 		\textbf{Salida}          &  \\
@@ -291,10 +291,9 @@
 		\textbf{Salida}          & idConsulta \\
 		\textbf{Precondiciones}  & \\
 		\textbf{Poscondiciones}  & 
-		\begin{itemizenomargins}
-			\item Se creó un objeto de la clase Consulta (cons), con tespecialidad=especialidad, y debidamente inicializado.
-			\item Se creó un enlace, identificado por idConsulta, entre cons y el objeto de la clase Sanitario identificado mediante idSanitario.
-			
+\begin{itemizenomargins}
+			\item Se creó un objeto de la clase Consulta (cons), con idConsulta y tespecialidad=especialidad, debidamente inicializado.
+			\item Se creó un enlace entre cons y el objeto de la clase Sanitario identificado mediante idSanitario.			
 		\end{itemizenomargins} \\
 		\textbf{Autor}			 & Simón López Vico
 	\end{tabularx}
@@ -321,11 +320,10 @@
 		\end{itemizenomargins} \\
 		\textbf{Salida}          &  \\
 		\textbf{Precondiciones}  &  \\
-		\textbf{Poscondiciones}  &  \\
+		\textbf{Poscondiciones}  & Se modificó el objeto de la clase Consulta identificado por idConsulta. \\
 		\textbf{Autor}			 & Simón López Vico
 	\end{tabularx}
 \end{table}
-
 
 
 \begin{table}[H]
