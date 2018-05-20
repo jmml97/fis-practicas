@@ -32,6 +32,10 @@
 \usepackage{float}
 \usepackage{adjustbox}
 
+\newenvironment{itemizenomargins}
+    {\begin{minipage}[t]{1\linewidth}\begin{itemize}}
+    {\end{itemize}\end{minipage}}
+
 \title{Práctica 3: Modelo conceptual y contratos \large\\ Fundamentos de Ingeniería del Software}
 \author{Sofía Almedia Bruno \and José Antonio Álvarez Ocete \and Miguel Lentisco Ballesteros \and Simón López Vico \and José María Martín Luque}
 
@@ -50,15 +54,15 @@
 \textbf{Tipo}            & ClinicaFIS \\
 \textbf{Notas}           &  \\
 \textbf{Excepciones}     & 
-\begin{itemize}
+\begin{itemizenomargins}
 \item El sanitario identificado por idSanitario no existe
-\end{itemize}\\
+\end{itemizenomargins}\\
 \textbf{Salida}          & idPaciente \\
 \textbf{Precondiciones}  &  \\
 \textbf{Poscondiciones}  &
-\begin{itemize}
+\begin{itemizenomargins}
 \item Se creó un enlace entre un objeto de tipo Cita enlazada con un valor de estado PENDIENTE y el paciente identificado por idPaciente 
-\end{itemize}\\
+\end{itemizenomargins}\\
 \textbf{Autor} & Sofía Almeida Bruno\\
 \end{tabularx}
 \end{table}
@@ -72,16 +76,16 @@
 \textbf{Tipo}            & ClinicaFIS \\
 \textbf{Notas}           &  \\
 \textbf{Excepciones}     & 
-\begin{itemize}
+\begin{itemizenomargins}
 \item El paciente identificado por idPaciente no existe
 \item El sanitario identificado por idSanitario no existe
-\end{itemize}\\
+\end{itemizenomargins}\\
 \textbf{Salida}          &  \\
 \textbf{Precondiciones}  &  \\
-\textbf{Poscondiciones}  & \begin{itemize}
+\textbf{Poscondiciones}  & \begin{itemizenomargins}
 \item Se destruyó el enlace entre el Paciente identificado por idPaciente y la Cita a la que también está enlazado el Sanitario identificado por idSanitario
 \item Se actualizó el estado de la cita a ATENDIDA
-\end{itemize}\\
+\end{itemizenomargins}\\
 \textbf{Autor}           & Sofía Almeida Bruno
 \end{tabularx}
 \end{table}
@@ -95,16 +99,16 @@
 \textbf{Tipo}            & ClinicaFIS \\
 \textbf{Notas}           &  \\
 \textbf{Excepciones}     & 
-\begin{itemize}
+\begin{itemizenomargins}
 \item El Paciente identificado por idPaciente no existe
-\end{itemize}\\
+\end{itemizenomargins}\\
 \textbf{Salida}          &  idHC\\
 \textbf{Precondiciones}  &  \\
 \textbf{Poscondiciones}  &
-\begin{itemize}
+\begin{itemizenomargins}
 \item Se creó un objeto de la clase HistoriaClinica debidamente inicializado e identificado por idHC
 \item Se creó un enlace entre el objeto de la clase HistoriaClinica identificado por idHC y el objeto Paciente identificado por idPaciente
-\end{itemize}\\
+\end{itemizenomargins}\\
 \textbf{Autor}           & Sofía Almeida Bruno
 \end{tabularx}
 \end{table}
@@ -118,19 +122,19 @@
 \textbf{Tipo}            & ClinicaFIS \\
 \textbf{Notas}           &  \\
 \textbf{Excepciones}     & 
-\begin{itemize}
+\begin{itemizenomargins}
 \item No existe la HistoriaClinica identificada por idHC
 \item No extiste el tipo de alergia tipoAlergia
-\end{itemize}\\
+\end{itemizenomargins}\\
 \textbf{Salida}          &  \\
 \textbf{Precondiciones}  &  \\
 \textbf{Poscondiciones}  &
-\begin{itemize}
+\begin{itemizenomargins}
 \item Se creó un objeto de la clase Alergia identificado por al
 \item Se inicializó al.textoExplicativo a textoExplicativo
 \item Se inicializó al.tipoAlergia a tipoAlergia
 \item Se creó un enlace entre el objeto de la clase Alergia identificado por al y el objeto de la clase HistoriaClinica identificado por idHC
-\end{itemize}\\
+\end{itemizenomargins}\\
 \textbf{Autor}           & Sofía Almeida Bruno
 \end{tabularx}
 \end{table}
@@ -144,19 +148,19 @@
 \textbf{Tipo}            & ClinicaFIS \\
 \textbf{Notas}           &  \\
 \textbf{Excepciones}     & 
-\begin{itemize}
+\begin{itemizenomargins}
 \item La HistoriaClinica identificada por idHC no existe
-\end{itemize}\\
+\end{itemizenomargins}\\
 \textbf{Salida}          &  \\
 \textbf{Precondiciones}  &  \\
 \textbf{Poscondiciones}  &
-\begin{itemize}
+\begin{itemizenomargins}
 \item Se creó un objeto de la clase Diagnostico identificado diag
 \item Se añadió a diag codDiagnostico en el atributo correspondiente
 \item Se inicializó diag.fechaAnotacion a la fecha actual
 \item Se inicializó diag.comentario a textoExplicativo
 \item Se creó un enlace entre el diag y el objeto de la clase HistoriaClinica identificado por idHC
-\end{itemize}\\
+\end{itemizenomargins}\\
 \textbf{Autor}           & Sofía Almeida Bruno
 \end{tabularx}
 \end{table}
@@ -170,19 +174,19 @@
 \textbf{Tipo}            & ClinicaFIS \\
 \textbf{Notas}           &  \\
 \textbf{Excepciones}     & 
-\begin{itemize}
+\begin{itemizenomargins}
 \item La HistoriaClinica identificada por idHC no existe
 \item El Tratamiento identificado por idTratamiento no existe
-\end{itemize}\\
+\end{itemizenomargins}\\
 \textbf{Salida}          &  \\
 \textbf{Precondiciones}  &  \\
 \textbf{Poscondiciones}  &
-\begin{itemize}
+\begin{itemizenomargins}
 \item Se creó un objeto de la clase Receta identificado por rec debidamente inicializado
 \item Se creó un enlace entre el objeto de la clase Receta identificado por rec y el objeto Tratamiento identificado por idTratamiento
 \item Se actualizó idTratamiento.fechaAnotacion a la fecha actual
 \item Se creó un enlace entre el objeto de la clase Tratamiento identificado por idTratamiento y el objeto de la clase HistoriaClinica identificado por idHC
-\end{itemize}\\
+\end{itemizenomargins}\\
 \textbf{Autor}           & Sofía Almeida Bruno
 \end{tabularx}
 \end{table}
@@ -197,20 +201,20 @@
 		\textbf{Tipo}            & ClinicaFIS \\
 		\textbf{Notas}           & La variable textoExplicativo tendrá información de como realizar el tratamiento asignado. \\
 		\textbf{Excepciones}     & 
-		\begin{itemize}
+		\begin{itemizenomargins}
 			\item No existe una historia clínica identificada por idHC.
 			\item No existe un diagnóstico identificado por codDiagnostico.
-		\end{itemize} \\
+		\end{itemizenomargins} \\
 		\textbf{Salida}          &  \\
 		\textbf{Precondiciones}  &  \\
 		\textbf{Poscondiciones}  &
-		\begin{itemize}
+		\begin{itemizenomargins}
 			\item Se creó un objeto de la clase Tratamiento (trat), debidamente inicializado.
 			\item Se creó un enlace entre trat y el objeto de la clase Diagnostico identificado por codDiagnostico. 
 			\item Se creó un enlace entre trat y el objeto de la clase HistoriaClinica identificado por idHC.
 			\item Se creó un objeto de la clase AnotacionHC (anot), con el atributo comentario=textoExplicativo, y debidamente inicializado.
 			\item Se creó un enlace entre anot y el objeto de la clase HistoriaClínica identificado por idHC.
-		\end{itemize} \\
+		\end{itemizenomargins} \\
 		\textbf{Autor}			 & Simón López Vico
 	\end{tabularx}
 \end{table}
@@ -225,19 +229,19 @@
 		\textbf{Tipo}            & ClinicaFIS \\
 		\textbf{Notas}           & La variable comentario contendrá información sobre la prueba a realizar. \\
 		\textbf{Excepciones}     &
-		\begin{itemize}
+		\begin{itemizenomargins}
 			\item No existe una historia clínica identificada por idHC.
 			\item No existe una prueba médica de tipo=tipoPrueba.
 			\item No existe el tipo de prueba indicada.
-		\end{itemize} \\
+		\end{itemizenomargins} \\
 		\textbf{Salida}          &  \\
 		\textbf{Precondiciones}  &  \\
 		\textbf{Poscondiciones}  &
-		\begin{itemize}
+		\begin{itemizenomargins}
 			\item Se creó un enlace entre el objeto de la clase HistoriaClinica identificado por idHC y un objeto de la clase PruebaMedica el cual tiene el atributo tipo=tipoPrueba.
 			\item Se creó un objeto de la clase AnotacionHC (anot), con el atributo this.comentario=comentario, y debidamente inicializado.
 			\item Se creó un enlace entre anot y el objeto de la clase HistoriaClínica identificado por idHC.
-		\end{itemize} \\
+		\end{itemizenomargins} \\
 		\textbf{Autor}			 & Simón López Vico 
 	\end{tabularx}
 \end{table}
@@ -252,19 +256,19 @@
 		\textbf{Tipo}            & ClinicaFIS \\
 		\textbf{Notas}           & La variable comentario contendrá información de por qué el paciente necesita un desvío a un especialista. \\
 		\textbf{Excepciones}     &
-		\begin{itemize}
+		\begin{itemizenomargins}
 			\item No existe una historia clínica identificada por idHC.
 			\item No existe un médico con especialidadMédica=especialidad.
 			\item No existe la especialidad indicada.
-		\end{itemize} \\
+		\end{itemizenomargins} \\
 		\textbf{Salida}          &  \\
 		\textbf{Precondiciones}  &  \\
 		\textbf{Poscondiciones}  &
-		\begin{itemize}
+		\begin{itemizenomargins}
 			\item Se creó un enlace entre el objeto de la clase HistoriaClinica identificado por idHC y un objeto de la clase Médico el cual tiene el atributo especialidadMédica=especialidad.
 			\item Se creó un objeto de la clase AnotacionHC (anot), con el atributo this.comentario=comentario, y debidamente inicializado.
 			\item Se creó un enlace entre anot y el objeto de la clase HistoriaClínica identificado por idHC.
-		\end{itemize} \\
+		\end{itemizenomargins} \\
 		\textbf{Autor}			 & Simón López Vico
 	\end{tabularx}
 \end{table}
@@ -279,19 +283,19 @@
 		\textbf{Tipo}            & ClinicaFIS \\
 		\textbf{Notas}           & \\
 		\textbf{Excepciones}     &
-		\begin{itemize}
+		\begin{itemizenomargins}
 			\item No existe un sanitario identificado con idSanitario.
 			\item No existe la especialidad indicada.
 			\item El sanitario idSanitario no es especialista en especialidad.
-		\end{itemize} \\
+		\end{itemizenomargins} \\
 		\textbf{Salida}          & idConsulta \\
 		\textbf{Precondiciones}  & \\
 		\textbf{Poscondiciones}  & 
-		\begin{itemize}
+		\begin{itemizenomargins}
 			\item Se creó un objeto de la clase Consulta (cons), con tespecialidad=especialidad, y debidamente inicializado.
 			\item Se creó un enlace, identificado por idConsulta, entre cons y el objeto de la clase Sanitario identificado mediante idSanitario.
 			
-		\end{itemize} \\
+		\end{itemizenomargins} \\
 		\textbf{Autor}			 & Simón López Vico
 	\end{tabularx}
 \end{table}
@@ -307,14 +311,14 @@
 		\textbf{Tipo}            & ClinicaFIS \\
 		\textbf{Notas}           &  \\
 		\textbf{Excepciones}     &
-		\begin{itemize}
+		\begin{itemizenomargins}
 			\item No existe una consulta identificada con idConsulta.
 			\item La consulta idConsulta no tiene tespecialidad=especialidad.
 			\item No existe un sanitario identificado con idSanitario. 
 			\item La consulta idConsulta no está asociada a idSanitario.
 			\item No existe la especialidad indicada.
 			\item El sanitario idSanitario no es especialista en especialidad.
-		\end{itemize} \\
+		\end{itemizenomargins} \\
 		\textbf{Salida}          &  \\
 		\textbf{Precondiciones}  &  \\
 		\textbf{Poscondiciones}  &  \\
@@ -333,17 +337,148 @@
 		\textbf{Tipo}            & ClinicaFIS \\
 		\textbf{Notas}           &  \\
 		\textbf{Excepciones}     &
-		\begin{itemize}
+		\begin{itemizenomargins}
 			\item No existe una consulta identificada por idConsulta.
-		\end{itemize} \\
+		\end{itemizenomargins} \\
 		\textbf{Salida}          &  \\
 		\textbf{Precondiciones}  &  \\
 		\textbf{Poscondiciones}  & 
-		\begin{itemize}
+		\begin{itemizenomargins}
 			\item Se destruyó el enlace entre el objeto de la clase consulta identificado por idConsulta y el sanitario asociado.
 			\item Se destruyó el objeto de la clase consulta identificado por idConsulta.
-		\end{itemize} \\
+		\end{itemizenomargins} \\
 		\textbf{Autor}			 & Simón López Vico
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\label{my-label}
+	\begin{tabularx}{\textwidth}{l|X}
+    \textbf{Nombre}          & verConsultas()\\
+		\textbf{Responsabilidad} & Muestra todas las consultas de la Clínica. \\
+		\textbf{Tipo}            & ClinicaFIS \\
+		\textbf{Notas}           &  \\
+		\textbf{Excepciones}     &
+		\begin{itemizenomargins}
+			\item No hay consultas registradas.
+		\end{itemizenomargins} \\
+		\textbf{Salida}          &  listadoConsulta\\
+		\textbf{Precondiciones}  &  Hay consultas registradas en el sistema.\\
+		\textbf{Poscondiciones}  & \\  
+		\textbf{Autor}			 & José María Martín Luque
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\label{pedir-cambio-cita-remoto}
+	\begin{tabularx}{\textwidth}{l|X}
+    \textbf{Nombre}          & pedirCambioCitaRemoto(idCita)\\
+		\textbf{Responsabilidad} & Solicitar un cambio de cita para una cita previamente establecida. \\
+		\textbf{Tipo}            & ClinicaFIS \\
+		\textbf{Notas}           &  \\
+		\textbf{Excepciones}     & 
+		\begin{itemizenomargins}
+			\item Si la cita identificada por idCita no existe.
+		\end{itemizenomargins} \\
+		\textbf{Salida}          &  listaPosiblesFechasHoras\\
+		\textbf{Precondiciones}  &  Debe existir previamente una cita.\\
+		\textbf{Poscondiciones}  & 
+		\begin{itemizenomargins}
+			\item Se modificó el objeto de la Cita identificado por idCita.
+		\end{itemizenomargins} \\
+		\textbf{Autor}			 & José María Martín Luque
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\label{pedir-cambio-cita}
+	\begin{tabularx}{\textwidth}{l|X}
+    \textbf{Nombre}          & pedirCambioCita(idCita, fecha, hora)\\
+		\textbf{Responsabilidad} & Solicitar un cambio de cita para una cita previamente establecida. \\
+		\textbf{Tipo}            & ClinicaFIS \\
+		\textbf{Notas}           &  \\
+		\textbf{Excepciones}     & 
+		\begin{itemizenomargins}
+			\item Si la cita identificada por idCita no existe.
+		\end{itemizenomargins} \\
+		\textbf{Salida}          &  infoCita\\
+		\textbf{Precondiciones}  &  Debe existir previamente una cita.\\
+		\textbf{Poscondiciones}  & 
+		\begin{itemizenomargins}
+			\item Se modificó el objeto de la Cita identificado por idCita.
+		\end{itemizenomargins} \\
+		\textbf{Autor}			 & José María Martín Luque
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\label{anular-cita}
+	\begin{tabularx}{\textwidth}{l|X}
+    \textbf{Nombre}          & anularCita(idCita)\\
+		\textbf{Responsabilidad} & Anula una cita previamente establecida. \\
+		\textbf{Tipo}            & ClinicaFIS \\
+		\textbf{Notas}           &  \\
+		\textbf{Excepciones}     & 
+		\begin{itemizenomargins}
+			\item Si la cita identificada por idCita no existe.
+		\end{itemizenomargins} \\
+		\textbf{Salida}          &  mensajeConfirmacion\\
+		\textbf{Precondiciones}  &  Debe existir previamente una cita.\\
+		\textbf{Poscondiciones}  & 
+		\begin{itemizenomargins}
+			\item Se destruyó el enlace entre el objeto de la clase Consulta identificado por idCita y la agenda del sanitario asociado.
+			\item Se destruyó el objeto de la clase Cita identificado por idCita.
+		\end{itemizenomargins} \\
+		\textbf{Autor}			 & José María Martín Luque
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\label{anular-cita}
+	\begin{tabularx}{\textwidth}{l|X}
+    \textbf{Nombre}          & consultarSanitarios(idPaciente)\\
+		\textbf{Responsabilidad} & Permite consultar los sanitarios asociados a un paciente. \\
+		\textbf{Tipo}            & ClinicaFIS \\
+		\textbf{Notas}           &  \\
+		\textbf{Excepciones}     & 
+		\begin{itemizenomargins}
+			\item Si el paciente identificado por idPaciente no existe.
+      \item Si no hay sanitarios asociados al paciente.
+		\end{itemizenomargins} \\
+		\textbf{Salida}          &  listaSanitarios\\
+		\textbf{Precondiciones}  &  Debe existir previamente un paciente.\\
+		\textbf{Poscondiciones}  & \\
+		\textbf{Autor}			 & José María Martín Luque
+	\end{tabularx}
+\end{table}
+
+
+\begin{table}[H]
+	\centering
+	\label{anular-cita}
+	\begin{tabularx}{\textwidth}{l|X}
+    \textbf{Nombre}          & valorarConsulta(idPaciente, idCita, puntuacion, comentario)\\
+		\textbf{Responsabilidad} & Permite valorar el trato y la calidad de una consulta. \\
+		\textbf{Tipo}            & ClinicaFIS \\
+		\textbf{Notas}           &  \\
+		\textbf{Excepciones}     & 
+		\begin{itemizenomargins}
+			\item Si el paciente identificado por idPaciente no existe.
+      \item Si la cita identificada por idCita no existe.
+      \item Si no se añade puntuación ni comentario.
+		\end{itemizenomargins} \\
+		\textbf{Salida}          &  infoValoracion\\
+		\textbf{Precondiciones}  &  Debe existir previamente una cita y un paciente asociado.\\
+		\textbf{Poscondiciones}  & 
+		\begin{itemizenomargins}
+			\item Se registró la valoración en el sistema.
+		\end{itemizenomargins} \\
+		\textbf{Autor}			 & José María Martín Luque
 	\end{tabularx}
 \end{table}
 
