@@ -1,0 +1,19 @@
+@startuml
+actor ":Administrativo" as Admin
+agent ":ClinicaFIS" as Clinica
+collections ":Paciente" as Pacientes
+agent "unPaciente : Paciente" as unPaciente
+agent ":HistorialClinico" as HC
+collections ":AnotacionHC" as anotaciones
+agent ":Sanitario" as Sanitario
+
+Admin -- Clinica: :infoPaciente = datosClinicosPaciente(idPaciente)
+Clinica - Pacientes: 1: unPaciente = buscarPaciente(idPaciente)\n <<A>>
+Clinica -- unPaciente: 2: infoPaciente += getNombre()\n <<L>> \n 3: infoPaciente += obtenerInfoHC() \n <<L>>
+unPaciente -- HC: 3.1: infoHC += obtenerNumeroHistoria()\n<<A>>\n 3.2 infoHC += obtenerFechaApertura()\n <<A>> \n 3.3: infoHC += obtenerInfoAnotaciones()\n <<A>>
+HC - anotaciones: 3.3.1: infoAnotacion += getFecha() \n <<A>> \n 3.3.2: infoAnotacion += getComentario()\n <<A>> \n 3.3.3: infoAnotacion += obtenerNombreSanitario() \n <<A>>
+note "Hacer 3.3.{1,2,3} para todos los elementos AnotacionHC de HistorialClinico" as N2
+HC .. N2
+N2 .. anotaciones
+anotaciones -- Sanitario: 3.3.3.1: nombre = getNombre() \n <<A>>
+@enduml

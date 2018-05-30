@@ -1,0 +1,30 @@
+@startuml
+actor ":Administrativo " as Admin
+agent ": ClinicaFIS" as Clinica
+agent ": ClinicaFIS" as Clinica2
+collections ": Paciente" as PL
+agent "unPaciente : Paciente" as unPaciente
+agent "unaHC: HistoriaClinica" as unaHC
+agent ": Paciente" as Paciente
+agent ": HistoriaClinica" as HC
+
+Clinica --- PL: "4: incluir(unPaciente) \n<<A>>"
+
+Admin -- Clinica: ": idPaciente = crearPaciente(dni, nombre, numeroTarjeta, direccion, telefono, fechaNacimiento)\n"
+
+
+Clinica --- unPaciente: "1: idPaciente = crear(dni, nombre, numeroTarjeta, direccion, telefono, fechaNacimiento, true)\n <<L>>"
+
+unPaciente - Clinica2: "\n1.1: {new}\n <<A>>"
+
+
+Clinica -- Clinica: "2: diaActual = obtenerDiaHoy()\n <<Self>>"
+
+Clinica --- unaHC: "\n\n3: crear(diaActual, unPaciente)\n <<L>>"
+
+unaHC -- Paciente: "\n3.1: incluirHC(unaHC)        \n <<A>>\n"
+
+Paciente - HC: "\n3.1.1: {new}\n <<A>>"
+
+note left of unaHC: En crear() el atributo numeroHistoria \nse toma del atributo estático \nde HistorialClinica: ultHistorial
+@enduml

@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   contentScriptType="application/ecmascript"
+   contentStyleType="text/css"
+   height="939px"
+   preserveAspectRatio="none"
+   style="width:960px;height:939px;"
+   version="1.1"
+   viewBox="0 0 960 939"
+   width="960px"
+   zoomAndPan="magnify"
+   id="svg105"
+   sodipodi:docname="datosClinicosPaciente.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata109">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview107"
+     showgrid="false"
+     inkscape:zoom="1.421744"
+     inkscape:cx="418.56151"
+     inkscape:cy="735.63175"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg105" />
+  <defs
+     id="defs11">
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker1720"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path1718"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(1.1) rotate(180) translate(1,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker1372"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path1370"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(1.1) rotate(180) translate(1,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker1328"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path1326"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(1.1) rotate(180) translate(1,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker1292"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path1290"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(1.1) rotate(180) translate(1,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker1208"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path1206"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(1.1) rotate(180) translate(1,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Lend"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path943"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(1.1) rotate(180) translate(1,0)" />
+    </marker>
+    <filter
+       height="300%"
+       id="f1491ig88jpmjo"
+       width="300%"
+       x="-1"
+       y="-1">
+      <feGaussianBlur
+         result="blurOut"
+         stdDeviation="2.0"
+         id="feGaussianBlur2" />
+      <feColorMatrix
+         in="blurOut"
+         result="blurOut2"
+         type="matrix"
+         values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"
+         id="feColorMatrix4" />
+      <feOffset
+         dx="4.0"
+         dy="4.0"
+         in="blurOut2"
+         result="blurOut3"
+         id="feOffset6" />
+      <feBlend
+         in="SourceGraphic"
+         in2="blurOut3"
+         mode="normal"
+         id="feBlend8" />
+    </filter>
+  </defs>
+  <g
+     id="g103">
+    <!--entity Admin-->
+    <ellipse
+       cx="91.5"
+       cy="18"
+       fill="#FEFECE"
+       filter="url(#f1491ig88jpmjo)"
+       rx="8"
+       ry="8"
+       style="stroke: #A80036; stroke-width: 2.0;"
+       id="ellipse13" />
+    <path
+       d="M91.5,26 L91.5,53 M78.5,34 L104.5,34 M91.5,53 L78.5,68 M91.5,53 L104.5,68 "
+       fill="none"
+       filter="url(#f1491ig88jpmjo)"
+       style="stroke: #A80036; stroke-width: 2.0;"
+       id="path15" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14"
+       lengthAdjust="spacingAndGlyphs"
+       textLength="101"
+       x="41"
+       y="87.9951"
+       id="text17">:Administrativo</text>
+    <!--entity Clinica-->
+    <rect
+       fill="#FEFECE"
+       filter="url(#f1491ig88jpmjo)"
+       height="36.2969"
+       style="stroke: #A80036; stroke-width: 1.5;"
+       width="89"
+       x="47"
+       y="168"
+       id="rect19" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14"
+       lengthAdjust="spacingAndGlyphs"
+       textLength="69"
+       x="57"
+       y="190.9951"
+       id="text21">:ClinicaFIS</text>
+    <!--entity Pacientes-->
+    <rect
+       fill="#FEFECE"
+       filter="url(#f1491ig88jpmjo)"
+       height="32.2969"
+       style="stroke: #000000; stroke-width: 1.5;"
+       width="81"
+       x="457"
+       y="172"
+       id="rect23" />
+    <rect
+       fill="#FEFECE"
+       height="32.2969"
+       style="stroke: #000000; stroke-width: 1.5;"
+       width="81"
+       x="453"
+       y="168"
+       id="rect25" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14"
+       lengthAdjust="spacingAndGlyphs"
+       textLength="65"
+       x="461"
+       y="188.9951"
+       id="text27">:Paciente</text>
+    <!--entity unPaciente-->
+    <rect
+       fill="#FEFECE"
+       filter="url(#f1491ig88jpmjo)"
+       height="36.2969"
+       style="stroke: #A80036; stroke-width: 1.5;"
+       width="171"
+       x="6"
+       y="326"
+       id="rect29" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14"
+       lengthAdjust="spacingAndGlyphs"
+       textLength="151"
+       x="16"
+       y="348.9951"
+       id="text31">unPaciente : Paciente</text>
+    <!--entity HC-->
+    <rect
+       fill="#FEFECE"
+       filter="url(#f1491ig88jpmjo)"
+       height="36.2969"
+       style="stroke: #A80036; stroke-width: 1.5;"
+       width="124"
+       x="29.5"
+       y="514"
+       id="rect33" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14"
+       lengthAdjust="spacingAndGlyphs"
+       textLength="104"
+       x="39.5"
+       y="536.9951"
+       id="text35">:HistorialClinico</text>
+    <!--entity anotaciones-->
+    <rect
+       fill="#FEFECE"
+       filter="url(#f1491ig88jpmjo)"
+       height="32.2969"
+       style="stroke: #000000; stroke-width: 1.5;"
+       width="110"
+       x="184.5"
+       y="768"
+       id="rect37" />
+    <rect
+       fill="#FEFECE"
+       height="32.2969"
+       style="stroke: #000000; stroke-width: 1.5;"
+       width="110"
+       x="180.5"
+       y="764"
+       id="rect39" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14"
+       lengthAdjust="spacingAndGlyphs"
+       textLength="94"
+       x="188.5"
+       y="784.9951"
+       id="text41">:AnotacionHC</text>
+    <!--entity Sanitario-->
+    <rect
+       fill="#FEFECE"
+       filter="url(#f1491ig88jpmjo)"
+       height="36.2969"
+       style="stroke: #A80036; stroke-width: 1.5;"
+       width="84"
+       x="195.5"
+       y="892"
+       id="rect43" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14"
+       lengthAdjust="spacingAndGlyphs"
+       textLength="64"
+       x="205.5"
+       y="914.9951"
+       id="text45">:Sanitario</text>
+    <path
+       d="M442.5,644.5 L442.5,669.6328 L948.5,669.6328 L948.5,654.5 L938.5,644.5 L442.5,644.5 "
+       fill="#FBFB77"
+       filter="url(#f1491ig88jpmjo)"
+       style="stroke: #A80036; stroke-width: 1.0;"
+       id="path47" />
+    <path
+       d="M938.5,644.5 L938.5,654.5 L948.5,654.5 L938.5,644.5 "
+       fill="#FBFB77"
+       style="stroke: #A80036; stroke-width: 1.0;"
+       id="path49" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacingAndGlyphs"
+       textLength="485"
+       x="448.5"
+       y="661.5669"
+       id="text51">Hacer 3.3.{1,2,3} para todos los elementos AnotacionHC de HistorialClinico</text>
+    <!--link Admin to Clinica-->
+    <path
+       d="M91.5,91.219 C91.5,116.889 91.5,148.7 91.5,167.895 "
+       fill="none"
+       id="Admin-Clinica"
+       style="stroke: #A80036; stroke-width: 1.0;" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacingAndGlyphs"
+       textLength="316"
+       x="92.5"
+       y="134.0669"
+       id="text54">:infoPaciente = datosClinicosPaciente(idPaciente)</text>
+    <!--link Clinica to Pacientes-->
+    <path
+       d="M136.279,186 C214.758,186 376.094,186 452.963,186 "
+       fill="none"
+       id="Clinica-Pacientes"
+       style="stroke: #A80036; stroke-width: 1.0;" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacingAndGlyphs"
+       textLength="280"
+       x="154.5"
+       y="164.0669"
+       id="text57">1: unPaciente = buscarPaciente(idPaciente)</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacingAndGlyphs"
+       textLength="25"
+       x="284"
+       y="179.1997"
+       id="text59">«A»</text>
+    <!--link Clinica to unPaciente-->
+    <path
+       d="M91.5,204.291 C91.5,234.277 91.5,295.592 91.5,325.632 "
+       fill="none"
+       id="Clinica-unPaciente"
+       style="stroke: #A80036; stroke-width: 1.0;" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacingAndGlyphs"
+       textLength="207"
+       x="106"
+       y="247.0669"
+       id="text62">2: infoPaciente += getNombre()</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacingAndGlyphs"
+       textLength="23"
+       x="198"
+       y="262.1997"
+       id="text64">«L»</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacingAndGlyphs"
+       textLength="226"
+       x="96.5"
+       y="277.3325"
+       id="text66">3: infoPaciente += obtenerInfoHC()</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacingAndGlyphs"
+       textLength="23"
+       x="200"
+       y="292.4653"
+       id="text68">«L»</text>
+    <!--link unPaciente to HC-->
+    <path
+       d="M91.5,362.165 C91.5,397.599 91.5,478.478 91.5,513.876 "
+       fill="none"
+       id="unPaciente-HC"
+       style="stroke: #A80036; stroke-width: 1.0;" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacingAndGlyphs"
+       textLength="261"
+       x="95"
+       y="405.0669"
+       id="text71">3.1: infoHC += obtenerNumeroHistoria()</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacingAndGlyphs"
+       textLength="25"
+       x="213"
+       y="420.1997"
+       id="text73">«A»</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacingAndGlyphs"
+       textLength="250"
+       x="102.5"
+       y="435.3325"
+       id="text75">3.2 infoHC += obtenerFechaApertura()</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacingAndGlyphs"
+       textLength="25"
+       x="213"
+       y="450.4653"
+       id="text77">«A»</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacingAndGlyphs"
+       textLength="262"
+       x="96.5"
+       y="465.5981"
+       id="text79">3.3: infoHC += obtenerInfoAnotaciones()</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacingAndGlyphs"
+       textLength="25"
+       x="215"
+       y="480.731"
+       id="text81">«A»</text>
+    <!--link HC to anotaciones-->
+    <path
+       d="M85.7739,550.21 C76.0693,582.742 60.1475,654.351 89.5,703 C109.156,735.578 147.45,755.239 180.16,766.672 "
+       fill="none"
+       id="HC-anotaciones"
+       style="stroke: #A80036; stroke-width: 1.0;" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacingAndGlyphs"
+       textLength="226"
+       x="142.5"
+       y="624.0669"
+       id="text84">3.3.1: infoAnotacion += getFecha()</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacingAndGlyphs"
+       textLength="25"
+       x="245"
+       y="639.1997"
+       id="text86">«A»</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacingAndGlyphs"
+       textLength="263"
+       x="128"
+       y="654.3325"
+       id="text88">3.3.2: infoAnotacion += getComentario()</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacingAndGlyphs"
+       textLength="25"
+       x="245"
+       y="669.4653"
+       id="text90">«A»</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacingAndGlyphs"
+       textLength="326"
+       x="94.5"
+       y="684.5981"
+       id="text92">3.3.3: infoAnotacion += obtenerNombreSanitario()</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacingAndGlyphs"
+       textLength="25"
+       x="247"
+       y="699.731"
+       id="text94">«A»</text>
+    <!--link HC to N2-->
+    <path
+       d="M153.582,545.642 C271.287,569.612 525.26,621.332 638.728,644.439 "
+       fill="none"
+       id="HC-N2"
+       style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+    <!--link N2 to anotaciones-->
+    <path
+       d="M652.412,669.572 C569.464,691.848 387.593,740.691 294.646,765.653 "
+       fill="none"
+       id="N2-anotaciones"
+       style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+    <!--link anotaciones to Sanitario-->
+    <path
+       d="M237.5,800.256 C237.5,824.384 237.5,867.9365 237.5,891.9528 "
+       fill="none"
+       id="anotaciones-Sanitario"
+       style="stroke: #A80036; stroke-width: 1.0;" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacingAndGlyphs"
+       textLength="204"
+       x="238.5"
+       y="843.0669"
+       id="text99">3.3.3.1: nombre = getNombre()</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="13"
+       lengthAdjust="spacingAndGlyphs"
+       textLength="25"
+       x="332"
+       y="858.1997"
+       id="text101">«A»</text>
+    <!--
+@startuml
+actor ":Administrativo" as Admin
+agent ":ClinicaFIS" as Clinica
+collections ":Paciente" as Pacientes
+agent "unPaciente : Paciente" as unPaciente
+agent ":HistorialClinico" as HC
+collections ":AnotacionHC" as anotaciones
+agent ":Sanitario" as Sanitario
+
+Admin - - Clinica: :infoPaciente = datosClinicosPaciente(idPaciente)
+Clinica - Pacientes: 1: unPaciente = buscarPaciente(idPaciente)\n <<A>>
+Clinica - - unPaciente: 2: infoPaciente += getNombre()\n <<L>> \n 3: infoPaciente += obtenerInfoHC() \n <<L>>
+unPaciente - - HC: 3.1: infoHC += obtenerNumeroHistoria()\n<<A>>\n 3.2 infoHC += obtenerFechaApertura()\n <<A>> \n 3.3: infoHC += obtenerInfoAnotaciones()\n <<A>>
+HC - anotaciones: 3.3.1: infoAnotacion += getFecha() \n <<A>> \n 3.3.2: infoAnotacion += getComentario()\n <<A>> \n 3.3.3: infoAnotacion += obtenerNombreSanitario() \n <<A>>
+note "Hacer 3.3.{1,2,3} para todos los elementos AnotacionHC de HistorialClinico" as N2
+HC .. N2
+N2 .. anotaciones
+anotaciones - - Sanitario: 3.3.3.1: nombre = getNombre() \n <<A>>
+@enduml
+
+PlantUML version 1.2018.07beta8(Unknown compile time)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.7.0_25-b15
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: US
+-->
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="622.68433"
+     y="913.1377"
+     id="text918"><tspan
+       sodipodi:role="line"
+       id="tspan916"
+       x="622.68433"
+       y="913.1377"
+       style="font-size:18.66666603px">Autor: Miguel Lentisco Ballesteros</tspan></text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
+     d="m 70.694632,102.74579 v 41.77754"
+     id="path920"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1208)"
+     d="m 68.929428,224.3847 v 72.44624"
+     id="path1204"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1292)"
+     d="M 218.04207,198.36033 H 339.72361"
+     id="path1288"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1328)"
+     d="m 62.599175,394.59819 v 70.33615"
+     id="path1324"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1.57485139px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1372)"
+     d="m 52.264569,631.22516 c 7.796772,88.75659 64.973101,126.52535 64.973101,126.52535"
+     id="path1368"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1720)"
+     d="m 213.11854,822.24199 0.70336,49.93867"
+     id="path1716"
+     inkscape:connector-curvature="0" />
+</svg>

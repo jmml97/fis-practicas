@@ -1,0 +1,10 @@
+@startuml
+actor ":Administrativo" as Admin
+agent ":ClinicaFIS" as Clinica
+agent "unPaciente : Paciente" as unPaciente
+collections ":Paciente" as Pacientes
+
+Admin -- Clinica: :infoPaciente = consultarPaciente(idPaciente)
+Clinica - Pacientes: 1: unPaciente = buscarPaciente(idPaciente)\n<<A>>
+Clinica -- unPaciente: 2: infoPaciente += getDni()\n<<L>>\n3: infoPaciente += getNombre()\n<<L>>\n4: infoPaciente += getNumeroTarjeta()\n<<L>>\n 5: infoPaciente += getDireccion()\n<<L>>\n6: infoPaciente += getTelefono()\n<<L>>\n7. infoPaciente += getFechaNacimiento()\n<<L>>
+@enduml
