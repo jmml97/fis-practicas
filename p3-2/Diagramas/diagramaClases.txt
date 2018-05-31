@@ -1,0 +1,71 @@
+@startuml
+
+class ClinicaFIS {
+ direccion : String
+ telefono : String
+ web : String
+
+ obtenerDiaHoy() : Fecha
+ crearPaciente(dni : String, nombre : String, numeroTarjeta : String, direccion : String, telefono : String, fechaNacimiento : Fecha) : TODO
+ consultarPaciente(idPaciente: TODO) : TODO
+ datosClinicosPaciente(idPaciente: TODO) : TODO
+}
+
+class Paciente {
+ dni : String
+ nombre : String
+ numeroTarjeta : int
+ direccion : String
+ telefono : String
+ fechaNacimiento : String
+ activo : Boolean
+
+ crear(dni : String, nombre : String, numeroTarjeta : String, direccion : String, telefono : String, fechaNacimiento : Fecha, activo : Boolean)
+ getDni() : String
+ getNombre() : String
+ getNumeroTarjeta() : String
+ getDireccion() : String
+ getTelefono() : String
+ getFechaNacimiento() : Fecha
+ obtenerInfoHC() : TODO
+ incluirHC(HC: HistorialClinico)
+ obtenerInfoHC() : TODO
+
+}
+
+class HistorialClinico {
+ {static} ultHistorial: int
+ numeroHistoria : int
+ fechaApertura : Fecha
+
+ crear(fechaApertura : Fecha, paciente : Paciente)
+ obtenerNumeroHistoria() : int
+ obtenerFechaApertura() : Fecha
+ obtenerInfoAnotaciones() : TODO
+}
+
+class AnotacionHC {
+ fechaAnotacion : Fecha
+ comentario : String
+
+ getFecha() : Fecha
+ getComentario() : String
+ obtenerNombreSanitario() : String
+}
+
+class Sanitario {
+ nombre : String
+ dni : String
+ puesto : TODO
+
+ getNombre() : String
+
+}
+
+ClinicaFIS -- "1..*" Paciente
+Paciente -- "0..1" HistorialClinico
+ClinicaFIS ..> HistorialClinico
+AnotacionHC -> Sanitario
+HistorialClinico -* "0..*" AnotacionHC
+
+@enduml
