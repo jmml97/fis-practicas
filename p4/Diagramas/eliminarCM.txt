@@ -1,0 +1,28 @@
+@startuml
+actor ":Administrativo" as Admin
+agent ":ClinicaFIS" as Clinica
+agent ":ClinicaFISExcepcion" as Excepcion
+collections ":Consulta" as Consulta
+collections ":Cita" as Cita
+agent "cons :Consulta" as cons
+agent ":HorarioUso" as Horario
+agent ":Recurso" as Recurso
+
+Admin -- Clinica: : eliminarCM(idConsulta)\n
+
+Clinica - Consulta: 2: cons = buscarConsulta(idConsulta)\n<<A>>
+
+Consulta -- Cita: 2.1: citas[] = getCitas(cons)\n<<A>>
+
+Cita - Cita: 2.1.1: estado[] = getEstado(citas)\n<<S>>
+
+Excepcion - Clinica: 3: [estado[i]==PENDIENTE or estado[i]==ENESPERA]eliminar("...")\n<<L>>
+
+Clinica -- cons: 4: eliminar(idConsulta)\n<<L>>
+
+cons -- Horario: {delete}\n<<A>>
+
+Horario - Recurso: {delete}\n<<A>>
+
+
+@enduml

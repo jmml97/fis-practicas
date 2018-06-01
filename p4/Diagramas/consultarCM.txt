@@ -1,0 +1,21 @@
+@startuml
+actor ":Administrativo" as Admin
+agent ":ClinicaFIS" as Clinica
+collections ":Consulta" as Consulta
+agent ":HorarioUso" as Horario
+collections ":Sanitario" as Sanitario
+agent "cons : Consulta" as cons
+
+
+Admin -- Clinica: : infoConsulta = consultarCM(idConsulta)\n
+
+Clinica - Consulta: 1: cons = buscarConsulta(idConsulta)\n<<A>>
+
+Clinica --- Sanitario: 2: infoConsulta += obtenerSanitarioConsulta(cons)\n<<A>>
+
+Clinica -- Horario: 3: infoConsulta += getHorario(cons)\n<<A>>
+
+Clinica --- cons: 4: infoConsulta += getInfoConsulta(cons)\n<<L>>
+
+@enduml
+

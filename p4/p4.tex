@@ -1,0 +1,49 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[headsep=1cm,headheight=3cm,left=3.5cm,right=3.5cm,top=2.5cm,bottom=2.5cm,a4paper]{geometry}
+
+\linespread{1.3}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+
+%% Fuentes personalizadas para utilizar con XeTeX
+\usepackage[sfdefault]{roboto}
+\usepackage[scaled=0.9]{DejaVuSansMono}
+\usepackage[T1]{fontenc}
+
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=*}
+\setlist[enumerate]{leftmargin=*}
+
+\usepackage{changepage}
+
+\newcommand{\term}[2]{\textbf{#1}\quad#2}
+
+\newcounter{ActCounter}
+\newcommand{\act}[1]{\addtocounter{ActCounter}{1}\textbf{\sffamily ACT-\theActCounter}\quad#1\\}
+
+\newcounter{CUCounter}
+\newcommand{\cu}[1]{\addtocounter{CUCounter}{1}\textbf{\sffamily CU-\theCUCounter}\quad#1\\}
+
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{adjustbox}
+
+\newenvironment{itemizenomargins}
+    {\begin{minipage}[t]{1\linewidth}\begin{itemize}}
+    {\end{itemize}\end{minipage}}
+
+\title{Práctica 4: Diseño \large\\ Fundamentos de Ingeniería del Software}
+\author{Sofía Almedia Bruno \and José Antonio Álvarez Ocete \and Miguel Lentisco Ballesteros \and Simón López Vico \and José María Martín Luque}
+
+\begin{document}
+
+\maketitle
+
+
+
+\end{document}
+

@@ -1,0 +1,15 @@
+@startuml
+actor ":Administrativo" as Admin
+agent ":ClinicaFIS" as Clinica
+collections ":Consulta" as Consulta
+agent ":HorarioUso" as Horario
+
+Admin -- Clinica: : modificarHorarioCM(idConsulta, datosNuevoHorario)\n
+
+
+
+
+
+
+
+@enduml
