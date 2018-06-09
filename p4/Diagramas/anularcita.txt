@@ -1,0 +1,28 @@
+@startuml
+left to right direction
+actor Administrativo
+
+agent ": ClinicaFIS" as FIS
+agent ": ExcepciónCita" as exp
+agent "mensajeConfirmación" as m
+agent "cita : Cita" as c
+agent "pac : Paciente" as pac
+collections ": Paciente" as p
+collections ": Cita" as cita
+
+Administrativo -- FIS : "mensajeConfirmación = anularCita(idPaciente, idCita)"
+FIS -- cita : "1: cita = buscar(idCita)\n<<A>>"
+FIS -- c : "2: getFecha()\n<<L>>"
+FIS -- c : "3: est = getEstado()\n<<L>>"
+FIS -- p : "4: buscar(idPaciente)\n<<A>>"
+FIS -- pac : "5: nombrePac = getNombre()\n<<L>>"
+pac -- c : "{destroyed}"
+FIS -- c : "6: nombreMed = getMedico()\n<<L>>"
+FIS -- c : "7: cambiarEstado(LIBRE)"
+FIS -- m : "8: incluir(fecha)\n<<L>>"
+FIS -- m : "9: incluir(nombrePac)\n<<L>>"
+FIS -- m : "8: incluir(nombreMed)\n<<L>>"
+FIS -- exp : "2.1: [fecha < fechaActual] crear(''Fecha errónea'')"
+FIS -- exp : "3.1: [estado == ATENDIDA] crear(''Cita ya atendida'')"
+
+@enduml

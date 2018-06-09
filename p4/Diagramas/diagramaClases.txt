@@ -9,6 +9,8 @@ class ClinicaFIS {
  crearPaciente(dni : String, nombre : String, numeroTarjeta : String, direccion : String, telefono : String, fechaNacimiento : Fecha) : TODO
  consultarPaciente(idPaciente: TODO) : TODO
  datosClinicosPaciente(idPaciente: TODO) : TODO
+ anularCita(idPaciente : String, idCita : String) : String
+ pedirCita(idPaciente : String, idMédico : String, fecha : Fecha) : String
 }
 
 class Paciente {
@@ -21,16 +23,10 @@ class Paciente {
  activo : Boolean
 
  crear(dni : String, nombre : String, numeroTarjeta : String, direccion : String, telefono : String, fechaNacimiento : Fecha, activo : Boolean)
- getDni() : String
- getNombre() : String
- getNumeroTarjeta() : String
- getDireccion() : String
- getTelefono() : String
- getFechaNacimiento() : Fecha
  obtenerInfoHC() : TODO
  incluirHC(HC: HistorialClinico)
  obtenerInfoHC() : TODO
-
+ obtenerCitas() : Citas[0..*]
 }
 
 class HistorialClinico {
@@ -47,9 +43,7 @@ class HistorialClinico {
 class AnotacionHC {
  fechaAnotacion : Fecha
  comentario : String
-
- getFecha() : Fecha
- getComentario() : String
+ 
  obtenerNombreSanitario() : String
 }
 
@@ -58,8 +52,37 @@ class Sanitario {
  dni : String
  puesto : TODO
 
- getNombre() : String
+}
 
+class Cita {
+ hora : Hora
+ fecha : Fecha
+
+ cambiarEstado(estado : TipoEstado) : void
+ obtenerMédico()
+ buscarCita(idMédico : Médico, fecha : Fecha)
+}
+
+enum TipoEstado {
+ PENDIENTE
+ ENESPERA
+ ATENDIDA
+ LIBRE
+}
+
+class ExcepcionCita {
+ crear(error : String)
+}
+
+class ExcepcionFecha {
+ crear(error : String)
+}
+
+class Medico {
+ númeroColegiado : int
+ especialidadMédica : String
+
+ obtenerCitas() : Citas[o..*]
 }
 
 ClinicaFIS -- "1..*" Paciente
@@ -67,5 +90,11 @@ Paciente -- "0..1" HistorialClinico
 ClinicaFIS ..> HistorialClinico
 AnotacionHC -> Sanitario
 HistorialClinico -* "0..*" AnotacionHC
-
+Cita -- TipoEstado : "estado"
+ClinicaFIS --> "0..*" Cita
+Cita .. Paciente
+ClinicaFIS --> ExcepcionCita
+ClinicaFIS --> "0..*" Medico
+ClinicaFIS --> ExcepcionFecha
+Cita -- Medico
 @enduml
