@@ -2,14 +2,30 @@
 actor ":Administrativo" as Admin
 agent ":ClinicaFIS" as Clinica
 collections ":Consulta" as Consulta
-agent ":HorarioUso" as Horario
+collections ":Sanitario" as Sanitario
+collections ":Consulta" as Consulta
+collections ":Cita" as Cita
+agent "cons : Consulta" as cons
+agent "sanit_actual : Sanitario" as sanit_actual
 
-Admin -- Clinica: : modificarHorarioCM(idConsulta, datosNuevoHorario)\n
+Admin -- Clinica: : modificarCM(idConsulta, especialidad, idSanitario)\n
 
+Clinica - Consulta: 1: cons = buscarConsulta(idConsulta)\n<<A>>
 
+Consulta -- Cita: 2.1: citas[] = getCitas(cons)\n<<A>>
 
+Cita - Cita: 2.2: estado[] = getEstado(citas)\n<<S>>
 
+Clinica --- cons: 3: [estado[i]!=PENDIENTE\nand estado[i]!=ENESPERA]\nmodificaEspecialidad(especialidad)\n<<L>>
 
+Clinica -- Consulta: 4: sanit_actual = getSanitAsociado(idConsulta)\n<<A>>
+
+Clinica --- cons: 5: [sanit_actual!=idSanitario]modifica(idConsulta,idSanitario)\n<<L>>
+
+cons -- sanit_actual: {delete}\n<<A>> 
+
+cons - Sanitario: {new}\n<<A>>
 
 
 @enduml
+

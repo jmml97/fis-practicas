@@ -14,11 +14,11 @@ Clinica - Consulta: 2: cons = buscarConsulta(idConsulta)\n<<A>>
 
 Consulta -- Cita: 2.1: citas[] = getCitas(cons)\n<<A>>
 
-Cita - Cita: 2.1.1: estado[] = getEstado(citas)\n<<S>>
+Cita - Cita: 2.2: estado[] = getEstado(citas)\n<<S>>
 
-Excepcion - Clinica: 3: [estado[i]==PENDIENTE or estado[i]==ENESPERA]eliminar("...")\n<<L>>
+Excepcion - Clinica: 2.2.1: [estado[i]==PENDIENTE or estado[i]==ENESPERA]eliminar("...")\n<<L>>
 
-Clinica -- cons: 4: eliminar(idConsulta)\n<<L>>
+Clinica -- cons: 3: eliminar(idConsulta)\n<<L>>
 
 cons -- Horario: {delete}\n<<A>>
 

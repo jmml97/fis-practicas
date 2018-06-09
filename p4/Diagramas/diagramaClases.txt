@@ -11,6 +11,9 @@ class ClinicaFIS {
  datosClinicosPaciente(idPaciente: TODO) : TODO
  anularCita(idPaciente : String, idCita : String) : String
  pedirCita(idPaciente : String, idMédico : String, fecha : Fecha) : String
+ consultarCM(idConsulta : String) : TODO
+ modificarCM(idConsulta : String, especialidad : String, idSanitario : String) : void
+ eliminarCM(idConsulta : String) : void
 }
 
 class Paciente {
@@ -52,15 +55,33 @@ class Sanitario {
  dni : String
  puesto : TODO
 
+ obtenerSanitarioConsulta(idConsulta : String) : Sanitario
+}
+
+class Consulta {
+ tespecialidad : String
+ 
+ buscarConsulta(idConsulta : String) : Consulta
+ eliminar(idConsulta : String) : void
+ getSanitAsociado(idConsulta : String) : Sanitario
+}
+
+class HorarioUso{
+ horaComienzo : Hora
+ horaFin : Hora
+ 
+ getHorario(idConsulta : String) : HorarioUso
 }
 
 class Cita {
  hora : Hora
  fecha : Fecha
 
+ getEstado() : String
  cambiarEstado(estado : TipoEstado) : void
  obtenerMédico()
  buscarCita(idMédico : Médico, fecha : Fecha)
+ 
 }
 
 enum TipoEstado {
@@ -76,6 +97,10 @@ class ExcepcionCita {
 
 class ExcepcionFecha {
  crear(error : String)
+}
+
+class ExcepcionConsulta {
+ eliminar(error : String)
 }
 
 class Medico {
@@ -97,4 +122,9 @@ ClinicaFIS --> ExcepcionCita
 ClinicaFIS --> "0..*" Medico
 ClinicaFIS --> ExcepcionFecha
 Cita -- Medico
+ClinicaFIS --> ExcepcionConsulta
+Sanitario -- "0..*" Consulta
+Consulta -- "0..*" Cita
+Consulta .. HorarioUso
+
 @enduml
