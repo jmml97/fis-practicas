@@ -24,6 +24,9 @@ class ClinicaFIS {
  llamarSiguientePaciente(idSanitario : String) : String
  diagnosticar(idHC, codDiagnostico, textoExplicativo, idMedico)
  terminarConsulta(idMedico, idPaciente) : void
+ eliminarPaciente(idPaciente : TODO) : String [0..*]
+ modificarPaciente(idPaciente : TODO, dni : String, nombre : String, numeroTarjeta : String, direccion : String, telefono : String, numeroTarjeta : String) : void
+ consultarCitas(idPaciente) : String[0..*]
 }
 
 class Paciente {
