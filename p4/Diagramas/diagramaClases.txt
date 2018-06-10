@@ -1,4 +1,11 @@
 @startuml
+' Remove shadows
+skinparam shadowing false
+
+' Generated diagram will be in black/grey/white.
+skinparam monochrome true
+
+skinparam packageStyle rectangle
 
 class ClinicaFIS {
  direccion : String
@@ -14,6 +21,9 @@ class ClinicaFIS {
  consultarCM(idConsulta : String) : TODO
  modificarCM(idConsulta : String, especialidad : String, idSanitario : String) : void
  eliminarCM(idConsulta : String) : void
+ llamarSiguientePaciente(idSanitario : String) : String
+ diagnosticar(idHC, codDiagnostico, textoExplicativo, idMedico)
+ terminarConsulta(idMedico, idPaciente) : void
 }
 
 class Paciente {
@@ -38,6 +48,8 @@ class HistorialClinico {
  fechaApertura : Fecha
 
  crear(fechaApertura : Fecha, paciente : Paciente)
+ buscarHistC(idHC) : HistorialClinico
+ obtenerNombrePaciente() : String 
  obtenerNumeroHistoria() : int
  obtenerFechaApertura() : Fecha
  obtenerInfoAnotaciones() : TODO
@@ -56,6 +68,8 @@ class Sanitario {
  puesto : TODO
 
  obtenerSanitarioConsulta(idConsulta : String) : Sanitario
+ buscarSanitario(idSanitario : String) : Sanitario
+ obtenerCitas() : Citas[o..*]
 }
 
 class Consulta {
@@ -79,8 +93,10 @@ class Cita {
 
  getEstado() : String
  cambiarEstado(estado : TipoEstado) : void
- obtenerMédico()
- buscarCita(idMédico : Médico, fecha : Fecha)
+ obtenerMédico() : Medico
+ obtenerPaciente() : Paciente
+ buscarCita(idMédico : Médico, fecha : Fecha) : Cita
+ modificarEstado(estado : TipoEstado) : void
  
 }
 
@@ -108,6 +124,11 @@ class Medico {
  especialidadMédica : String
 
  obtenerCitas() : Citas[o..*]
+ getNombre() : String
+}
+
+class Diagnostico {
+ crear(codDiagnostico, fecha, textoExplicativo)
 }
 
 ClinicaFIS -- "1..*" Paciente
@@ -117,14 +138,17 @@ AnotacionHC -> Sanitario
 HistorialClinico -* "0..*" AnotacionHC
 Cita -- TipoEstado : "estado"
 ClinicaFIS --> "0..*" Cita
+ClinicaFIS --> "0..*" Sanitario
 Cita .. Paciente
 ClinicaFIS --> ExcepcionCita
 ClinicaFIS --> "0..*" Medico
+ClinicaFIS --> "0..*" Diagnostico
+Diagnostico .. HistorialClinico
+Diagnostico .. Medico
 ClinicaFIS --> ExcepcionFecha
 Cita -- Medico
 ClinicaFIS --> ExcepcionConsulta
 Sanitario -- "0..*" Consulta
 Consulta -- "0..*" Cita
 Consulta .. HorarioUso
-
 @enduml
