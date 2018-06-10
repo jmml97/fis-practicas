@@ -1,0 +1,19 @@
+@startuml
+left to right direction
+
+actor Administrativo
+
+agent ": ClinicaFIS" as FIS
+collections ": Paciente" as TodosPacientes
+agent "pac : Paciente" as pac
+collections "todasCitas : Cita" as listaAux
+agent "cita : Cita" as cita
+agent listaCitas
+
+Administrativo - FIS : "listaCitas = consultarCitas(idPaciente)"
+FIS -- TodosPacientes : "1: pac = buscarPaciente(idPaciente)\n<<A>>"
+FIS -- pac : "2: todasCitas = obtenerCitas()\n<<L>>"
+FIS -- listaAux : "3:*[para todos] cita = siguiente()\n<<L>>"
+FIS -- cita : "3.1:[cita.estado==PENDIENTE] med = obtenerMedico()\n<<L>>"
+FIS - listaCitas : "3.1.1: incluir(cita.fecha, med.nombre, med.especialidadMedica)\n<<L>>"
+@enduml

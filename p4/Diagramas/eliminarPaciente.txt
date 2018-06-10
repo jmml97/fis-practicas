@@ -1,0 +1,19 @@
+@startuml
+left to right direction
+
+actor Administrativo
+
+agent ": ClinicaFIS" as FIS
+collections ": Paciente" as TodosPacientes
+agent "pac : Paciente" as pac
+collections "listaCitas : Cita" as listaCitas
+agent "cita : Cita" as cita
+agent infoBajaEnClinica
+
+Administrativo - FIS : "infoBajaEnClinica = eliminarPaciente(idPaciente)"
+FIS -- TodosPacientes : "1: pac = buscarPaciente(idPaciente)\n<<A>>"
+FIS -- pac : "2: desactivarPaciente()\n3: listaCitas = obtenerCitas()\n4.1:eliminarEnlace(cita)\n<<L>>"
+FIS -- listaCitas : "4:*[para todos] cita = siguiente()\n<<L>>"
+pac - cita : "{delete}\n<<A>>"
+FIS - infoBajaEnClinica : "5: incluir(pac.admin, pac.nombre)\n<<L>>"
+@enduml

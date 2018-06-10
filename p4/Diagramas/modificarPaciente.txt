@@ -1,0 +1,13 @@
+@startuml
+actor ":Administrativo" as Admin
+agent ":ClinicaFIS" as Clinica
+collections ":Paciente" as TodosPacientes
+agent "pac : Paciente" as Paciente
+
+Admin -- Clinica: : modificarPaciente(idPaciente, dni, nombre, NumeroTarjeta, direccion, telefono, numeroTarjeta)\n
+
+Clinica - TodosPacientes: 1: pac = buscarPaciente(idPaciente)\n<<A>>
+
+Clinica -- Paciente: 2: modificarDatos(dni, nombre, NumeroTarjeta, direccion, telefono, numeroTarjeta)\n<<L>>
+
+@enduml
