@@ -1,7 +1,7 @@
 @startuml
 left to right direction
 
-actor Administrativo
+actor Paciente
 
 agent ": ClinicaFIS" as FIS
 collections ": Cita" as cita
@@ -12,8 +12,8 @@ collections ": Medico" as m
 agent "med : Medico" as med
 agent infoCita
 
-Administrativo -- FIS : "infoCita = pedirCita(idPaciente, idMedico, fecha)
-FIS -- cita : "1: cita = buscarCita(idMedico, fecha)"
+Paciente -- FIS : "infoCita = pedirCita(idPaciente, idMedico, fecha)"
+FIS -- cita : "1: cita = buscarCita(idMedico, fecha)\n<<A>>"
 FIS -- p : "2: pac = buscar(IdPaciente)\n<<A>>"
 FIS -- pac : "3: nombrePac = getNombre()\n<<L>>"
 pac -- c : "{new}\n<<L>>"

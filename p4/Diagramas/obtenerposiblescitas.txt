@@ -7,21 +7,21 @@ agent ": ClinicaFIS" as FIS
 collections ": Paciente" as p
 agent "pac : Paciente" as pac
 collections ": Médico" as m
-agent listaCitas
+collections "listaCitas : Cita" as listaCitas
 agent ": ExepciónFecha" as exp
 agent "med : Médico" as med
-agent "listaCitasMédico" as l
-agent "cita : Cita" as c
+collections "listaCitasMédico : Cita" as l
+agent "c : Cita" as c
 agent listaPosiblesFechasHoras
 
 Administrativo -- FIS : "listaPosiblesfechashoras = obtenerPosiblesCitas(idMédico, idPaciente)"
 FIS -- p : "1: pac = buscarPaciente(idPaciente)\n<<A>>"
 FIS -- pac : "2: listaCitas = obtenerCitas()\n<<L>>"
-FIS -- listaCitas : "3:*[para todas]\n<<L>>"
-FIS -- exp : "3.1:[cita.fecha >= fechaActual && cita.Estado==PENDIENTE]\n<<L>>"
+FIS -- listaCitas : "3:*[para todos] cita = siguiente()\n<<L>>"
+FIS -- exp : "3.1:[cita.fecha >= fechaActual && cita.Estado==PENDIENTE] crear(''Error: ya existe una cita'')\n<<L>>"
 FIS -- m : "4: med = buscar(idMédico)\n<<A>>"
-FIS -- med : "5: listaCitasMédico = obtenerCitas\n<<L>>"
-FIS -- l : "6: *[para todas]\n<<L>>"
-FIS -- c : "6.1: [cita.fecha >= fechaActual && cita.Estado == LIBRE]\n<<L>>"
+FIS -- med : "5: listaCitasMédico = obtenerCitas()\n<<L>>"
+FIS -- l : "6: *[para todos] c = siguiente()\n<<L>>"
+FIS -- c : "6.1: [c.fecha >= fechaActual && c.Estado == LIBRE] fecha = getFecha()\n<<L>>"
 FIS -- listaPosiblesFechasHoras : "6.1.1: incluir(fecha)\n<<L>>"
 @enduml
