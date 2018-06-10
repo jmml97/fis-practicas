@@ -1,0 +1,23 @@
+@startuml
+' Remove shadows
+skinparam shadowing false
+
+' Generated diagram will be in black/grey/white.
+skinparam monochrome true
+
+skinparam packageStyle rectangle
+
+:Sanitario: as Sa
+
+rectangle ": ClinicaFIS " as CLI
+collections ": Sanitario " as S
+rectangle "sani : Sanitario " as sani
+collections "listaCitas: Cita " as liCi
+rectangle "c : Cita " as c
+
+Sa-down->CLI : nombrePaciente = llamarSiguientePaciente(idSanitario)
+CLI-down->S :  <b><<A>></b> <b>1:</b> sani = buscarSanitario(idSanitario)
+CLI-down-sani : <b><<L>></b> <b>2:</b> listaCitas = obtenerCitas()
+CLI-liCi : <b><<L>></b> <b>3:</b>[para todos] \n c = siguiente()
+CLI-down-c : <b><<L>></b> <b>4:</b> [estado = ENESPERA && fecha=fechaActual] \n nombrePaciente = obtenerNombrePaciente()
+@enduml

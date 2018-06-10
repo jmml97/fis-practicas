@@ -1,0 +1,21 @@
+@startuml
+' Remove shadows
+skinparam shadowing false
+
+' Generated diagram will be in black/grey/white.
+skinparam monochrome true
+
+skinparam packageStyle rectangle
+
+:Sanitario: as Ad
+
+rectangle ": ClinicaFIS" as CLI
+collections ": Cita" as C
+rectangle "c : Cita" as cit
+rectangle ": ExcepcionCita" as Ex
+
+Ad-->CLI : <b> :</b> terminarConsulta(idMedico,idPaciente)
+CLI-left->C :  <b><<A>></b> <b>1:</b> c = buscarCita(idMedico,idPaciente)
+CLI-down->Ex : <b><<L>></b> <b>1.1:</b> [cit.fecha != fechaActual] \n crear("Error de cita: la cita consultada no es de hoy.")
+CLI-right->cit : <b><<A>></b> <b>2:</b> modificarEstado(ATENDIDA)
+@enduml
