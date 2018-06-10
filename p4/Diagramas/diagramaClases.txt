@@ -13,19 +13,19 @@ class ClinicaFIS {
  web : String
 
  obtenerDiaHoy() : Fecha
- crearPaciente(dni : String, nombre : String, numeroTarjeta : String, direccion : String, telefono : String, fechaNacimiento : Fecha) : TODO
- consultarPaciente(idPaciente: TODO) : TODO
- datosClinicosPaciente(idPaciente: TODO) : TODO
+ crearPaciente(dni : String, nombre : String, numeroTarjeta : String, direccion : String, telefono : String, fechaNacimiento : Fecha) : String
+ consultarPaciente(idPaciente: String) : String[0..*]
+ datosClinicosPaciente(idPaciente: String) : String[0..*]
  anularCita(idPaciente : String, idCita : String) : String
  pedirCita(idPaciente : String, idMédico : String, fecha : Fecha) : String
- consultarCM(idConsulta : String) : TODO
+ consultarCM(idConsulta : String) : String[0..*]
  modificarCM(idConsulta : String, especialidad : String, idSanitario : String) : void
  eliminarCM(idConsulta : String) : void
  llamarSiguientePaciente(idSanitario : String) : String
  diagnosticar(idHC, codDiagnostico, textoExplicativo, idMedico)
  terminarConsulta(idMedico, idPaciente) : void
- eliminarPaciente(idPaciente : TODO) : String [0..*]
- modificarPaciente(idPaciente : TODO, dni : String, nombre : String, numeroTarjeta : String, direccion : String, telefono : String, numeroTarjeta : String) : void
+ eliminarPaciente(idPaciente : String) : String [0..*]
+ modificarPaciente(idPaciente : String, dni : String, nombre : String, numeroTarjeta : String, direccion : String, telefono : String, numeroTarjeta : String) : void
  consultarCitas(idPaciente) : String[0..*]
 }
 
@@ -39,7 +39,7 @@ class Paciente {
  activo : Boolean
 
  crear(dni : String, nombre : String, numeroTarjeta : String, direccion : String, telefono : String, fechaNacimiento : Fecha, activo : Boolean)
- obtenerInfoHC() : TODO
+ obtenerInfoHC() : String[0..*]
  incluirHC(HC: HistorialClinico)
  obtenerCitas() : Citas[0..*]
  desactivarPaciente() : void
@@ -57,13 +57,12 @@ class HistorialClinico {
  obtenerNombrePaciente() : String
  obtenerNumeroHistoria() : int
  obtenerFechaApertura() : Fecha
- obtenerInfoAnotaciones() : TODO
+ obtenerInfoAnotaciones() : String[0..*]
 }
 
 class AnotacionHC {
  fechaAnotacion : Fecha
  comentario : String
-
  obtenerNombreSanitario() : String
 }
 
